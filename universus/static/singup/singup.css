@@ -1,0 +1,29 @@
+html body {
+	font-family: 'Roboto', sans-serif;	
+	background: #FAFAFA;
+	height: 100%;
+}
+
+.container-fluid {
+}
+
+.container-fluid .row {
+	height: 300px;
+}
+
+.singup {
+	margin: auto;
+	margin-top: 5%;
+	max-width: 400px;
+
+}
+
+.title {
+	font-size: 1.75em;
+	font-weight: bolder;
+}
+
+.form-group{
+	padding-left: 5%;
+	padding-right: 5%;
+}

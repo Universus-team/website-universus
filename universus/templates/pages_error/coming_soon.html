@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Скоро будет!</title>
+    <style>
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -285px;
+            margin-top: -190px;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Эта страница ещё не создана</h2>
+    <img src="{% static 'pages_error/code.jpg' %}">
+</body>
+</html>

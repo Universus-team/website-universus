@@ -1,0 +1,136 @@
+html body {
+  background: #FAFAFA;
+  height: 100%;
+}
+.template {
+  display: none;
+}
+.text-format-toolbar-up {
+	margin-bottom: 10px;
+}
+.text-format-toolbar-down {
+  margin-top: 10px;
+}
+
+.txt-color {
+  display: block;
+  width: 17px;
+  height: 17px;
+  border-color: #4D4D4D; 
+}
+.txt-color-black {
+  background-color: black;
+}
+.txt-color-red {
+  background-color: red;
+}
+.txt-color-yellow {
+  background-color: yellow;
+}
+.txt-color-green {
+  background-color: green;
+}
+.txt-color-blue {
+  background-color: blue;
+}
+
+.dropdown-menu {
+    min-width: 0px !important;
+}
+
+.selectpicker {
+  min-width: 0px !important
+}
+
+.test {
+	margin: 1em;
+	max-width: 600px;
+  min-width: 300px;
+}
+
+hr {
+  border-style: solid none none none;
+    border-width: 2px;
+}
+
+.question hr {
+	border-style: double none none none;
+  border-width: 7px;
+}
+
+.posible-answers-menu {
+  margin-left: -20px;
+}
+
+.posible-answers-toolbar button {
+  margin-left: 10px;
+}
+
+.question-textarea {
+  font-family: 'Lora';
+  font-size: 1.2em;
+  height: 105px;
+  padding: 4px;
+  overflow: auto;
+}
+
+
+/*[contenteditable=true]:empty {*/
+  /*background-image:url("question_txt.svg");*/
+  /*background-repeat: no-repeat;*/
+/*}*/
+
+
+.btn-remove-test {
+  background-color: #D79F9F;
+}
+
+/*style below http://dimox.name/custom-checkboxes-and-radio-buttons-using-css-only/*/
+input[type="radio"] {
+  vertical-align: top;
+  width: 17px;
+  height: 17px;
+  margin: 0 3px 0 0;
+}
+input[type="radio"] + label {
+  cursor: pointer;
+}
+input[type="radio"]:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+input[type="radio"]:not(checked) + label {
+  position: relative;
+  padding: 0 0 0 35px;
+}
+input[type="radio"]:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #CDD1DA;
+  border-radius: 50%;
+  background: #FFF;
+}
+input[type="radio"]:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #4F8FFF; /*background of checked radio button*/
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+  opacity: 0;
+  transition: all .2s;
+}
+input[type="radio"]:checked + label:after {
+  opacity: 1;
+}
+input[type="radio"]:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(230,230,230,.5);
+}
+/*style above http://dimox.name/custom-checkboxes-and-radio-buttons-using-css-only/*/

@@ -1,0 +1,259 @@
+
+{% load static %}﻿
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+
+
+    <!-- Font awesome Font Awesome is fully open source and is GPL friendly. You can use it for commercial projects, open source projects, or really just about whatever you want. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- fonts remote-->
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+
+    <!-- Bootstrap CSS remote-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  
+
+
+ 
+
+    <!-- custom style local-->
+    <link rel="stylesheet" type="text/css" href="{% static 'exam_builder/exam_builder.css' %}">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="{% static 'common/js/jquery-1.11.1.min.js' %}"></script>
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="{% static 'exam_builder/exam_builder.js' %}"></script>
+
+    <!-- Bootstrap  JS remote-->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+      <!-- bootstrap-select https://silviomoreto.github.io/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="examMenu">
+          <button
+                  class="btn btn-success btn-lg"
+                  onclick="sendToServer()"
+          >
+              Сохранить
+          </button>
+          <br>
+          <p id="saveMessage"></p>
+      </div>
+      <div class="row" id="testContainer">
+
+      </div>
+    </div>
+
+    <!--elements below are hidden and using like templates -->
+
+    <div id="tmptTest" class="template">
+      <div class="panel panel-default test">
+
+        <div class="panel-heading text-center">
+          Вопрос
+          <button 
+            onclick="removeElement(this.parentNode.parentNode)" 
+            class="btn btn-secondary btn-xs btn-remove-test"
+            style="float: right;">
+            <i class="fa fa-remove" style="color:#FFFFFF;"></i>
+          </button>
+        </div>
+
+        <div class="panel-body">
+
+          <div class="question">
+
+            <!-- for desktop -->
+            <!-- this code is repeated. fix it if you can. -->
+            <div class="text-format-toolbar-up hidden-xs">
+               <button onclick="formatDoc('bold');" class="btn btn-default btn-sm"
+                  data-toggle="tooltip"
+                  data-html="true"
+                  title="Сделать текст жирным. <b> CTRL+B </b>."
+                  >
+                <i class="fa fa-bold"></i>
+              </button>
+              <button onclick="formatDoc('italic');" class="btn btn-default btn-sm"
+                  data-toggle="tooltip"
+                  data-html="true"
+                  title="Сделать текст курсивным. <b> CTRL+I </b>."
+                  >
+                <i class="fa fa-italic"></i>
+              </button>
+              <button onclick="formatDoc('underline');" class="btn btn-default btn-sm"
+                  data-toggle="tooltip"
+                  data-html="true"
+                  title="Сделать текст подчёркнутым. <b> CTRL+U </b>."
+                  >
+                <i class="fa fa-underline"></i>
+              </button>
+
+              <div class="btn-group">
+                <button 
+                  onclick = "formatDoc('forecolor','red')" 
+                  type="button"
+                  class="btn btn-default btn-sm txt-color-red"
+                  data-toggle="tooltip"
+                  data-html="true"
+                  title="Сделать текст красным. <b> CTRL+ALT+R </b>.">_</button>
+                <button 
+                  onclick = "formatDoc('forecolor','blue')" 
+                  type="button"
+                  class="btn btn-default btn-sm txt-color-blue"
+                  data-toggle="tooltip"
+                  data-html="true"
+                  title="Сделать текст синим. <b> CTRL+ALT+B </b>."
+                  >_</button>
+
+                <button 
+                  onclick = "formatDoc('forecolor','green')" 
+                  type="button"
+                  class="btn btn-default btn-sm txt-color-green"
+                  data-toggle="tooltip"
+                  data-html="true"
+                  title="Сделать текст зелёным. <b> CTRL+ALT+G </b>.">_</button>  
+
+                <button 
+                  onclick = "formatDoc('forecolor','yellow')" 
+                  type="button"
+                  class="btn btn-default btn-sm txt-color-yellow"
+                  data-toggle="tooltip"
+                  data-html="true"
+                  title="Сделать текст жёлтым. <b> CTRL+ALT+Y </b>.">_</button>                                  
+                <button 
+                  onclick = "formatDoc('forecolor','black')" 
+                  type="button"
+                  class="btn btn-default btn-sm txt-color-black"
+                  data-toggle="tooltip"
+                  data-html="true"
+                  title="Сделать текст черным. <b> CTRL+ALT+K </b>.">_</button>
+              </div>
+
+              <div class="btn-group">
+                  <button 
+                    onclick = "formatDoc('justifyleft');" 
+                    type="button"
+                    class="btn btn-default btn-sm"
+                    data-toggle="tooltip"
+                    data-html="true"
+                    title="Центр. <b> CTRL+R </b>.">
+                    <i class="fa fa-align-right"></i>
+                  </button>
+                  <button 
+                    onclick = "formatDoc('justifycenter');" 
+                    type="button"
+                    class="btn btn-default btn-sm"
+                    data-toggle="tooltip"
+                    data-html="true"
+                    title="Центр. <b> CTRL+E </b>.">
+                    <i class="fa fa-align-center"></i>
+                  </button>
+                  <button 
+                    onclick = "formatDoc('justifyright');" 
+                    type="button"
+                    class="btn btn-default btn-sm"
+                    data-toggle="tooltip"
+                    data-html="true"
+                    title="Центр. <b> CTRL+L </b>.">
+                    <i class="fa fa-align-left"></i>
+                  </button>
+              </div>
+
+
+            </div>
+
+            <div contenteditable="true" class="form-control question-textarea" placeholder="Вопрос"></div>
+
+            <!-- for mobile -->
+            <!-- this code is repeated. fix it if you can. -->
+            <div class="text-format-toolbar-down hidden-lg hidden-md hidden-sm">
+               <button onclick="formatDoc('bold');" class="btn btn-default btn-sm"
+                  data-toggle="tooltip"
+                  data-html="true"
+                  title="Сделать текст жирным. Горячая клавиша <b> CTRL+B </b>."
+                  >
+                <i class="fa fa-bold"></i>
+              </button>
+              <button onclick="formatDoc('italic');" class="btn btn-default btn-sm"
+                  data-toggle="tooltip"
+                  data-html="true"
+                  title="Сделать текст курсивным. Горячая клавиша <b> CTRL+I </b>."
+                  >
+                <i class="fa fa-italic"></i>
+              </button>
+              <button onclick="formatDoc('underline');" class="btn btn-default btn-sm"
+                  data-toggle="tooltip"
+                  data-html="true"
+                  title="Сделать текст подчёркнутым. Горячая клавиша <b> CTRL+U </b>."
+                  >
+                <i class="fa fa-underline"></i>
+              </button>
+            </div>
+            <hr>
+
+          </div>
+          <div class="posible-answers-toolbar">
+            <button 
+              class="btn btn-default btn-md" 
+              onclick="addPosibleAnswer(
+                this.parentNode.parentNode.getElementsByClassName('container-posible-answers')[0]
+              )">
+              <i class="fa fa-plus-square fa-lg"></i> Вариант
+            </button>
+          </div>
+          <hr>
+          <div class="container-posible-answers">
+            
+          </div>
+
+          
+        </div> 
+        <!-- panel body end -->
+
+
+        <div class="panel-footer text-center">
+          <button onclick="addTest()"><i class="fa fa-plus-square"></i> Вопрос</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="tmptSingleAnswer" class="template">
+      <div class="posible-answer posible-answer-single">
+        <div class="row">
+          <div class="col-xs-1">
+            <input type="radio">
+            <label ></label>
+          </div>
+          <div class="col-xs-10">
+            <textarea class="form-control" row="4" placeholder="Возможный вариант ответа"></textarea>
+          </div>
+          <div class="col-xs-1 posible-answers-menu">
+            <button 
+              onclick="removeElement(this.parentNode.parentNode.parentNode)" 
+              class="btn btn-secondary btn-xs">
+              <i class="fa fa-remove" style="color:#FFFFFF;"></i>
+            </button>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {#Bootstrap CSS remote#}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  {#custom style  #}
+  <link rel="stylesheet" href="{% static 'user_profile/user_profile.css' %}">
+{#    fonts#}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{#    jQuery#}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a id="logo" class="navbar-brand" href="#">Universus</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="#"><i class="fa fa-user fa-lg"></i> Профиль</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-university fa-lg"></i> Университеты</a>
+        </li>
+        <li>
+          <a href="#"> <i class="fa fa-calendar-o fa-lg"></i> Расписание</a>
+        </li>
+        <li><a href="#"><i class="fa fa-info fa-lg"></i> О нас</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <table class="table table-hover">
+        <tr>
+          <td><a href="../error/coming_soon">Тесты</a></td>
+        </tr>
+        <tr>
+          <td><a href="../error/coming_soon">Сообщения</a></td>
+        </tr>
+        <tr>
+          <td><a href="../error/coming_soon">Участники</a></td>
+        </tr>
+        <tr>
+          <td><a href="../error/coming_soon">Лекции</a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-sm-8 text-left body-meduim"> 
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div id="user-name">Курочкин Михаил</div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-3 col-lg-3 " align="center">
+              <img alt="User Pic" id="user-img" src="{% static 'common/img/photo.jpg' %}" class="img-circle img-responsive">
+            </div>
+            
+            <div class=" col-md-9 col-lg-9 "> 
+              <table class="table table-user-information">
+                <tbody>
+                  <tr>
+                    <td>Университет:</td>
+                    <td>ВлГУ</td>
+                  </tr>
+                  <tr>
+                    <td>Факультет/институт:</td>
+                    <td>Информационных технологий и радиоэлектронники</td>
+                  </tr>
+                  <tr>
+                    <td>Группа:</td>
+                    <td>ПРИ-115</td>
+                  </tr>
+                  <tr>
+                    <td>Курс:</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>Дата рождения:</td>
+                    <td>24/12/1996</td>
+                  </tr>
+                  <tr>
+                    <td>Пол:</td>
+                    <td>М</td>
+                  </tr>
+                  <tr>
+                    <td>Адрес</td>
+                    <td>г. Владимир ул. Юбилейная д. 5 кв. 72</td>
+                  </tr>
+                  <tr>
+                    <td>Email</td>
+                    <td><a href="mailto:mkv-1724@mail.ru">mkv-1724@mail.ru</a></td>
+                  </tr>
+                    <td>Номер телефона:</td>
+                    <td>+79157510930</td>     
+                  </tr>
+                 
+                </tbody>
+              </table>
+              
+              <button class="btn btn-primary">
+                <i class="glyphicon glyphicon-envelope"></i>
+                Отправить сообщение
+              </button>
+            </div>
+          </div>
+        </div>
+             <div class="panel-footer">
+                    <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                    <span class="pull-right">
+                        <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                        <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                    </span>
+                </div>
+        
+      </div>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>
+          <h5><b>Тест по физике</b></h5>
+          <h6>22.12.2017</h6>
+        </p>
+      </div>
+      <div class="well">
+        <p>
+          <h5><b>Тест по Java</b></h5>
+          <h6>02.12.2017</h6>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
