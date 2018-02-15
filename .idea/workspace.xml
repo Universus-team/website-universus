@@ -4,8 +4,6 @@
     <list default="true" id="f0807708-1590-481a-b810-cedea5c314d0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/universus/templates/main/main.html" afterPath="$PROJECT_DIR$/universus/templates/main/main.html" />
-      <change beforePath="$PROJECT_DIR$/universus/templates/university/university.html" afterPath="$PROJECT_DIR$/universus/templates/university/university.html" />
-      <change beforePath="$PROJECT_DIR$/universus/templates/university/university_list.html" afterPath="$PROJECT_DIR$/universus/templates/university/university_list.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,21 +81,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="university.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="university.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/universus/templates/university/university.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="21" column="64" lean-forward="false" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+            <state relative-caret-position="375">
+              <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/universus/templates/main/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="59" column="24" lean-forward="false" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+            <state relative-caret-position="285">
+              <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -187,8 +185,8 @@
         <option value="$PROJECT_DIR$/universus/university/views.py" />
         <option value="$PROJECT_DIR$/universus/university/urls.py" />
         <option value="$PROJECT_DIR$/universus/templates/university/university_list.html" />
-        <option value="$PROJECT_DIR$/universus/templates/main/main.html" />
         <option value="$PROJECT_DIR$/universus/templates/university/university.html" />
+        <option value="$PROJECT_DIR$/universus/templates/main/main.html" />
       </list>
     </option>
   </component>
@@ -407,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1518695289282</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add content to application &quot;university&quot;">
+      <created>1518696621374</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1518696621374</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -418,7 +423,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.50313973" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.384375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1734375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24670571" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -449,7 +454,8 @@
     <MESSAGE value="fix profile page" />
     <MESSAGE value="fix main page and fix url (add new regex)" />
     <MESSAGE value="add application &quot;university&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="add application &quot;university&quot;" />
+    <MESSAGE value="add content to application &quot;university&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="add content to application &quot;university&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -659,18 +665,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/universus/templates/main/main.html">
+    <entry file="file://$PROJECT_DIR$/universus/templates/university/university.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="24" lean-forward="false" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+        <state relative-caret-position="375">
+          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/universus/templates/university/university.html">
+    <entry file="file://$PROJECT_DIR$/universus/templates/main/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="21" column="64" lean-forward="false" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+        <state relative-caret-position="285">
+          <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
           <folding />
         </state>
       </provider>
