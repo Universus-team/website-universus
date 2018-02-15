@@ -25,5 +25,5 @@ urlpatterns = [
     path('about_body/', include('about.urls')),
 
     # must be at the end
-    re_path('^[a-zA-Z]+_$', include('main.urls')),
+    re_path('(^[a-zA-Z]+_$|^[a-zA-Z]+_/[a-zA-Z_]+$)', include('main.urls')),
 ]
