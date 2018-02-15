@@ -6,9 +6,9 @@
     <title>Title</title>
 
 {#    сюда пиши стили#}
-    <link type="text/css" href="{% static 'about/about.css' %}">
+    <link type="text/css" href="{% static 'university/university_list.js' %}">
 {#    сюда скрипты#}
-    <script scr="{% static 'about/about.js' %}"></script>
+    <script scr="{% static 'university/university_list.js' %}"></script>
 
 {#    картинки также забрасыват в папку static/<имя приложения>#}
 {#    и прописывать урл картинки как "{% static '<имя приложения>/<имя картинки>' %}" #}
@@ -16,8 +16,12 @@
 <body>
     <h3>
 
-university_list
+        university_list
 
+        Тут будет список всех универов в нашем проекте
+        Список будет состоят из лого универа и его имени, а также адреса
+        Не забывай использовать bootstrap он даёт нашему проекту более-менее
+        унифицированный дизайн
 </h3>
 </body>
 </html>
