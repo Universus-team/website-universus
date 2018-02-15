@@ -8,9 +8,14 @@
   {#Bootstrap CSS remote#}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   {#custom style  #}
-  <link rel="stylesheet" href="{% static 'user_profile/user_profile.css' %}">
+  <link rel="stylesheet" href="{% static 'main/main.css' %}">
+
 {#    fonts#}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{#    Custom JS#}
+
+    <script src="{% static 'main/main.js' %}"></script>
 {#    jQuery#}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -68,7 +73,7 @@
     <div class="col-sm-8 text-left body-meduim">
 
 
-        <iframe src="{{ content_src }} " width="100%" height="100%">
+        <iframe src="{{ content_src }} " width="100%" frameborder="0" scrolling="no"  onload="resizeIframe(this)">
 
         </iframe>
 

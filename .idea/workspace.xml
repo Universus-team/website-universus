@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0807708-1590-481a-b810-cedea5c314d0" name="Default" comment="add app &quot;about&quot;">
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/main/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/main/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/main/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/main/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/main/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/main/tests.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/main/urls.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/main/views.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/templates/main/main.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/universus.iml" afterPath="$PROJECT_DIR$/.idea/universus.iml" />
+    <list default="true" id="f0807708-1590-481a-b810-cedea5c314d0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/static/main/main.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/static/main/main.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/universus/templates/about/about.html" afterPath="$PROJECT_DIR$/universus/templates/about/about.html" />
+      <change beforePath="$PROJECT_DIR$/universus/static/user_profile/user_profile.css" afterPath="$PROJECT_DIR$/universus/static/user_profile/user_profile.css" />
+      <change beforePath="$PROJECT_DIR$/universus/templates/main/main.html" afterPath="$PROJECT_DIR$/universus/templates/main/main.html" />
+      <change beforePath="$PROJECT_DIR$/universus/templates/user_profile/user_profile.html" afterPath="$PROJECT_DIR$/universus/templates/user_profile/user_profile.html" />
       <change beforePath="$PROJECT_DIR$/universus/universus/urls.py" afterPath="$PROJECT_DIR$/universus/universus/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,14 +22,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/universus/universus/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+            <state relative-caret-position="242">
+              <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
               <folding>
                 <element signature="e#633#665#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_profile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/universus/templates/user_profile/user_profile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/universus/templates/about/about.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+              <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -75,8 +79,38 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/universus/templates/main/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+            <state relative-caret-position="242">
+              <caret line="75" column="113" lean-forward="false" selection-start-line="75" selection-start-column="113" selection-end-line="75" selection-end-column="113" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/universus/static/main/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="38" column="1" lean-forward="false" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_profile.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/universus/static/user_profile/user_profile.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/universus/static/main/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="54" lean-forward="false" selection-start-line="1" selection-start-column="54" selection-end-line="1" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -98,6 +132,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -139,8 +175,12 @@
         <option value="$PROJECT_DIR$/universus/templates/about/about.html" />
         <option value="$PROJECT_DIR$/universus/main/urls.py" />
         <option value="$PROJECT_DIR$/universus/main/views.py" />
-        <option value="$PROJECT_DIR$/universus/templates/main/main.html" />
         <option value="$PROJECT_DIR$/universus/universus/urls.py" />
+        <option value="$PROJECT_DIR$/universus/templates/user_profile/user_profile.html" />
+        <option value="$PROJECT_DIR$/universus/static/main/main.js" />
+        <option value="$PROJECT_DIR$/universus/static/user_profile/user_profile.css" />
+        <option value="$PROJECT_DIR$/universus/static/main/mian.css" />
+        <option value="$PROJECT_DIR$/universus/templates/main/main.html" />
       </list>
     </option>
   </component>
@@ -193,6 +233,33 @@
               <item name="universus" type="b2602c69:ProjectViewProjectNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="universus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="universus" type="462c0819:PsiDirectoryNode" />
+              <item name="universus" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="universus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="universus" type="462c0819:PsiDirectoryNode" />
+              <item name="universus" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="universus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="universus" type="462c0819:PsiDirectoryNode" />
+              <item name="universus" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="user_profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="universus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="universus" type="462c0819:PsiDirectoryNode" />
+              <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -213,6 +280,13 @@
               <item name="universus" type="b2602c69:ProjectViewProjectNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="user_profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="universus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="universus" type="462c0819:PsiDirectoryNode" />
+              <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -228,6 +302,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/universus/universus/settings.py" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -308,6 +383,14 @@
       <option name="presentableId" value="Default" />
       <updated>1515843572348</updated>
     </task>
+    <task id="LOCAL-00001" summary="divided the site into static and dynamic content, see app main">
+      <created>1518690282081</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1518690282081</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -344,15 +427,15 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="divided the site into static and dynamic content, see app main" />
+    <option name="LAST_COMMIT_MESSAGE" value="divided the site into static and dynamic content, see app main" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/universus/settings.py" />
-    <entry file="file://$PROJECT_DIR$/universus/urls.py" />
-    <entry file="file://$PROJECT_DIR$/universus/settings.py" />
-    <entry file="file://$PROJECT_DIR$/universus/urls.py" />
     <entry file="file://$USER_HOME$/prog/python/перцептрон.py" />
     <entry file="file://$PROJECT_DIR$/singup/__init__.py" />
     <entry file="file://$PROJECT_DIR$/singup/admin.py" />
@@ -417,7 +500,7 @@
     <entry file="file://$PROJECT_DIR$/universus/templates/about/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -440,21 +523,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/universus/templates/main/main.html">
+    <entry file="file://$PROJECT_DIR$/universus/universus/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+        <state relative-caret-position="242">
+          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding>
+            <element signature="e#633#665#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/templates/user_profile/user_profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/universus/universus/urls.py">
+    <entry file="file://$PROJECT_DIR$/universus/static/main/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="e#633#665#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="1" column="54" lean-forward="false" selection-start-line="1" selection-start-column="54" selection-end-line="1" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/static/user_profile/user_profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/templates/main/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="75" column="113" lean-forward="false" selection-start-line="75" selection-start-column="113" selection-end-line="75" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/static/main/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="1" lean-forward="false" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
