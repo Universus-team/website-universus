@@ -5,7 +5,7 @@
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {height: 450px}
+.row.content {height: 85vh}
 
 /* Set gray background color and 100% height */
 .sidenav {
@@ -15,11 +15,12 @@
 }
 
 
+
 /* Set black background color, white text and some padding */
 footer {
   background-color: #555;
   color: white;
-  padding: 15px;
+  padding: 10px;
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
