@@ -6,7 +6,13 @@
     <title>Title</title>
 
 {#    сюда пиши стили#}
-    <link type="text/css" href="{% static 'about/about.css' %}">
+    <link type="text/css" href="{% static 'about/about.css' %}">  
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	
+
+  
+  
 {#    сюда скрипты#}
     <script scr="{% static 'about/about.js' %}"></script>
 
@@ -14,14 +20,75 @@
 {#    и прописывать урл картинки как "{% static '<имя приложения>/<имя картинки>' %}" #}
 </head>
 <body>
-    <h3>
+   
+	<table class="table table-user">
+<tbody>
+<tr>
+<td>   <!-- Begin Image -->
+          <img class="portrait" src="{% static 'common/img/frame.jpg' %}" alt="John Smith" />
+          <!-- End Image -->
+          <!-- Begin Personal Information -->
+          <div class="self">
+            <h1 class="name">John Smith <br />
+              <span>Interactive Designer</span></h1>
+            <ul>
+              <li class="ad">111 Lorem Street, 34785, Ipsum City</li>
+              <li class="mail">johnsmith@business.com</li>
+              <li class="tel">+11 444 555 22 33</li>
+              <li class="web">www.businessweb.com</li>
+            </ul>
+          </div>
+          <!-- End Personal Information --></td>
+		  <td>   <!-- Begin Image -->
+         <img class="portrait" src="{% static 'common/img/frame.jpg' %}" alt="John Smith" />
+          <!-- End Image -->
+          <!-- Begin Personal Information -->
+          <div class="self">
+            <h1 class="name">John Smith <br />
+              <span>Interactive Designer</span></h1>
+            <ul>
+              <li class="ad">111 Lorem Street, 34785, Ipsum City</li>
+              <li class="mail">johnsmith@business.com</li>
+              <li class="tel">+11 444 555 22 33</li>
+              <li class="web">www.businessweb.com</li>
+            </ul>
+          </div>
+          <!-- End Personal Information --></td></tr>
+<tr>
+<td>   <!-- Begin Image -->
+          <img class="portrait" src="{% static 'common/img/frame.jpg' %}" alt="John Smith" />
+          <!-- End Image -->
+          <!-- Begin Personal Information -->
+          <div class="self">
+            <h1 class="name">John Smith <br />
+              <span>Interactive Designer</span></h1>
+            <ul>
+              <li class="ad">111 Lorem Street, 34785, Ipsum City</li>
+              <li class="mail">johnsmith@business.com</li>
+              <li class="tel">+11 444 555 22 33</li>
+              <li class="web">www.businessweb.com</li>
+            </ul>
+          </div>
+          <!-- End Personal Information --></td>
+		  <td>   <!-- Begin Image -->
+          <img class="portrait" src="{% static 'common/img/frame.jpg' %}" alt="John Smith" />
+          <!-- End Image -->
+          <!-- Begin Personal Information -->
+          <div class="self">
+            <h1 class="name">John Smith <br />
+              <span>Interactive Designer</span></h1>
+            <ul>
+              <li class="ad">111 Lorem Street, 34785, Ipsum City</li>
+              <li class="mail">johnsmith@business.com</li>
+              <li class="tel">+11 444 555 22 33</li>
+              <li class="web">www.businessweb.com</li>
+            </ul>
+          </div>
+          <!-- End Personal Information --></td></tr>
+</tbody>
+</tr>
+</table> 
 
-    Тут необходимо сверстать страницу, которая будет содержать инфу: кто мы, откуда, что тут делаем,
-    а также какие мы молодцы.
-    Потом краткая инфа в списке о каждом члене нашей команды.
-    Так-то можно сразу заполнить данными, так как информация практически статическая,
-    и никаких обращений к бэкенду не требует.
 
-</h3>
 </body>
 </html>

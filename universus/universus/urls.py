@@ -19,11 +19,13 @@ from django.urls import path, include, re_path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('singup/', include('singup.urls')),
-    path('exam_builder_body/', include('exam_builder.urls')),
+    path('exambuilder_body/', include('exam_builder.urls')),
     path('profile_body/', include('user_profile.urls')),
     path('error/', include('pages_error.urls')),
     path('about_body/', include('about.urls')),
     path('university_body/', include('university.urls')),
+    path('chat_body/', include('chat.urls')),
+    path('timetable_body/', include('timetable.urls')),
 
     # must be at the end
     re_path('(^[a-zA-Z]+_$|^[a-zA-Z]+_/[a-zA-Z_]+$)', include('main.urls')),

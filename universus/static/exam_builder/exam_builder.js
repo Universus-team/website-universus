@@ -1,3 +1,5 @@
+
+
 function addTest() {
     var test = $('.template .test')[0].cloneNode(true);
     var testContainer = $('#testContainer');
@@ -57,7 +59,7 @@ function sendToServer() {
     //если всё произошло удачно, выводит пользователю сообщение
     //о последнем времени сохранение теста
     $.ajax({
-        url: '/exam_builder/',
+        url: '/exambuilder_body/',
         type: 'POST',
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(readExam()),

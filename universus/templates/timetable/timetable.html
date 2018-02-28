@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+        <!-- custom style local-->
+    <link rel="stylesheet" type="text/css" href="{% static 'timetable/timetable.css' %}">
+
+    <!-- Bootstrap CSS remote-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- jQuery local-->
+    <script type="text/javascript" src="{% static 'common/js/jquery-1.11.1.min.js' %}"></script>
+
+    <!-- Bootstrap  JS remote-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    {# Custom JS local  #}
+
+    <script src="{% static 'timetable/timetable.js' %}"></script>
+
+    {# JSGRID JS LOCAL#}
+
+    <script src="{% static 'lib/jsgrid/src/jsgrid.core.js' %}"></script>
+    <script src="{% static 'lib/jsgrid/src/jsgrid.load-indicator.js' %}"></script>
+    <script src="{% static 'lib/jsgrid/src/jsgrid.load-strategies.js' %}"></script>
+    <script src="{% static 'lib/jsgrid/src/jsgrid.sort-strategies.js' %}"></script>
+    <script src="{% static 'lib/jsgrid/src/jsgrid.field.js' %}"></script>
+    <script src="{% static 'lib/jsgrid/src/fields/jsgrid.field.text.js' %}"></script>
+    <script src="{% static 'lib/jsgrid/src/fields/jsgrid.field.number.js' %}"></script>
+    <script src="{% static 'lib/jsgrid/src/fields/jsgrid.field.select.js' %}"></script>
+    <script src="{% static 'lib/jsgrid/src/fields/jsgrid.field.checkbox.js' %}"></script>
+    <script src="{% static 'lib/jsgrid/src/fields/jsgrid.field.control.js' %}"></script>
+
+    {# JSGRID CSS LOCAL   #}
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/jsgrid/css/jsgrid.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'lib/jsgrid/css/theme.css' %}" />
+
+
+</head>
+<body>
+<h1>Timetable</h1>
+<div id="timetable"></div>
+
+</body>
+</html>

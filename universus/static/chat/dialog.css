@@ -1,0 +1,158 @@
+
+
+textarea {
+    resize: none;
+}
+
+.text{
+    width:75%;
+    display:flex;
+    flex-direction:column;
+}
+
+/*Message content style*/
+.text > p:first-of-type{
+    width:100%;
+    margin-top:0;
+    margin-bottom:auto;
+    color: #575757;
+    line-height: 13px;
+    font-size: 16px;
+}
+.text > p:last-of-type{
+    width:100%;
+    text-align:right;
+    color: #6e6e6e;
+    margin-bottom:-7px;
+    margin-top:auto;
+}
+
+.text-l{
+    width: 100%;
+    float:left;
+    padding-right:10px;
+}
+.text-r{
+    width: 100%;
+    float:right;
+    padding-left:10px;
+}
+.text-send {
+    width: 100%;
+    float:right;
+}
+.macro{
+    margin-top:5px;
+    width:85%;
+    border-radius:5px;
+    padding:5px;
+    display:flex;
+}
+
+
+.msj-rta{
+    margin-right: 20px;
+    float:right;
+    background: #e3e3e3;
+}
+
+.msj-rta:after{
+    width: 0;
+    height: 0;
+    content:"";
+    top:-5px;
+    left:14px;
+    position:relative;
+    border-style: solid;
+    border-width: 13px 13px 0 0;
+    border-color: #e3e3e3 transparent transparent transparent;
+}
+
+.msj{
+    float:left;
+    /*Sender message color*/
+    background: #9cb4ff;
+}
+
+
+.frame{
+    background: #FFFFFF;
+    height: 550px;
+    overflow:hidden;
+    padding:0;
+}
+.frame > div:last-of-type{
+    position:absolute;
+    bottom:5px;
+    width:100%;
+    display:flex;
+}
+ul {
+    width:100%;
+    list-style-type: none;
+    padding:18px;
+    position:absolute;
+    bottom: 70px;
+    display:flex;
+    flex-direction: column;
+    margin-right: 10px;
+
+}
+
+
+
+input:focus{
+    outline: none;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #d4d4d4;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #d4d4d4;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #d4d4d4;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #d4d4d4;
+}
+
+
+/* Desktop ONLY */
+@media screen and (min-width: 800px) {
+    .msj {
+        float:right;
+        margin-right: 20px;
+    }
+    .msj:after{
+        width: 0;
+        height: 0;
+        content:"";
+        top:-5px;
+        left:14px;
+        position:relative;
+        border-style: solid;
+        border-width: 13px 13px 0 0;
+        border-color: #9cb4ff transparent transparent transparent;
+    }
+
+}
+
+/* MOBILE ONLY*/
+
+@media screen and (max-width: 800px) {
+    .msj-send {
+        width: 100%;
+    }
+    .msj:before{
+    width: 0;
+    height: 0;
+    content:"";
+    top:-5px;
+    left:-14px;
+    position:relative;
+    border-style: solid;
+    border-width: 0 13px 13px 0;
+    border-color: transparent #9cb4ff transparent transparent;
+}
+}

@@ -7,6 +7,11 @@
 
 {#    сюда пиши стили#}
     <link type="text/css" href="{% static 'university/university_list.js' %}">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	   {#custom style  #}
+  <link rel="stylesheet" href="{% static 'user_profile/user_profile.css' %}">
+{#    fonts#}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {#    сюда скрипты#}
     <script scr="{% static 'university/university_list.js' %}"></script>
 
@@ -14,14 +19,44 @@
 {#    и прописывать урл картинки как "{% static '<имя приложения>/<имя картинки>' %}" #}
 </head>
 <body>
-    <h3>
 
-        university_list
 
-        Тут будет список всех универов в нашем проекте
-        Список будет состоят из лого универа и его имени, а также адреса
-        Не забывай использовать bootstrap он даёт нашему проекту более-менее
-        унифицированный дизайн
-</h3>
+             
+              <table class="table table-user-information" >
+                <tbody>
+                  <tr>
+                    <td><b>Университеты</b></td>
+                    <td><b>Месторасположение</b></td>
+                  </tr>
+                  <tr>
+                    <td> <img alt="logo" src="{% static 'common/img/vlsu.png' %}"  width="50" height="50" hspace="10"> Влгу</td>
+                    <td>Владимир</td>
+                  </tr>
+                  <tr>
+                    <td><img alt="logo" src="{% static 'common/img/msu.png' %}"  width="50" height="50" hspace="10"> МГУ</td>
+                    <td>Москва</td>
+                  </tr>
+                  <tr>
+                    <td>---</td>
+                    <td>---</td>
+                  </tr>
+                   <tr>
+                    <td>---</td>
+                    <td>---</td>
+                  </tr>
+                  <tr>
+                    <td>---</td>
+                    <td>---</td>
+                  </tr>
+                
+                 
+                </tbody>
+              </table>
+              
+            
+         
+        
+      
+
 </body>
 </html>

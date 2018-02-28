@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+        <!-- custom style local-->
+    <link rel="stylesheet" type="text/css" href="{% static 'chat/dialog.css' %}">
+
+    <!-- Bootstrap CSS remote-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    {#  AWESOME ICONS fonts#}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- jQuery local-->
+    <script type="text/javascript" src="{% static 'common/js/jquery-1.11.1.min.js' %}"></script>
+
+    <!-- Bootstrap  JS remote-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    {# Custom JS local  #}
+
+    <script src="{% static 'chat/dialog.js' %}"></script>
+
+</head>
+<body>
+    <div class="col-lg-10 col-lg-offset-4 frame dialog-list">
+        <ul></ul>
+        <div>
+            <div class="msj-rta macro msj-send" style="margin:auto;">
+                <div class="text text-send" style="display: inline-block ">
+                    <div class="input-group">
+                        <textarea id="my_message" rows="3" class="form-control" placeholder="Введите сообщение..."></textarea>
+                      <span onclick="sendMessage($('#my_message').val())" class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</body>
+</html>

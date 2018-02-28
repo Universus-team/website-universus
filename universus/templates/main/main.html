@@ -10,7 +10,7 @@
   {#custom style  #}
   <link rel="stylesheet" href="{% static 'main/main.css' %}">
 
-{#    fonts#}
+{#  AWESOME ICONS fonts#}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 {#    Custom JS#}
@@ -34,16 +34,16 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-
 {#          li maybe use class="active"#}
         <li >
           <a href="/profile_"><i class="fa fa-user fa-lg"></i> Профиль</a>
+
         </li>
         <li>
           <a href="/university_/list"><i class="fa fa-university fa-lg"></i> Университеты</a>
         </li>
         <li>
-          <a href="#"> <i class="fa fa-calendar-o fa-lg"></i> Расписание</a>
+          <a href="/timetable_"> <i class="fa fa-calendar-o fa-lg"></i> Расписание</a>
         </li>
         <li><a href="/about_"><i class="fa fa-info fa-lg"></i> О нас</a></li>
       </ul>
@@ -65,7 +65,7 @@
           <td><a href="../error/coming_soon">Тесты</a></td>
         </tr>
         <tr>
-          <td><a href="../error/coming_soon">Сообщения</a></td>
+          <td><a href="/chat_/list">Сообщения</a></td>
         </tr>
         <tr>
           <td><a href="../error/coming_soon">Участники</a></td>
@@ -75,12 +75,19 @@
         </tr>
       </table>
     </div>
-    <div class="col-sm-8 text-left body-meduim">
+    <div class="col-sm-8 text-left body-meduim" style="height: auto; overflow: auto">
 
 
-        <iframe src="{{ content_src }} " width="100%" frameborder="0" scrolling="no"  onload="resizeIframe(this)">
+
+
+
+        <iframe id = 'main_content' src="{{ content_src }} " width="100%" frameborder="0" scrolling="no">
 
         </iframe>
+
+
+
+
 
     </div>
     <div class="col-sm-2 sidenav">
