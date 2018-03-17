@@ -17,6 +17,9 @@ Including another URLconf
 from timetable import views
 from django.urls import path, include
 
+import timetable.views
+
 urlpatterns = [
     path('', views.timetable, name='timetable'),
+    path(r'^get/?$', views.get_timetable, name='get_timetable'),
 ]

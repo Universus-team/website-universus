@@ -20,5 +20,9 @@ from university import views
 
 urlpatterns = [
     path('', views.university, name='university'),
-    path('list/', views.university_list, name='university_list')
+    path('list/', views.university_list, name='university_list'),
+    path('list/delete', views.university_list_delete, name='university_list_delete'),
+    path('list/add', views.university_add, name='university_add'),
+    path('department/add', views.department_add, name='department_add'),
+    path('department/delete', views.department_delete, name='department_delete'),
 ]

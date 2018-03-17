@@ -82,3 +82,12 @@ margin: 0 0 4px;
 strong {
 font-weight: bold;
 }
+
+.input-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    background-color: #ffca4d;
+}

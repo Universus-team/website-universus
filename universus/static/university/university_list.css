@@ -1,0 +1,13 @@
+.highlight {
+    background-color: #ffca4d;
+}
+
+.input-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+}

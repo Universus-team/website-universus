@@ -15,6 +15,9 @@
     <!-- jQuery local-->
     <script type="text/javascript" src="{% static 'common/js/jquery-1.11.1.min.js' %}"></script>
 
+{#    Highlight jquery plugin #}
+    <script src='{% static "common/js/highlight_jquery_plugin.js" %}'></script>
+
     <!-- Bootstrap  JS remote-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -24,36 +27,54 @@
 
 </head>
 <body style="height: 100%">
-<div class="addon">
-  <p>Твои сообщения:</p>
-  <ul>
-    <li class="clearfix">
-      <a href="/chat_body/show" >
-      <img class="round" src="https://upload.wikimedia.org/wikipedia/ru/thumb/4/4c/Neo2.jpg/220px-Neo2.jpg">
-      <div class="legend-info">
-        <strong>Томас А. Андерсон</strong>
-          Тук! Тук! Нео!
-        </div></a>
-      </li>
+<div class="container-fluid">
 
-    <li class="clearfix">
-        <a href="/chat_body/show" >
-      <em class="extra"></em>
-        <img class="round" src="http://crosti.ru/patterns/00/12/4f/d69cfcc7e5/picture.jpg">
-      <div class="legend-info">
-        <strong>Агент Смит</strong>Зачем? Во имя чего?
-      </div>
-    </li>
+    {# Search field #}
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <div class="input-group">
+                <input id="search" type="text" class="form-control" type="text" placeholder="Search..">
+                <div class="input-group-addon">
+                    <i class="fa fa-search fa-lg"></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <li class="clearfix">
-        <a href="/chat_body/show" >
-      <em class="extra"></em>
-        <img class="round" src="http://img.rosbalt.ru/photobank/b/d/6/d/b6gHrWcK-580.jpg">
-      <div class="legend-info">
-        <strong>Морфеус</strong>Ебать, ты избранный!
-      </div>
-    </li>
-  </ul>
+
+    <div class="row">
+        <div class="addon">
+          <p>Твои сообщения:</p>
+          <ul>
+            <li class="clearfix">
+              <a href="/chat_body/show" >
+              <img class="round" src="https://upload.wikimedia.org/wikipedia/ru/thumb/4/4c/Neo2.jpg/220px-Neo2.jpg">
+              <div class="legend-info">
+                <strong class="user-name">Томас А. Андерсон</strong>
+                  Тук! Тук! Нео!
+                </div></a>
+              </li>
+
+            <li class="clearfix">
+                <a href="/chat_body/show" >
+              <em class="extra"></em>
+                <img class="round" src="http://crosti.ru/patterns/00/12/4f/d69cfcc7e5/picture.jpg">
+              <div class="legend-info">
+                <strong class="user-name">Агент Смит</strong>Зачем? Во имя чего?
+              </div>
+            </li>
+
+            <li class="clearfix">
+                <a href="/chat_body/show" >
+              <em class="extra"></em>
+                <img class="round" src="http://img.rosbalt.ru/photobank/b/d/6/d/b6gHrWcK-580.jpg">
+              <div class="legend-info">
+                <strong class="user-name">Морфеус</strong>Ты избранный!
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
 </div>
 
 

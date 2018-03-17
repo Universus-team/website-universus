@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+        {#    Bootstrap 3 CSS remote#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    {#    jQuery#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    {#    Highlight jquery plugin #}
+    <script src='{% static "common/js/highlight_jquery_plugin.js" %}'></script>
+
+    {#    Bootstrap 3 JS remote#}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {#    fonts#}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {#custom style  #}
+    <link rel="stylesheet" href="{% static 'university/department.css' %}">
+
+    {#    сюда скрипты#}
+    <script src="{% static 'university/department.js' %}"></script>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+        <div class="alert alert-danger">delete department form!</div>
+
+        <div style="margin: 10px 0px 10px 0px">
+            <button class="btn btn-danger">Delete checked</button>
+        </div>
+        {#    Search#}
+        <div class="input-group">
+            <input id="search" type="text" class="form-control" type="text" placeholder="Search..">
+            <div class="input-group-addon">
+                <i class="fa fa-search fa-lg"></i>
+            </div>
+        </div>
+
+
+
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <td></td><td><h4>Список отделов</h4></td>
+            </tr>
+            </thead>
+            <tbody id="departments" >
+            <tr>
+                <td><input type="checkbox" value="id123"></td><td>Department1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="id123"></td><td>Department2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="id123"></td><td>Department3</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="id123"></td><td>Department4</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="id123"></td><td>Department5</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" value="id123"></td><td>Department6</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+</body>
+</html>

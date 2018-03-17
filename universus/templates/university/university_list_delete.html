@@ -20,6 +20,7 @@
 {#custom style  #}
     <link rel="stylesheet" href="{% static 'university/university_list.css' %}">
 
+
     {#    сюда скрипты#}
    <script src="{% static 'university/university_list.js' %}"></script>
 
@@ -32,29 +33,21 @@
 
 <div class="container-fluid">
 
-    {# Manage panel for moderator/admin#}
-    <div class="row">
-        <div class="panel panel-warning">
-            <div class="panel-heading">Administrator panel</div>
-            <div class="panel-body">
-                <div class="btn-group">
-                    <a class="btn btn-primary" href="add">Add university</a>
-                    <a class="btn btn-danger" href="delete">Delete university</a>
-                </div>
-            </div>
-        </div>
+    <div class="alert alert-danger">
+        <h3>Delete universities form!</h3>
     </div>
 
-
-{#    Search#}
     <div class="row">
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-6 col-sm-6">
             <div class="input-group">
                 <input id="search" type="text" class="form-control" type="text" placeholder="Search..">
                 <div class="input-group-addon">
                     <i class="fa fa-search fa-lg"></i>
                 </div>
             </div>
+        </div>
+        <div class="col-xs-6" style="margin: 10px 0px 10px 0px">
+            <button class="btn btn-danger">Delete checked</button>
         </div>
     </div>
 
@@ -64,17 +57,20 @@
             <thead>
                 <tr>
                     <td></td>
+                    <td></td>
                     <td><b>Университет</b></td>
                     <td><b>Адрес</b></td>
                 </tr>
             </thead>
             <tbody id="universities">
                 <tr>
+                    <td><input type="checkbox" value="id123"></td>
                     <td><img alt="logo" src="{% static 'common/img/vlsu.png' %}"  width="50" height="50" hspace="10"></td>
                     <td> Влгу</td>
                     <td>Владимир</td>
                 </tr>
                 <tr>
+                    <td><input type="checkbox" value="id123"></td>
                     <td><img alt="logo" src="{% static 'common/img/msu.png' %}"  width="50" height="50" hspace="10"></td>
                     <td> МГУ</td>
                     <td>Москва</td>

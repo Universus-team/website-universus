@@ -1,0 +1,12 @@
+input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+}
+
+td:first-child {
+    width: 40px;
+}
+
+.highlight {
+    background-color: #ffca4d;
+}
