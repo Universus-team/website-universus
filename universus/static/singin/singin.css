@@ -1,0 +1,16 @@
+.singin {
+	margin: auto;
+	margin-top: 5%;
+	max-width: 400px;
+
+}
+
+.form-group{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.title {
+	font-size: 1.75em;
+	font-weight: bolder;
+}

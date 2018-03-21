@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <!-- custom style local-->
-    <link rel="stylesheet" type="text/css" href="{% static 'singup/singup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'singin/singin.css' %}">
 
     <!-- Bootstrap CSS remote-->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -29,8 +29,8 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="panel panel-default">
-        <div class="panel-heading">
+      <div class="panel panel-default singin">
+        <div class="panel-heading title text-center">
           Sing in
         </div>
         <div class="panel-body">
@@ -43,7 +43,7 @@
               <label for="mail" class="control-label">E-mail</label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i> </span>
-                <input type="text" class="form-control" name="{{ form.email.name }}" placeholder="Mail">
+                <input type="text" class="form-control" name="email" placeholder="Mail">
               </div>
             </div>
 
@@ -51,12 +51,7 @@
               <label for="password" class="control-label">Password</label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input type="text" class="form-control" name="{{ form.password.name }}" placeholder="Password">
-                <div class="input-group-btn">
-                  <button class="btn btn-default">
-                    <i class="glyphicon glyphicon-eye-open"></i>
-                  </button>
-                </div>
+                <input type="text" class="form-control" name="password" placeholder="Password">
               </div>
             </div>
 
