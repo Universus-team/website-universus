@@ -54,9 +54,9 @@
                         <a class="btn btn-primary" href="">
                             <i class="fa fa-plus-circle fa-lg"></i> Create new group
                         </a>
-                        <a class="btn btn-danger" href="">
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#delete_modal">
                             <i class="fa fa-trash-alt fa-lg"></i> Delete group
-                        </a>
+                        </button>
                     </div>
                     <div class="col-sm-5 btn-group btn-admin-group ">
                         <input id="edit-mode" type="checkbox" data-toggle="toggle" data-on="Edit on" data-off="Edit off">
@@ -80,66 +80,94 @@
             <input id="created_date" class="field" type="date" value="2015-09-01" readonly>
         </div>
 
+        <div class="row" style="margin-left: 10px">
+            <a class="btn btn-success btn-lg"><i class="fa fa-tasks fa-lg"></i> Set test</a>
+        </div>
 
+        <div class="row">
+            {# Members of group#}
+            <div class="col-sm-6">
 
-        {# Members of group#}
-        <div class="col-sm-6">
-
-            {# Student manager bar#}
-            <div class="btn-group btn-admin-group">
-                <a href="" class="btn btn-primary"><i class="fa fa-plus-circle fa-lg"></i> Add new a student</a>
-                <a href="" class="btn btn-danger"><i class="fa fa-trash-alt fa-lg"></i> Delete a student</a>
-            </div>
-
-
-            {#    Search#}
-            <div class="input-group">
-                <input id="search_student" type="text" class="form-control" type="text" placeholder="Search..">
-                <div class="input-group-addon">
-                    <i class="fa fa-search fa-lg"></i>
+                {# Student manager bar#}
+                <div class="btn-group btn-admin-group">
+                    <a href="" class="btn btn-primary"><i class="fa fa-plus-circle fa-lg"></i> Add new a student</a>
+                    <a href="" class="btn btn-danger"><i class="fa fa-trash-alt fa-lg"></i> Delete a student</a>
                 </div>
+
+
+                {#    Search#}
+                <div class="input-group">
+                    <input id="search_student" type="text" class="form-control" type="text" placeholder="Search..">
+                    <div class="input-group-addon">
+                        <i class="fa fa-search fa-lg"></i>
+                    </div>
+                </div>
+
+
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <td><h4>Список участников</h4></td>
+                    </tr>
+                    </thead>
+                    <tbody id="students" >
+                    <tr>
+                        <td>
+                            <div class="media">
+                                <div class="media-left"><i class="far fa-user-circle fa-4x"></i></div>
+                                <div class="media-body">Ivanov Ivan</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="media">
+                                <div class="media-left"><i class="far fa-user-circle fa-4x"></i></div>
+                                <div class="media-body">Kurochkin Mikhail</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="media">
+                                <div class="media-left"><i class="far fa-user-circle fa-4x"></i></div>
+                                <div class="media-body">Pushkin Alexsandr</div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
             </div>
-
-
-            <table class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                    <td><h4>Список участников</h4></td>
-                </tr>
-                </thead>
-                <tbody id="students" >
-                <tr>
-                    <td>
-                        <div class="media">
-                            <div class="media-left"><i class="far fa-user-circle fa-4x"></i></div>
-                            <div class="media-body">Ivanov Ivan</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="media">
-                            <div class="media-left"><i class="far fa-user-circle fa-4x"></i></div>
-                            <div class="media-body">Kurochkin Mikhail</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="media">
-                            <div class="media-left"><i class="far fa-user-circle fa-4x"></i></div>
-                            <div class="media-body">Pushkin Alexsandr</div>
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-
-
         </div>
 
 
+
+
     </div>
+</div>
+
+<!-- Modal -->
+<div id="delete_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete the group</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete the group?</p>
+        <button class="btn btn-danger">Yes</button>
+        <button class="btn btn-primary" data-dismiss="modal">No</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
 </body>
 </html>
