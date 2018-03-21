@@ -34,6 +34,12 @@
 
     {#    сюда скрипты#}
     <script src="{% static 'department/department.js' %}"></script>
+
+        {#common style    #}
+    <link rel="stylesheet" href="{% static 'common/css/common.css' %}">
+
+    {#common JS    #}
+    <script src="{% static 'common/js/common.js' %}"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -68,7 +74,6 @@
 
         <div class="col-sm-6">
 
-
             {#    Search#}
             <div class="input-group">
                 <input id="search_student_group" type="text" class="form-control" type="text" placeholder="Search..">
@@ -78,7 +83,8 @@
             </div>
 
 
-            <table class="table table-striped table-bordered">
+            {#List of student group#}
+            <table class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
                     <td><h4>Список групп</h4></td>
@@ -86,22 +92,19 @@
                 </thead>
                 <tbody id="student_groups" >
                 <tr>
-                    <td>Group1</td>
+                    <td onclick="window.location='/studentgroup_body';">PRI-115</td>
                 </tr>
                 <tr>
-                    <td>Group2</td>
+                    <td>IST-115</td>
                 </tr>
                 <tr>
-                    <td>Group3</td>
+                    <td>PRI-114</td>
                 </tr>
                 <tr>
-                    <td>Group4</td>
+                    <td>IST-114</td>
                 </tr>
                 <tr>
-                    <td>Group5</td>
-                </tr>
-                <tr>
-                    <td>Group6</td>
+                    <td>VT-115</td>
                 </tr>
                 </tbody>
             </table>

@@ -28,6 +28,7 @@ urlpatterns = [
     path('timetable_body/', include('timetable.urls')),
     path('department_body/', include('department.urls')),
     path('singin/', include('singin.urls')),
+    path('studentgroup_body/', include('student_group.urls')),
 
     # must be at the end
     re_path('(^[a-zA-Z]+_$|^[a-zA-Z]+_/[a-zA-Z_]+$)', include('main.urls')),

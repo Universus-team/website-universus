@@ -9,3 +9,7 @@ h5, h4 {
 .btn-group {
     margin: 10px 0px 10px 0px;
 }
+
+#departments td {
+    cursor: pointer;
+}
