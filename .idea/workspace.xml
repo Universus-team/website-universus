@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0807708-1590-481a-b810-cedea5c314d0" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/students/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/students/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/students/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/students/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/students/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/students/tests.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/students/views.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/universus/templates/main/main.html" afterPath="$PROJECT_DIR$/universus/templates/main/main.html" />
-      <change beforePath="$PROJECT_DIR$/universus/templates/student_group/student_group.html" afterPath="$PROJECT_DIR$/universus/templates/student_group/student_group.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/teachers/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/teachers/admin.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/teachers/apps.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/teachers/migrations/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/teachers/models.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/teachers/tests.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/teachers/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
