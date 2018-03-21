@@ -2,34 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0807708-1590-481a-b810-cedea5c314d0" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/static/common/js/highlight_jquery_plugin.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/static/university/department.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/static/university/department.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/templates/university/department_add.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/templates/university/department_delete.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/templates/university/university_add.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/templates/university/university_list_delete.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/venv/lib/python3.5/site-packages/webservice/webservice.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/webservice/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/universus/webservice/webservice.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/department/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/department/admin.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/department/apps.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/department/migrations/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/department/models.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/department/tests.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/department/urls.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/department/views.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/singin/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/singin/admin.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/singin/apps.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/singin/migrations/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/singin/models.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/singin/tests.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/singin/urls.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/singin/views.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/static/singin/singin.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/static/singin/singin.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/templates/department/department.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/universus/templates/singin/singin.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/universus/static/chat/my_dialogs.css" afterPath="$PROJECT_DIR$/universus/static/chat/my_dialogs.css" />
-      <change beforePath="$PROJECT_DIR$/universus/static/chat/my_dialogs.js" afterPath="$PROJECT_DIR$/universus/static/chat/my_dialogs.js" />
-      <change beforePath="$PROJECT_DIR$/universus/static/timetable/timetable.js" afterPath="$PROJECT_DIR$/universus/static/timetable/timetable.js" />
-      <change beforePath="$PROJECT_DIR$/universus/static/university/university.css" afterPath="$PROJECT_DIR$/universus/static/university/university.css" />
-      <change beforePath="$PROJECT_DIR$/universus/static/university/university.js" afterPath="$PROJECT_DIR$/universus/static/university/university.js" />
-      <change beforePath="$PROJECT_DIR$/universus/static/university/university_list.css" afterPath="$PROJECT_DIR$/universus/static/university/university_list.css" />
-      <change beforePath="$PROJECT_DIR$/universus/static/university/university_list.js" afterPath="$PROJECT_DIR$/universus/static/university/university_list.js" />
-      <change beforePath="$PROJECT_DIR$/universus/static/user_profile/user_profile.css" afterPath="$PROJECT_DIR$/universus/static/user_profile/user_profile.css" />
-      <change beforePath="$PROJECT_DIR$/universus/templates/chat/my_dialogs.html" afterPath="$PROJECT_DIR$/universus/templates/chat/my_dialogs.html" />
-      <change beforePath="$PROJECT_DIR$/universus/templates/timetable/timetable.html" afterPath="$PROJECT_DIR$/universus/templates/timetable/timetable.html" />
+      <change beforePath="$PROJECT_DIR$/universus/static/university/department.css" afterPath="$PROJECT_DIR$/universus/static/department/department.css" />
+      <change beforePath="$PROJECT_DIR$/universus/static/university/department.js" afterPath="$PROJECT_DIR$/universus/static/department/department.js" />
+      <change beforePath="$PROJECT_DIR$/universus/templates/main/main.html" afterPath="$PROJECT_DIR$/universus/templates/main/main.html" />
+      <change beforePath="$PROJECT_DIR$/universus/templates/university/department_add.html" afterPath="$PROJECT_DIR$/universus/templates/department/department_add.html" />
+      <change beforePath="$PROJECT_DIR$/universus/templates/university/department_delete.html" afterPath="$PROJECT_DIR$/universus/templates/department/department_delete.html" />
       <change beforePath="$PROJECT_DIR$/universus/templates/university/university.html" afterPath="$PROJECT_DIR$/universus/templates/university/university.html" />
-      <change beforePath="$PROJECT_DIR$/universus/templates/university/university_list.html" afterPath="$PROJECT_DIR$/universus/templates/university/university_list.html" />
-      <change beforePath="$PROJECT_DIR$/universus/timetable/urls.py" afterPath="$PROJECT_DIR$/universus/timetable/urls.py" />
-      <change beforePath="$PROJECT_DIR$/universus/timetable/views.py" afterPath="$PROJECT_DIR$/universus/timetable/views.py" />
+      <change beforePath="$PROJECT_DIR$/universus/templates/university/university_list_delete.html" afterPath="$PROJECT_DIR$/universus/templates/university/university_list_delete.html" />
       <change beforePath="$PROJECT_DIR$/universus/university/urls.py" afterPath="$PROJECT_DIR$/universus/university/urls.py" />
       <change beforePath="$PROJECT_DIR$/universus/university/views.py" afterPath="$PROJECT_DIR$/universus/university/views.py" />
-      <change beforePath="$PROJECT_DIR$/universus/universus/settings.py" afterPath="$PROJECT_DIR$/universus/universus/settings.py" />
+      <change beforePath="$PROJECT_DIR$/universus/universus/urls.py" afterPath="$PROJECT_DIR$/universus/universus/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,104 +46,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="department_add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/universus/templates/university/department_add.html">
+      <file leaf-file-name="department.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/universus/templates/department/department.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-225">
-              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+            <state relative-caret-position="-300">
+              <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="university_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/universus/templates/university/university_list.html">
+      <file leaf-file-name="singin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/universus/static/singin/singin.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="17" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="department_delete.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/universus/templates/university/department_delete.html">
+      <file leaf-file-name="singin.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/universus/static/singin/singin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="15" column="79" lean-forward="false" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="singup.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/universus/templates/singup/singup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1545">
+              <caret line="103" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="103" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="singin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/universus/templates/singin/singin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/universus/singin/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="success_singup.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/universus/templates/singup/success_singup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registration.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/universus/templates/singup/registration.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-180">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/universus/singup/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/universus/singup/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="49" lean-forward="true" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="university.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/universus/static/university/university.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="department.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/universus/static/university/department.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="university_list_delete.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/universus/templates/university/university_list_delete.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="48" column="8" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="50" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="university_add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/universus/templates/university/university_add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="12" selection-end-column="95" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="university.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/universus/templates/university/university.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="14" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="department.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/universus/static/university/department.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="university.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/universus/static/university/university.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="2" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -151,9 +154,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -170,14 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/about/views.py" />
-        <option value="$PROJECT_DIR$/about/urls.py" />
-        <option value="$PROJECT_DIR$/templates/about/about.html" />
-        <option value="$PROJECT_DIR$/universus/main/urls.py" />
-        <option value="$PROJECT_DIR$/universus/templates/user_profile/user_profile.html" />
-        <option value="$PROJECT_DIR$/universus/static/main/mian.css" />
-        <option value="$PROJECT_DIR$/universus/main/views.py" />
-        <option value="$PROJECT_DIR$/universus/static/about/about.css" />
         <option value="$PROJECT_DIR$/universus/static/about/about.js" />
         <option value="$PROJECT_DIR$/universus/templates/about/about.html" />
         <option value="$PROJECT_DIR$/universus/about/urls.py" />
@@ -187,7 +182,6 @@
         <option value="$PROJECT_DIR$/universus/static/chat/dialog.css" />
         <option value="$PROJECT_DIR$/universus/static/chat/dialog.js" />
         <option value="$PROJECT_DIR$/universus/templates/chat/dialog.html" />
-        <option value="$PROJECT_DIR$/universus/universus/urls.py" />
         <option value="$PROJECT_DIR$/universus/static/timetable/timetable.css" />
         <option value="$PROJECT_DIR$/universus/static/main/main.js" />
         <option value="$PROJECT_DIR$/universus/static/main/main.css" />
@@ -198,7 +192,6 @@
         <option value="$PROJECT_DIR$/universus/static/timetable/timetable.js" />
         <option value="$PROJECT_DIR$/universus/timetable/views.py" />
         <option value="$PROJECT_DIR$/universus/timetable/urls.py" />
-        <option value="$PROJECT_DIR$/universus/templates/main/main.html" />
         <option value="$PROJECT_DIR$/universus/universus/settings.py" />
         <option value="$PROJECT_DIR$/universus/static/university/university_list_srcipt.js" />
         <option value="$PROJECT_DIR$/universus/static/university/university_list_script.js" />
@@ -209,18 +202,28 @@
         <option value="$PROJECT_DIR$/universus/static/user_profile/user_profile.css" />
         <option value="$PROJECT_DIR$/universus/static/university/university_list.css" />
         <option value="$PROJECT_DIR$/universus/static/university/university_list.js" />
-        <option value="$PROJECT_DIR$/universus/templates/university/university_list_delete.html" />
         <option value="$PROJECT_DIR$/universus/templates/university/university_list.html" />
         <option value="$PROJECT_DIR$/universus/templates/university/university_add.html" />
         <option value="$PROJECT_DIR$/universus/static/university/university.js" />
         <option value="$PROJECT_DIR$/universus/static/university/university.css" />
-        <option value="$PROJECT_DIR$/universus/university/views.py" />
-        <option value="$PROJECT_DIR$/universus/university/urls.py" />
-        <option value="$PROJECT_DIR$/universus/templates/university/university.html" />
         <option value="$PROJECT_DIR$/universus/templates/university/department_add.html" />
         <option value="$PROJECT_DIR$/universus/static/university/department.js" />
-        <option value="$PROJECT_DIR$/universus/templates/university/department_delete.html" />
         <option value="$PROJECT_DIR$/universus/static/university/department.css" />
+        <option value="$PROJECT_DIR$/universus/templates/university/university_list_delete.html" />
+        <option value="$PROJECT_DIR$/universus/templates/university/department_delete.html" />
+        <option value="$PROJECT_DIR$/universus/university/views.py" />
+        <option value="$PROJECT_DIR$/universus/university/urls.py" />
+        <option value="$PROJECT_DIR$/universus/department/views.py" />
+        <option value="$PROJECT_DIR$/universus/universus/urls.py" />
+        <option value="$PROJECT_DIR$/universus/department/urls.py" />
+        <option value="$PROJECT_DIR$/universus/static/department/department.js" />
+        <option value="$PROJECT_DIR$/universus/templates/department/department_delete.html" />
+        <option value="$PROJECT_DIR$/universus/templates/main/main.html" />
+        <option value="$PROJECT_DIR$/universus/templates/university/university.html" />
+        <option value="$PROJECT_DIR$/universus/templates/department/department.html" />
+        <option value="$PROJECT_DIR$/universus/static/singin/singin.js" />
+        <option value="$PROJECT_DIR$/universus/static/singin/singin.css" />
+        <option value="$PROJECT_DIR$/universus/templates/singin/singin.html" />
       </list>
     </option>
   </component>
@@ -250,6 +253,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,46 +271,39 @@
               <item name="universus" type="b2602c69:ProjectViewProjectNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="singin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="universus" type="b2602c69:ProjectViewProjectNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="university" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="universus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="universus" type="462c0819:PsiDirectoryNode" />
-              <item name="universus" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="singup" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="universus" type="b2602c69:ProjectViewProjectNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="chat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="universus" type="b2602c69:ProjectViewProjectNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="university" type="462c0819:PsiDirectoryNode" />
+              <item name="singin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="universus" type="b2602c69:ProjectViewProjectNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
-              <item name="university" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="singup" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="universus" type="b2602c69:ProjectViewProjectNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="universus" type="462c0819:PsiDirectoryNode" />
-              <item name="universus" type="462c0819:PsiDirectoryNode" />
+              <item name="webservice" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="universus" type="b2602c69:ProjectViewProjectNode" />
@@ -315,8 +313,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,11 +325,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/universus/singin" />
+      <recent name="$PROJECT_DIR$/universus/static/department" />
+      <recent name="$PROJECT_DIR$/universus/department" />
       <recent name="$PROJECT_DIR$/universus/venv/lib/python3.5/site-packages/webservice" />
       <recent name="$PROJECT_DIR$/universus/timetable" />
-      <recent name="$PROJECT_DIR$/universus/static/lib/jsgrid" />
-      <recent name="$PROJECT_DIR$/universus/static/lib/jsgrid/src" />
-      <recent name="$PROJECT_DIR$/universus/chat" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/universus/templates/department" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -446,19 +445,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1368" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.384375" sideWeight="0.11346999" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.178125" sideWeight="0.5087848" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.384375" sideWeight="0.88653004" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.384375" sideWeight="0.87115663" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29648608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29648608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@universus" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.178125" sideWeight="0.49121523" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -468,7 +467,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@universus" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.178125" sideWeight="0.4968603" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -500,97 +498,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/universus/static/exam_builder/exam_builder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/exam_builder/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/chat/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/chat/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/chat/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/templates/singup/singup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="22" selection-end-column="203" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/chat/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/static/chat/dialog.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="144" column="20" lean-forward="false" selection-start-line="144" selection-start-column="20" selection-end-line="144" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/static/chat/dialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="84" column="46" lean-forward="false" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/templates/chat/dialog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/static/lib/jsgrid/src/fields/jsgrid.field.text.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/static/timetable/timetable.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/static/main/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/universus/static/main/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
@@ -654,13 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/universus/universus/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="27" column="51" lean-forward="false" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/universus/static/timetable/timetable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -680,9 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="23" column="63" lean-forward="false" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
-          <folding>
-            <element signature="e#634#661#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -695,29 +592,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/universus/static/university/university_list_srcipt.js" />
-    <entry file="file://$PROJECT_DIR$/universus/templates/main/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="20" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/static/university/university_list_script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/static/university/university_list_script.js" />
     <entry file="file://$PROJECT_DIR$/universus/static/common/js/highlight_jquery_plugin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="974">
           <caret line="106" column="2" lean-forward="false" selection-start-line="106" selection-start-column="2" selection-end-line="106" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -725,7 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -733,7 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="88" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -741,7 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-360">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -749,7 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -757,7 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -765,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -773,23 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/university/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/universus/university/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="26" column="53" lean-forward="false" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -797,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -805,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="12" selection-end-column="95" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -813,72 +667,193 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/static/university/department.css" />
+    <entry file="file://$PROJECT_DIR$/universus/university/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/university/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="66" lean-forward="false" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/universus/templates/university/department_add.html">
+    <entry file="file://$PROJECT_DIR$/universus/department/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
+        <state relative-caret-position="195">
+          <caret line="13" column="67" lean-forward="false" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/universus/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="28" column="57" lean-forward="false" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/department/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#634#671#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/static/university/department.js" />
+    <entry file="file://$PROJECT_DIR$/universus/templates/department/department_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/universus/templates/university/university_list_delete.html">
+    <entry file="file://$PROJECT_DIR$/universus/static/university/university.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="48" column="8" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="50" selection-end-column="14" />
+        <state relative-caret-position="150">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/universus/static/university/university.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="2" />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="17" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/universus/static/university/department.js">
+    <entry file="file://$PROJECT_DIR$/universus/static/department/department.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/templates/department/department_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/templates/main/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="42" lean-forward="false" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/templates/university/university_list_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/universus/templates/university/university.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="14" selection-end-column="79" />
+        <state relative-caret-position="705">
+          <caret line="47" column="67" lean-forward="false" selection-start-line="47" selection-start-column="67" selection-end-line="47" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/universus/templates/university/department_delete.html">
+    <entry file="file://$PROJECT_DIR$/universus/templates/department/department.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="79" lean-forward="false" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
+        <state relative-caret-position="-300">
+          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/static/singin/singin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/static/singin/singin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/templates/singup/success_singup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/templates/singup/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/singup/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/singup/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="49" lean-forward="true" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/universus/static/university/university.css">
+    <entry file="file://$PROJECT_DIR$/universus/templates/singup/singup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="1" />
+        <state relative-caret-position="1545">
+          <caret line="103" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="103" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/universus/static/university/department.css">
+    <entry file="file://$PROJECT_DIR$/universus/templates/singin/singin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        <state relative-caret-position="90">
+          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/singin/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -26,6 +26,7 @@ urlpatterns = [
     path('university_body/', include('university.urls')),
     path('chat_body/', include('chat.urls')),
     path('timetable_body/', include('timetable.urls')),
+    path('department_body/', include('department.urls')),
 
     # must be at the end
     re_path('(^[a-zA-Z]+_$|^[a-zA-Z]+_/[a-zA-Z_]+$)', include('main.urls')),

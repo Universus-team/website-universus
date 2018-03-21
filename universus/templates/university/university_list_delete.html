@@ -15,7 +15,11 @@
     <script src='{% static "common/js/highlight_jquery_plugin.js" %}'></script>
 
 
+{#    Bootstrap JS remote#}
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {#  AWESOME ICONS fonts#}
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 
 {#custom style  #}
     <link rel="stylesheet" href="{% static 'university/university_list.css' %}">
@@ -46,9 +50,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-6" style="margin: 10px 0px 10px 0px">
-            <button class="btn btn-danger">Delete checked</button>
-        </div>
     </div>
 
     <div class="row">
@@ -64,13 +65,13 @@
             </thead>
             <tbody id="universities">
                 <tr>
-                    <td><input type="checkbox" value="id123"></td>
+                    <td><button class="btn btn-danger" type="submit" value="id_university"><i class="fas fa-trash-alt"></i></button></td>
                     <td><img alt="logo" src="{% static 'common/img/vlsu.png' %}"  width="50" height="50" hspace="10"></td>
                     <td> Влгу</td>
                     <td>Владимир</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" value="id123"></td>
+                    <td><button class="btn btn-danger" type="submit" value="id_university"><i class="fas fa-trash-alt"></i></button></td>
                     <td><img alt="logo" src="{% static 'common/img/msu.png' %}"  width="50" height="50" hspace="10"></td>
                     <td> МГУ</td>
                     <td>Москва</td>

@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {#    Bootstrap 3 CSS remote#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    {#    jQuery#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    {#    Highlight jquery plugin #}
+    <script src='{% static "common/js/highlight_jquery_plugin.js" %}'></script>
+
+   {#  AWESOME ICONS fonts#}
+   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+    {#    Bootstrap 3 JS remote#}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {#    fonts#}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {#custom style  #}
+    <link rel="stylesheet" href="{% static 'department/department.css' %}">
+
+    {#    сюда скрипты#}
+    <script src="{% static 'department/department.js' %}"></script>
+</head>
+<body>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                Delete department
+            </div>
+            <div class="panel-body">
+
+                {#    Search#}
+                <div class="input-group">
+                    <input id="search_department" type="text" class="form-control" type="text" placeholder="Search..">
+                    <div class="input-group-addon">
+                        <i class="fa fa-search fa-lg"></i>
+                    </div>
+                </div>
+
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <td></td><td><h4>Список отделов</h4></td>
+                    </tr>
+                    </thead>
+                    <tbody id="departments" >
+                    <tr>
+                        <td><button class="btn btn-danger" type="submit" value="id_university"><i class="fas fa-trash-alt"></i></button></td>
+                        <td>Department1</td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-danger" type="submit" value="id_university"><i class="fas fa-trash-alt"></i></button></td>
+                        <td>Department2</td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-danger" type="submit" value="id_university"><i class="fas fa-trash-alt"></i></button></td>
+                        <td>Department3</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
