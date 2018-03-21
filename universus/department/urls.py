@@ -19,6 +19,6 @@ from department import views
 
 urlpatterns = [
     path('', views.department, name='department'),
-    path('department/add', views.department_add, name='department_add'),
-    path('department/delete', views.department_delete, name='department_delete'),
+    path('add/', views.department_add, name='department_add'),
+    path('delete/', views.department_delete, name='department_delete'),
 ]

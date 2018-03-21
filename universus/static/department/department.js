@@ -17,6 +17,6 @@ $(document).ready(function () {
             $(this).highlight(value)
         });
     });
-    
+
 
 })

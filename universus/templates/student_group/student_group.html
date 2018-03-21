@@ -50,13 +50,19 @@
             <div class="panel-heading">Administrator panel</div>
             <div class="panel-body">
                 <div class="row">
-                   <div class="btn-group col-sm-5 btn-admin">
-                        <a class="btn btn-primary" href="">Add new student group</a>
-                        <a class="btn btn-danger" href="">Delete this group</a>
+                   <div class="btn-group col-sm-5 btn-admin-group">
+                        <a class="btn btn-primary" href="">
+                            <i class="fa fa-plus-circle fa-lg"></i> Create new group
+                        </a>
+                        <a class="btn btn-danger" href="">
+                            <i class="fa fa-trash-alt fa-lg"></i> Delete group
+                        </a>
                     </div>
-                    <div class="col-sm-5 btn-group btn-admin">
+                    <div class="col-sm-5 btn-group btn-admin-group ">
                         <input id="edit-mode" type="checkbox" data-toggle="toggle" data-on="Edit on" data-off="Edit off">
-                        <button id="save-change" class="btn btn-warning">Save change</button>
+                        <button id="save-change" class="btn btn-warning">
+                            <i class="fa fa-save fa-lg"></i> Save change
+                        </button>
                     </div>
                 </div>
             </div>
@@ -78,6 +84,13 @@
 
         {# Members of group#}
         <div class="col-sm-6">
+
+            {# Student manager bar#}
+            <div class="btn-group btn-admin-group">
+                <a href="" class="btn btn-primary"><i class="fa fa-plus-circle fa-lg"></i> Add new a student</a>
+                <a href="" class="btn btn-danger"><i class="fa fa-trash-alt fa-lg"></i> Delete a student</a>
+            </div>
+
 
             {#    Search#}
             <div class="input-group">
