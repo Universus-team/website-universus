@@ -10,4 +10,6 @@ $(document).ready(function () {
         }
     })
 
+    $('.field:not(input)').attr('contenteditable', 'false').css('background-color', '')
+    $('input.field').attr('readonly', '').css('background-color', '')
 })

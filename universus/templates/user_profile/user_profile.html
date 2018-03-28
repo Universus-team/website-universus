@@ -5,21 +5,42 @@
   <title>Profile</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {#Bootstrap CSS remote#}
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  {#custom style  #}
-  <link rel="stylesheet" href="{% static 'user_profile/user_profile.css' %}">
-{#    fonts#}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-{#    jQuery#}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+    {#Bootstrap CSS remote#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    {#custom style  #}
+    <link rel="stylesheet" href="{% static 'user_profile/user_profile.css' %}">
+    {#    fonts#}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {#    jQuery#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {#Bootstrap toogle plugin#}
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+    {#common style    #}
+    <link rel="stylesheet" href="{% static 'common/css/common.css' %}">
+
+    {#common JS    #}
+    <script src="{% static 'common/js/common.js' %}"></script>
 </head>
 <body>
 
+        <div class="btn-group btn-admin-group " >
+            <input id="edit-mode" type="checkbox" data-toggle="toggle" data-on="Edit on" data-off="Edit off">
+            <button id="save-change" class="btn btn-warning">
+                <i class="fa fa-save fa-lg"></i> Save change
+            </button>
+        </div>
+
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div id="user-name">Курочкин Михаил</div>
+          <div id="user-name" class="field">Курочкин Михаил</div>
         </div>
         <div class="panel-body">
           <div class="row">
@@ -48,22 +69,20 @@
                   </tr>
                   <tr>
                     <td>Дата рождения:</td>
-                    <td>24/12/1996</td>
-                  </tr>
-                  <tr>
-                    <td>Пол:</td>
-                    <td>М</td>
+                    <td>
+                        <input name="birth_day" type="date" value="1996-12-24" class="field">
+                    </td>
                   </tr>
                   <tr>
                     <td>Адрес</td>
-                    <td>г. Владимир ул. Юбилейная д. 5 кв. 72</td>
+                    <td><input name="address" type="text" value="Владимир" class="field"></td>
                   </tr>
                   <tr>
                     <td>Email</td>
-                    <td><a href="mailto:mkv-1724@mail.ru">mkv-1724@mail.ru</a></td>
+                    <td><input name="email" type="email" value="mkv-1724@mail.ru" class="field"></td>
                   </tr>
                     <td>Номер телефона:</td>
-                    <td>+79157510930</td>     
+                    <td><input name="phone" type="tel" value="+79157510930" class="field"></td>
                   </tr>
                  
                 </tbody>
