@@ -69,16 +69,15 @@
                 </tr>
             </thead>
             <tbody id="universities">
-                <tr onclick="window.location='/university_body';">
-                    <td><img alt="logo" src="{% static 'common/img/vlsu.png' %}"  width="50" height="50" hspace="10"></td>
-                    <td> Влгу</td>
-                    <td>Владимир</td>
-                </tr>
-                <tr onclick="window.location='/university_body';">
-                    <td><img alt="logo" src="{% static 'common/img/msu.png' %}"  width="50" height="50" hspace="10"></td>
-                    <td> МГУ</td>
-                    <td>Москва</td>
-                </tr>
+                {% for univer in universities %}
+
+                    <tr onclick="window.location='/university_body/show/{{ univer.Id }}/';">
+                        <td><img alt="logo" src="{{ univer.LogoURL }}"  width="50" height="50" hspace="10"></td>
+                        <td>{{ univer.ShortName }}</td>
+                        <td width="50%">{{ univer.Address }}</td>
+                    </tr>
+
+                {% endfor %}
             </tbody>
         </table>
 

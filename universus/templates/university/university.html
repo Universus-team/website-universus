@@ -33,6 +33,13 @@
 {#    сюда скрипты#}
     <script src="{% static 'university/university.js' %}"></script>
 
+
+        {#common style    #}
+    <link rel="stylesheet" href="{% static 'common/css/common.css' %}">
+
+    {#common JS    #}
+    <script src="{% static 'common/js/common.js' %}"></script>
+
 </head>
 <body>
 
@@ -53,26 +60,18 @@
 
 
     <div class="row">
-        <img src="{% static 'common/img/vlsu.png' %}" align="left" height="150" style="margin-right: 10px" width="150">
-        <h2 id="title" class="field">Владимирский государственный университет</h2>
-        <h5>Описание</h5>
+        <img src="{{ university.LogoURL }}" align="left" height="150" style="margin-right: 10px" width="150">
+        <h2 id="title" class="field">{{ university.FullName }}</h2>
+        <h5>Описание:</h5>
         <p id="description" class="field" name="description">
-            Со времени своего создания университет подготовил более 60 тысяч специалистов. ВлГУ сотрудничает с более чем 40 университетами мира, на его базе функционирует более 30 учебно-образовательных центров.
-
-            Владимирский государственный университет реализует основные образовательные программы высшего профессионального образования по ступеням[2]:
-
-            бакалавриат — подтверждаемое присвоением лицу, успешно прошедшему итоговую аттестацию, квалификации (степени) «бакалавр»;
-            подготовка специалиста — подтверждаемое присвоением лицу, успешно прошедшему итоговую аттестацию, квалификации (степени) «специалист»;
-            магистратура — подтверждаемое присвоением лицу, успешно прошедшему итоговую аттестацию, квалификации (степени) «магистр»;
-            подготовка кадров высшей квалификации (аспирантура и докторантура).
+            {{ university.Description }}
         </p>
-        <h5>Веб-сайт университета</h5>
-        <a id="web-site" class="field" name="web_site" href="www.vlsu.ru">
-            www.vlsu.ru
-        </a>
-        <h5>Адрес</h5>
+        <h5>Веб-сайт университета:</h5>
+        <input id="web_site" type="url" class="field" name="web_site" value="{{ university.WebSite }}">
+
+        <h5>Адрес:</h5>
         <p id="address" class="field" name="address">
-            г. Владимир ул. Горького д. 71
+            {{ university.Address }}
         </p>
 
         <div class="col-sm-8">

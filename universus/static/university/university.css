@@ -2,8 +2,8 @@ h5, h4 {
     font-weight: bold;
 }
 
-.highlight {
-    background-color: #ffca4d;
+input {
+    border: none;
 }
 
 .btn-group {

@@ -8,13 +8,5 @@ $(document).ready(function () {
             $(this).highlight(value)
         });
     });
-
-    $('#edit-mode').change(function() {
-        if ($(this).prop('checked')) {
-            $('.field').attr('contenteditable', 'true').css('background-color', '#fff992')
-        } else {
-            $('.field').attr('contenteditable', 'false').css('background-color', '')
-        }
-    })
 })
 
