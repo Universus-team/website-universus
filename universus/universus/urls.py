@@ -31,8 +31,12 @@ urlpatterns = [
     path('studentgroup_body/', include('student_group.urls')),
     path('students_body/', include('students.urls')),
     path('teachers_body/', include('teachers.urls')),
+    path('test_webservice/', include('test_webservice.urls')),
 
 
     # must be at the end
     re_path('(^[a-zA-Z]+_$|^[a-zA-Z]+_/[a-zA-Z_]+$)', include('main.urls')),
 ]
+
+
+
