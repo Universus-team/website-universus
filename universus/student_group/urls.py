@@ -15,8 +15,8 @@ Including another URLconf
 """
 
 from student_group import views
-from django.urls import path, include
+from django.urls import path, include, re_path
 
 urlpatterns = [
-    path('', views.student_group, name='student_group')
+    re_path('show/(?P<group_id>\d+)/', views.student_group, name='student_group')
 ]

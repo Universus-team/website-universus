@@ -73,16 +73,15 @@
         <button class="btn btn-warning" data-toggle="modal" data-target="#leave_modal"><i class="fas fa-sign-out-alt fa-lg"></i> Leave group</button>
 
 
-        <h1 id="title" class="field">PRI-115</h1>
-        <p id="description" class="field">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Beatae deleniti earum iure quaerat sed? Accusantium amet aperiam
-            excepturi illum laudantium libero, repellat suscipit tenetur? Aspernatur beatae
-            debitis fuga reprehenderit soluta.</p>
+        <h1 id="title" class="field">{{ group.Name }}</h1>
+        <h5>Описание:</h5>
+        <p id="description" class="field">{{ group.Description }}</p>
 
         <div>
             <label for="created_date">Дата создания:</label>
-            <input id="created_date" class="field" type="date" value="2015-09-01" readonly>
+            <input id="created_date" class="field" type="date" value="{{ group.CreatedDate|date:"Y-m-d" }}" readonly>
         </div>
+
 
 
         <div class="row">

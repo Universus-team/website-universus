@@ -5,8 +5,11 @@ from suds.client import Client
 
 def university(request, university_id):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
-    result = client.service.getUniversityById(int(university_id))
-    return render(request, 'university/university.html', {'university' : result})
+    university = client.service.getUniversityById(int(university_id))
+    departments = client.service.getAllDepartmentsByUniversityId(int(university_id))
+    return render(request, 'university/university.html', {
+        'university': university,
+        'departments': departments.Department if departments else None})
 
 def university_list(request):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')

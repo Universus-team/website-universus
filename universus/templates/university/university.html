@@ -99,15 +99,17 @@
                 </tr>
                 </thead>
                 <tbody id="departments" >
-                <tr>
-                    <td onclick="window.location='/department_body';">Information technology</td>
-                </tr>
-                <tr>
-                    <td onclick="window.location='/department_body';">Jurisprudence</td>
-                </tr>
-                <tr>
-                    <td onclick="window.location='/department_body';">Journalism</td>
-                </tr>
+                {% if not departments %}
+                    <tr><td >Нет отделов</td></tr>
+                {% endif %}
+
+
+                {% for department in departments %}
+                    <tr onclick="window.location='/department_body/show/{{ department.Id }}/';">
+                        <td >{{ department.Name }}</td>
+                    </tr>
+                {% endfor %}
+
                 </tbody>
             </table>
         </div>

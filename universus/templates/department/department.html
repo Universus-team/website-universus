@@ -64,11 +64,11 @@
 
 
 
-        <h1 id="title" class="field">Department name</h1>
-        <p id="description" class="field">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis
-            debitis deleniti, distinctio dolor ducimus ex hic magni nemo nulla officia
-            quas qui quos ratione reiciendis rem reprehenderit rerum similique sint sunt u
-            t veniam voluptate? Animi dolorem est quam rem?</p>
+        <h1 id="title" class="field">{{ department.Name }}</h1>
+        <h5>Описание:</h5>
+        <p id="description" class="field"> {{ department.Description }}</p>
+        <h5>Декан:</h5>
+        <p> {{ department.DeanName }}</p>
 
 
 
@@ -92,21 +92,15 @@
                 </tr>
                 </thead>
                 <tbody id="student_groups" >
-                <tr>
-                    <td onclick="window.location='/studentgroup_body';">PRI-115</td>
-                </tr>
-                <tr>
-                    <td>IST-115</td>
-                </tr>
-                <tr>
-                    <td>PRI-114</td>
-                </tr>
-                <tr>
-                    <td>IST-114</td>
-                </tr>
-                <tr>
-                    <td>VT-115</td>
-                </tr>
+                {% if not groups %}
+                    <tr><td >Нет групп</td></tr>
+                {% endif %}
+
+                {% for group in groups %}
+                    <tr onclick="window.location='/studentgroup_body/show/{{ group.Id }}/';">
+                        <td >{{ group.Name }}</td>
+                    </tr>
+                {% endfor %}
                 </tbody>
             </table>
 
