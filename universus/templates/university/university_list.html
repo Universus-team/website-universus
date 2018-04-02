@@ -69,6 +69,15 @@
                 </tr>
             </thead>
             <tbody id="universities">
+
+            
+                {% if not universities %}
+                    <tr>
+                        <td>Университетов нет</td>
+                    </tr>
+                {% endif %}
+
+
                 {% for univer in universities %}
 
                     <tr onclick="window.location='/university_body/show/{{ univer.Id }}/';">
