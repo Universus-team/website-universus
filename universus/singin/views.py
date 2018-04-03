@@ -10,14 +10,16 @@ def singin(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
-        auth = Element("AuthHeader").append(Element('Email').setText('mkv-1724@mail.ru'))
-        auth.append(Element('Password').setText('17kmv1724sh'))
-        auth.append(Attribute('xmlns', 'http://universus-webservice.ru/'))
+        auth = Element("AuthHeader").append((
+            Element('Email').setText(email),
+            Element('Password').setText(password),
+            Attribute('xmlns', 'http://universus-webservice.ru/'))
+        )
 
         client.set_options(soapheaders=auth)
         id = client.service.getId()
-        if (id > 0):
-            return HttpResponseRedirect('/profile_')
-        else:
-            return render(request, 'singin/singin.html', {'result': False})
+        # if (id > 0):
+        #     return HttpResponseRedirect('/profile_')
+        # else:
+        return render(request, 'singin/singin.html', {'result': False, 'id' : id})
     return render(request, 'singin/singin.html', {'result': True})
