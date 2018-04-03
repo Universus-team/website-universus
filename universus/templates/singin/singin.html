@@ -30,11 +30,9 @@
   <body>
     <div class="container-fluid">
 
-{#    {% if not result %}#}
-{#        <h1>Неправильный логин или пароль!</h1>#}
-{#    {% endif %}#}
-
-    <h1>{{ id }}</h1>
+    {% if not result %}
+        <h1>Неправильный логин или пароль!</h1>
+    {% endif %}
 
 
       <div class="panel panel-default singin">

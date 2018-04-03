@@ -18,8 +18,8 @@ def singin(request):
 
         client.set_options(soapheaders=auth)
         id = client.service.getId()
-        # if (id > 0):
-        #     return HttpResponseRedirect('/profile_')
-        # else:
-        return render(request, 'singin/singin.html', {'result': False, 'id' : id})
+        if (id > 0):
+            return HttpResponseRedirect('/profile_')
+        else:
+            return render(request, 'singin/singin.html', {'result': False})
     return render(request, 'singin/singin.html', {'result': True})
