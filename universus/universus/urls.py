@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 
 urlpatterns = [
+
+    path('', include('singin.urls')),
     path('admin/', admin.site.urls),
     path('singup/', include('singup.urls')),
     path('exambuilder_body/', include('exam_builder.urls')),
