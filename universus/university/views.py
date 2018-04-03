@@ -6,14 +6,14 @@ from suds.client import Client
 def university(request, university_id):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
     university = client.service.getUniversityById(int(university_id))
-    departments = client.service.getAllDepartmentsByUniversityId(int(university_id))
+    departments = client.service.getAllDepartmentsByUniversityIdLite(int(university_id))
     return render(request, 'university/university.html', {
         'university': university,
         'departments': departments.Department if departments else None})
 
 def university_list(request):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
-    result = client.service.getAllUniversities()
+    result = client.service.getAllUniversitiesLite()
     return render(request, 'university/university_list.html', { 'universities': result.University })
 
 def university_list_delete(request):

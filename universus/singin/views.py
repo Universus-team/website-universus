@@ -15,10 +15,12 @@ def singin(request):
             Element('Password').setText(password),
             Attribute('xmlns', 'http://universus-webservice.ru/'))
         )
-
         client.set_options(soapheaders=auth)
         id = client.service.getId()
         if (id > 0):
+            request.session['id'] = id
+            request.session['email'] = email
+            request.session['password'] = password
             return HttpResponseRedirect('/profile_')
         else:
             return render(request, 'singin/singin.html', {'result': False})

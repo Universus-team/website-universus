@@ -40,7 +40,8 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div id="user-name" class="field">Курочкин Михаил</div>
+          <div id="user-name" class="field"> {{ account.Surname }} {{ account.Name }} {{ account.Patronymic }}
+              ({{ role }}) </div>
         </div>
         <div class="panel-body">
           <div class="row">
@@ -70,19 +71,19 @@
                   <tr>
                     <td>Дата рождения:</td>
                     <td>
-                        <input name="birth_day" type="date" value="1996-12-24" class="field">
+                        <input name="birth_day" type="date" value="{{ account.BirthDay|date:"Y-m-d" }}" class="field">
                     </td>
                   </tr>
                   <tr>
                     <td>Адрес</td>
-                    <td><input name="address" type="text" value="Владимир" class="field"></td>
+                    <td><input name="address" type="text" value="{{ account.Address }}" class="field"></td>
                   </tr>
                   <tr>
                     <td>Email</td>
-                    <td><input name="email" type="email" value="mkv-1724@mail.ru" class="field"></td>
+                    <td><input name="email" type="email" value="{{ account.Email }}" class="field"></td>
                   </tr>
                     <td>Номер телефона:</td>
-                    <td><input name="phone" type="tel" value="+79157510930" class="field"></td>
+                    <td><input name="phone" type="tel" value="{{ account.Phone }}" class="field"></td>
                   </tr>
                  
                 </tbody>

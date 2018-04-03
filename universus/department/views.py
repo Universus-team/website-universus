@@ -16,7 +16,7 @@ def department_delete(request):
 def department(request, department_id):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
     depart = client.service.getDepartmentById(int(department_id))
-    groups = client.service.getAllStudentGroupByDepartmentId(int(department_id))
+    groups = client.service.getAllStudentGroupByDepartmentIdLite(int(department_id))
     return render(request, "department/department.html", {
         'department': depart ,
         'groups' : groups.StudentGroup if groups else None});
