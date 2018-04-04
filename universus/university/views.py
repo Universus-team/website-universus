@@ -26,8 +26,19 @@ def university_list(request):
         'universities': result.University,
         'role_id': role_id})
 
-def university_list_delete(request):
-    return render(request, 'university/university_list_delete.html', locals())
+def university_delete(request, university_id):
+    client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
+    auth = Element("AuthHeader").append((
+        Element('Email').setText(request.session.get('email', '')),
+        Element('Password').setText(request.session.get('password', '')),
+        Attribute('xmlns', 'http://universus-webservice.ru/'))
+    )
+    client.set_options(soapheaders=auth)
+    uni = client.service.getUniversityById(university_id)
+    result = client.service.deleteUniversityById(university_id)
+    return render(request, 'university/university_delete.html',
+                  {'result': result,
+                   'university': uni})
 
 def university_add(request):
     if request.method == 'POST':
@@ -40,8 +51,8 @@ def university_add(request):
         University = client.factory.create('University')
         auth = Element("AuthHeader").append((
             Element('Email').setText(request.session.get('email', '')),
-            Element('Password').setText(request.session.get('password', '')),
-            Attribute('xmlns', 'http://universus-webservice.ru/'))
+        Element('Password').setText(request.session.get('password', '')),
+        Attribute('xmlns', 'http://universus-webservice.ru/'))
         )
         client.set_options(soapheaders=auth)
         University['Id'] = 0;
