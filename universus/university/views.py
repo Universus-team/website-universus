@@ -34,7 +34,7 @@ def university_delete(request, university_id):
         Attribute('xmlns', 'http://universus-webservice.ru/'))
     )
     client.set_options(soapheaders=auth)
-    uni = client.service.getUniversityById(university_id)
+    uni = client.service.getUniversityByIdLite(university_id)
     result = client.service.deleteUniversityById(university_id)
     return render(request, 'university/university_delete.html',
                   {'result': result,

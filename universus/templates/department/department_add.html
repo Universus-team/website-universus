@@ -20,28 +20,38 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-8">
+
             <div class="panel panel-success">
-                <div class="panel-heading">Добавление отдела</div>
+                <div class="panel-heading">Добавление отдела в университет {{ university.ShortName }}</div>
                 <div class="panel-body">
 
-                    <form action="">
-
+                    <form action="" method="post">
+                        {% csrf_token %}
                         <div class="form-group">
-                            <label for="in1">Название</label>
-                            <input type="text" id="in1" class="form-control" name="name">
+                            <label for="in1">Название:</label>
+                            <input type="text" id="in1" class="form-control" name="name" required maxlength="100">
                         </div>
                         <div class="form-group">
-                            <label for="in2">Описание</label>
-                            <textarea type="text" id="in2" class="form-control" name="description" rows="5"></textarea>
+                            <label for="in2">Описание:</label>
+                            <textarea type="text" id="in2" class="form-control" name="description" rows="5" maxlength="65000"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="in1">Декан</label>
-                            <input type="text" id="in1" class="form-control" name="dean">
+                            <label for="in1">Декан:</label>
+                            <input type="text" id="in1" class="form-control" name="dean"  maxlength="100">
                         </div>
                         <input type="submit" class="btn btn-primary btn-lg" value="Добавить">
                     </form>
 
 
+                </div>
+                <div class="panel panel-footer">
+                    {% if result == 1 %}
+                    <h3 class="alert alert-success">Отдел был добавлен</h3>
+                    {% elif result == -1 %}
+                    <h3 class="alert alert-danger">Ошибка базы данных, отдел добавлен не был</h3>
+                    {% elif result == -2 %}
+                    <h3 class="alert alert-danger">Ошибка нет прав доступа, отдел добавлен не был</h3>
+                    {% endif %}
                 </div>
             </div>
         </div>

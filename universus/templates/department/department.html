@@ -53,7 +53,7 @@
                     </button>
                     <div class="btn-group btn-admin-group">
                         <input id="edit-mode" type="checkbox" data-toggle="toggle" data-on="Edit on" data-off="Edit off">
-                        <button id="save-change" class="btn btn-warning">
+                        <button id="save-change" class="btn btn-warning" onclick="saveChange()">
                            <i class="fa fa-save fa-lg"></i> Сохранить изменения
                         </button>
                     </div>
@@ -64,7 +64,7 @@
 
 
 
-        <h1 id="title" class="field">{{ department.Name }}</h1>
+        <h1 id="name" class="field">{{ department.Name }}</h1>
         <h5>Описание:</h5>
         <p id="description" class="field"> {{ department.Description }}</p>
         <h5>Декан:</h5>
@@ -130,7 +130,7 @@
       </div>
       <div class="modal-body">
         <h4>Вы действительно хотите удалить этот отдел университета?</h4>
-        <a class="btn btn-danger" href="/department_body/delete/123">Да</a>
+        <a class="btn btn-danger" href="/department_body/delete/{{ department.Id }}/">Да</a>
         <button class="btn btn-primary" data-dismiss="modal">Нет</button>
       </div>
       <div class="modal-footer">
