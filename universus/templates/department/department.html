@@ -3,28 +3,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-
+    <title>Universus department</title>
     {# Bootstrap 3 CSS remote#}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     {#    jQuery#}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
     {#    Highlight jquery plugin #}
     <script src='{% static "common/js/highlight_jquery_plugin.js" %}'></script>
 
-       {#  AWESOME ICONS fonts#}
-  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
-
+    {#  AWESOME ICONS fonts#}
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 
     {#    Bootstrap 3 JS remote#}
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     {#    Bootstrap toogle plugin#}
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
     {#    fonts#}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,13 +29,13 @@
     {#custom style  #}
     <link rel="stylesheet" href="{% static 'department/department.css' %}">
 
-    {#    сюда скрипты#}
+    {#    custom script#}
     <script src="{% static 'department/department.js' %}"></script>
 
-        {#common style    #}
+    {#share style    #}
     <link rel="stylesheet" href="{% static 'common/css/common.css' %}">
 
-    {#common JS    #}
+    {#share JS    #}
     <script src="{% static 'common/js/common.js' %}"></script>
 </head>
 <body>
@@ -47,16 +44,17 @@
 
         {# Manage panel for moderator/admin#}
         <div class="panel panel-warning">
-            <div class="panel-heading">Administrator panel</div>
+            <div class="panel-heading">Панель администратора</div>
             <div class="panel-body">
                 <div >
-                    <div class="btn-group btn-admin-group">
-                        <a class="btn btn-primary" href="department/add">Add department</a>
-                        <a class="btn btn-danger" href="department/delete">Delete department</a>
-                    </div>
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#delete_modal_department">
+                        <i class="fa fa-trash-alt fa-lg"></i> Удалить
+                    </button>
                     <div class="btn-group btn-admin-group">
                         <input id="edit-mode" type="checkbox" data-toggle="toggle" data-on="Edit on" data-off="Edit off">
-                        <button id="save-change" class="btn btn-warning">Save change</button>
+                        <button id="save-change" class="btn btn-warning">
+                           <i class="fa fa-save fa-lg"></i> Сохранить изменения
+                        </button>
                     </div>
                 </div>
             </div>
@@ -68,12 +66,20 @@
         <h5>Описание:</h5>
         <p id="description" class="field"> {{ department.Description }}</p>
         <h5>Декан:</h5>
-        <p> {{ department.DeanName }}</p>
+        <p id="dean" class="field"> {{ department.DeanName }}</p>
 
 
 
 
         <div class="col-sm-6">
+
+
+            {#Student group manager bar#}
+            <div class="btn-group btn-admin-group">
+                <a class="btn btn-primary" href="/studentgroup_body/add">
+                   <i class="fa fa-plus-circle fa-lg"></i> Добавить группу
+                </a>
+            </div>
 
             {#    Search#}
             <div class="input-group">
@@ -104,10 +110,31 @@
                 </tbody>
             </table>
 
-
         </div>
 
     </div>
+</div>
+
+{# Delete department modal#}
+<div id="delete_modal_department" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title">Удалить отдел?</h3>
+      </div>
+      <div class="modal-body">
+        <h4>Вы действительно хотите удалить этот отдел университета?</h4>
+        <a class="btn btn-danger" href="/department_body/delete/123">Да</a>
+        <button class="btn btn-primary" data-dismiss="modal">Нет</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+
+  </div>
 </div>
 </body>
 </html>

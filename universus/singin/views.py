@@ -18,9 +18,11 @@ def singin(request):
         client.set_options(soapheaders=auth)
         id = client.service.getId()
         if (id > 0):
+            account = client.service.getAccount()
             request.session['id'] = id
             request.session['email'] = email
             request.session['password'] = password
+            request.session['role_id'] = account.RoleId
             return HttpResponseRedirect('/profile_')
         else:
             return render(request, 'singin/singin.html', {'result': False})

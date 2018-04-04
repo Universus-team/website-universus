@@ -14,7 +14,10 @@ def university(request, university_id):
 def university_list(request):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
     result = client.service.getAllUniversitiesLite()
-    return render(request, 'university/university_list.html', { 'universities': result.University })
+    role_id = request.session.get('role_id', 0)
+    return render(request, 'university/university_list.html', {
+        'universities': result.University,
+        'role_id': role_id})
 
 def university_list_delete(request):
     return render(request, 'university/university_list_delete.html', locals())

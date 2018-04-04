@@ -32,21 +32,24 @@
 
 <div class="container-fluid">
 
+    {% if role_id == 3 or role_id == 4 %}
     {# Manage panel for moderator/admin#}
     <div class="row">
         <div class="panel panel-warning">
-            <div class="panel-heading">Administrator panel</div>
+            <div class="panel-heading">Панель администратора</div>
             <div class="panel-body">
                 <div class="btn-group">
-                    <a class="btn btn-primary" href="add">Add university</a>
-                    <a class="btn btn-danger" href="delete">Delete university</a>
+                    <a class="btn btn-primary" href="add">
+                       <i class="fa fa-plus-circle fa-lg"></i> Добавить университет
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
 
 
-{#    Search#}
+    {#Search panel#}
     <div class="row">
         <div class="col-xs-12 col-sm-6">
             <div class="input-group">
