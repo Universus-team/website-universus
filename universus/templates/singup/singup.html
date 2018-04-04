@@ -28,64 +28,118 @@
     <!--  CSS widget "Bootstrap datetimepicker" -->  
     <link rel="stylesheet" href="{% static 'common/css/bootstrap-datetimepicker.min.css' %}" />
 
+      <!-- custom scripts-->
+    <script type="text/javascript" src="{% static 'singup/singup.js' %}"></script>
+
   </head>
   <body>
     <div class="container-fluid">
       <div class="panel panel-default singup">
         <div class="panel-heading title text-center">
-          Sing up
+          Регистрация на <span style="color: #FF8900">Universus</span>
         </div>
         <div class="panel-body">
           <form name = "form" class="form-horizontal" action = "" 
              method = "POST" >{% csrf_token %}
-
+            Обязательные поля помеченны *
             <div class="form-group">
-              <label for="name" class="control-label">Name</label>
+              <label for="name" class="control-label">Имя*:</label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> </span>
-                <input type="text" class="form-control" name="{{ form.name.name }}" placeholder="Name">
+                <input type="text" class="form-control" name="name" placeholder="Имя" required>
               </div>
             </div>                
 
             <div class="form-group">
-              <label for="surname" class="control-label">Surname</label>
+              <label for="surname" class="control-label">Фамилия*:</label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> </span>
-                <input type="text" class="form-control" name="{{ form.surname.name }}" placeholder="Surname">
+                <input type="text" class="form-control" name="surname" placeholder="Фамилия" required>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="mail" class="control-label">E-mail</label>
+              <label for="patronymic" class="control-label">Отчество:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> </span>
+                <input type="text" class="form-control" name="patronymic" placeholder="Отчество">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="photo" class="control-label">Загрузите аватар:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-camera"></i></span>
+                <input type="file" class="form-control" name="photo"
+                       accept="image/x-png,image/gif,image/jpeg" placeholder="Повторите пароль">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="control-label">E-mail*:</label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i> </span>
-                <input type="text" class="form-control" name="{{ form.email.name }}" placeholder="Mail">
+                <input type="text" class="form-control" name="email" placeholder="E-Mail" required>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="password" class="control-label">Password</label>
+              <label for="phone" class="control-label">Телефон:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i> </span>
+                <input type="text" class="form-control" name="phone" placeholder="Телефон">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="control-label">Пароль*:</label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input type="text" class="form-control" name="{{ form.password.name }}" placeholder="Password">
-                <div class="input-group-btn">
-                  <button class="btn btn-default">
-                    <i class="glyphicon glyphicon-eye-open"></i>
-                  </button>
-                </div>
+                <input type="password" class="form-control" name="password" placeholder="Пароль" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="control-label">Повторите пароль*:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input type="password" class="form-control" name="password2" placeholder="Повторите пароль" required>
               </div>
             </div>
 
             <!-- useful link https://itchief.ru/lessons/bootstrap-3/113-bootstrap-3-datetimepicker -->
             <div class="form-group">        
-                <label for="birth_day" class="control-label">Birth day</label>
+                <label for="birth_day" class="control-label">День рождения:</label>
                 <div class="input-group">
                   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                  <input type='text' class="form-control" name="{{ form.password.birth_day }}" id="datetimepicker1" /> 
+                  <input type='text' class="form-control" name="birthDay" id="datetimepicker1" />
                 </div>
-            </div> 
+            </div>
 
-            <button class="btn btn-primary" type="submit">Submit</button>
+            <div class="form-group">
+                <label for="sel1">Выберите университет*:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
+                    <select class="form-control" id="universities" name="university">
+                        <option value="0" selected disabled hidden>Выберите университет</option>
+                        {% for univer in universities %}
+                            <option value="{{ univer.Id }}">{{ univer.ShortName }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sel1">Выберите отдел*:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
+                    <select class="form-control" id="departments" name="department">
+                    </select>
+                </div>
+            </div>
+
+
+            <button class="btn btn-primary" type="submit">Зарегистрироваться!</button>
 
           </form>
         </div>

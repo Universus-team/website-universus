@@ -1,19 +1,19 @@
+from django.http import HttpResponse
 from django.shortcuts import render
-from .forms import SingupForm
+import json
 
+from django.views.decorators.csrf import csrf_exempt
+from suds.client import Client
+from suds.sax.attribute import Attribute
+from suds.sax.element import Element
+
+@csrf_exempt
 def singup(request):
-   name = "---"
-   surname = "---"
-   if request.method == "POST":
-      #Get the posted form
-      form = SingupForm(request.POST)
-
-      if form.is_valid():
-         name = form.cleaned_data["name"]
-         surname = form.cleaned_data["surname"]
-         email = form.cleaned_data["email"]
-         password = form.cleaned_data["password"]
-         return render(request, 'singup/success_singup.html', locals())
-   else:
-      form = SingupForm()   
-   return render(request, 'singup/singup.html', locals())
+   client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
+   if request.method == 'POST':
+      ajax_data = json.loads(request.body.decode('utf-8'))
+      dps = client.service.getAllDepartmentsByUniversityIdLite(ajax_data['university_id'])
+      depart = [{'Name' :d.Name, 'Id': d.Id} for d in dps.Department]
+      return HttpResponse(json.dumps(depart), content_type='application/json')
+   uni = client.service.getAllUniversitiesLite()
+   return render(request, 'singup/singup.html', {'universities' : uni.University})
