@@ -10,3 +10,26 @@ $(document).ready(function () {
     });
 })
 
+function saveChange() {
+    $.ajax({
+        url: window.location.href,
+        type: 'POST',
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify(readUniversity()),
+        dataType: 'text',
+        success: function(result) {
+            data = JSON.parse(result)
+            $('#saveMessage').text(data.message)
+        }
+    });
+}
+
+function readUniversity() {
+    return {
+        'ShortName' : $('#ShortName').text(),
+        'FullName' : $('#FullName').text(),
+        'Description' : $('#Description').text(),
+        'Address' : $('#Address').text(),
+        'WebSite' : $('#WebSite').val()
+    }
+}

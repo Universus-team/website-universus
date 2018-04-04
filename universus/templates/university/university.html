@@ -54,7 +54,7 @@
                 </button>
                 <div class="btn-group btn-admin-group">
                     <input id="edit-mode" type="checkbox" data-toggle="toggle" data-on="Edit on" data-off="Edit off">
-                    <button id="save-change" class="btn btn-warning">
+                    <button id="save-change" class="btn btn-warning" onclick="saveChange()">
                         <i class="fa fa-save fa-lg"></i> Сохранить изменения
                     </button>
                 </div>
@@ -65,18 +65,21 @@
 
     <div class="row">
         <img src="{{ university.LogoURL }}" align="left" height="150" style="margin-right: 10px" width="150">
-        <h2 id="title" class="field">{{ university.FullName }}</h2>
+        <h2 id="FullName" class="field">{{ university.FullName }}</h2>
         <h5>Описание:</h5>
-        <p id="description" class="field" name="description">
+        <p id="Description" class="field" name="description">
             {{ university.Description }}
         </p>
         <h5>Веб-сайт университета:</h5>
-        <input id="web_site" type="url" class="field" name="web_site" value="{{ university.WebSite }}">
+        <input id="WebSite" type="url" class="field" name="web_site" value="{{ university.WebSite }}">
 
         <h5>Адрес:</h5>
-        <p id="address" class="field" name="address">
+        <p id="Address" class="field" name="address">
             {{ university.Address }}
         </p>
+
+        <h5>Кратко:</h5>
+        <p id="ShortName" class="field"> {{ university.ShortName }}</p>
 
         <div class="col-sm-8">
 

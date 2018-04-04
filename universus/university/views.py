@@ -1,15 +1,32 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from suds.client import Client
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from suds.sax.attribute import Attribute
 from suds.sax.element import Element
-
+import json
 # Create your views here.
-
+@csrf_exempt
 def university(request, university_id):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
+    auth = Element("AuthHeader").append((
+        Element('Email').setText(request.session.get('email', '')),
+        Element('Password').setText(request.session.get('password', '')),
+        Attribute('xmlns', 'http://universus-webservice.ru/'))
+    )
+    client.set_options(soapheaders=auth)
+    if request.method == 'POST':
+        data = request.body.decode('utf-8')
+        uni = json.loads(data)
+        univer = client.service.getUniversityByIdLite(university_id)
+        univer.FullName = uni['FullName']
+        univer.ShortName = uni['ShortName']
+        univer.Description = uni['Description']
+        univer.Address = uni['Address']
+        univer.WebSite = uni['WebSite']
+        result = client.service.updateUniversity(univer)
     university = client.service.getUniversityById(int(university_id))
     departments = client.service.getAllDepartmentsByUniversityIdLite(int(university_id))
     role_id = request.session.get('role_id', 0)
