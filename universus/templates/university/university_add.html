@@ -16,26 +16,40 @@
 <div class="container-fluid">
     <div class="row">
         <div class="panel panel-success">
-            <div class="panel-heading">Add new university</div>
+            <div class="panel-heading">Добавить новый университет</div>
             <div class="panel-body">
-                <form action="">
+                <form action="/add">
                     <div class="form-group">
-                        <label for="in1">Name</label>
-                        <input type="text" id="in1" class="form-control" name="university_name">
+                        <label for="in1">Полное название:</label>
+                        <input type="text" id="in1" class="form-control" name="full_name" required maxlength="255">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="in2">Сокращенное название:</label>
+                        <input type="text" id="in2" class="form-control" name="short_name" required maxlength="15">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="in2">Описание:</label>
+                        <textarea type="text" id="in2" class="form-control" name="description" rows="5" maxlength="65000">
+
+                        </textarea>
                     </div>
                     <div class="form-group">
-                        <label for="in2">Description</label>
-                        <textarea type="text" id="in2" class="form-control" name="description" rows="5"></textarea>
+                        <label for="in3">Веб-сайт:</label>
+                        <input type="url" id="in3" class="form-control" name="web_site" required maxlength="254">
                     </div>
                     <div class="form-group">
-                        <label for="in3">Web-site</label>
-                        <input type="url" id="in3" class="form-control" name="web_site">
+                        <label for="in4">Адрес:</label>
+                        <input type="text" id="in4" class="form-control" name="address" required maxlength="255">
                     </div>
                     <div class="form-group">
-                        <label for="in4">Address</label>
-                        <input type="text" id="in4" class="form-control" name="address">
+                        <label for="in4">Логотип: (вставьте ссылку на логотип или загрузите)</label>
+                        <input type="text" id="in4" class="form-control" name="logo_utl" maxlength="255">
+                        <input type="file" name="logo" accept="image/x-png,image/gif,image/jpeg" />
                     </div>
-                    <input type="submit" class="btn btn-primary btn-lg" value="Add">
+
+                    <input type="submit" class="btn btn-primary btn-lg" value="Добавить">
                 </form>
             </div>
         </div>

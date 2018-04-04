@@ -43,6 +43,7 @@
     <div class="row">
 
         {# Manage panel for moderator/admin#}
+        {% if role_id == 3 or role_id == 4 %}
         <div class="panel panel-warning">
             <div class="panel-heading">Панель администратора</div>
             <div class="panel-body">
@@ -59,6 +60,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
 
 
 
@@ -73,13 +75,14 @@
 
         <div class="col-sm-6">
 
-
+            {% if role_id >= 2 %}
             {#Student group manager bar#}
             <div class="btn-group btn-admin-group">
                 <a class="btn btn-primary" href="/studentgroup_body/add">
                    <i class="fa fa-plus-circle fa-lg"></i> Добавить группу
                 </a>
             </div>
+            {% endif %}
 
             {#    Search#}
             <div class="input-group">
@@ -98,6 +101,7 @@
                 </tr>
                 </thead>
                 <tbody id="student_groups" >
+
                 {% if not groups %}
                     <tr><td >Нет групп</td></tr>
                 {% endif %}

@@ -7,9 +7,11 @@ def university(request, university_id):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
     university = client.service.getUniversityById(int(university_id))
     departments = client.service.getAllDepartmentsByUniversityIdLite(int(university_id))
+    role_id = request.session.get('role_id', 0)
     return render(request, 'university/university.html', {
         'university': university,
-        'departments': departments.Department if departments else None})
+        'departments': departments.Department if departments else None,
+        'role_id': role_id})
 
 def university_list(request):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')

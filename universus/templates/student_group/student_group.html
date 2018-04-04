@@ -42,24 +42,24 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-
+        {% if role_id == 2 or role_id == 3 or role_id == 4 %}
         {# Manage panel for moderator/admin#}
         <div class="panel panel-warning">
-            <div class="panel-heading">Administrator panel</div>
+            <div class="panel-heading">Панель администратора</div>
             <div class="panel-body">
                 <div class="row">
                    <div class="btn-group col-sm-5 btn-admin-group">
                         <a class="btn btn-primary" href="">
-                            <i class="fa fa-plus-circle fa-lg"></i> Create new group
+                            <i class="fa fa-plus-circle fa-lg"></i> Добавить преподавателя
                         </a>
                         <button class="btn btn-danger" data-toggle="modal" data-target="#delete_modal">
-                            <i class="fa fa-trash-alt fa-lg"></i> Delete group
+                            <i class="fa fa-trash-alt fa-lg"></i> Удалить
                         </button>
                     </div>
                     <div class="col-sm-5 btn-group btn-admin-group ">
                         <input id="edit-mode" type="checkbox" data-toggle="toggle" data-on="Edit on" data-off="Edit off">
                         <button id="save-change" class="btn btn-warning">
-                            <i class="fa fa-save fa-lg"></i> Save change
+                            <i class="fa fa-save fa-lg"></i> Сохранить изменения
                         </button>
                     </div>
                 </div>
@@ -67,8 +67,14 @@
         </div>
 
 
-        <a class="btn btn-success"><i class="fa fa-tasks fa-lg"></i> Set test</a>
-        <button class="btn btn-warning" data-toggle="modal" data-target="#leave_modal"><i class="fas fa-sign-out-alt fa-lg"></i> Leave group</button>
+        <a class="btn btn-success"><i class="fa fa-tasks fa-lg"></i> Назначить тест</a>
+        {% endif %}
+
+        {% if role_id == 1 or role_id == 2 or role_id == 3 or role_id == 4 %}
+        <button class="btn btn-warning" data-toggle="modal" data-target="#leave_modal">
+            <i class="fas fa-sign-out-alt fa-lg"></i> Покинуть группу
+        </button>
+        {% endif %}
 
 
         <h1 id="title" class="field">{{ group.Name }}</h1>
@@ -85,12 +91,15 @@
         <div class="row">
             {# Members of group#}
             <div class="col-sm-6">
+                {% if role_id == 2 or role_id == 3 or role_id == 4%}
 
                 {# Student manager bar#}
                 <div class="btn-group btn-admin-group">
-                    <a href="" class="btn btn-primary"><i class="fa fa-plus-circle fa-lg"></i> Add new a student</a>
-                    <a href="" class="btn btn-danger"><i class="fa fa-trash-alt fa-lg"></i> Delete a student</a>
+                    <a href="" class="btn btn-primary"><i class="fa fa-plus-circle fa-lg"></i> Добавить студента</a>
+                    <a href="" class="btn btn-danger"><i class="fa fa-trash-alt fa-lg"></i> Удалить студента</a>
                 </div>
+
+                {% endif %}
 
 
                 {#    Search#}
@@ -145,6 +154,7 @@
     </div>
 </div>
 
+{% if role_id == 2 or role_id == 3 or role_id == 4 %}
 {# Modal delete#}
 <div id="delete_modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -166,7 +176,9 @@
 
   </div>
 </div>
+{% endif %}
 
+{%  if role_id == 1 or role_id == 2 or role_id == 3 or role_id == 4 %}
 {# Modal delete#}
 <div id="leave_modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -188,7 +200,7 @@
 
   </div>
 </div>
-
+{% endif %}
 
 </body>
 </html>

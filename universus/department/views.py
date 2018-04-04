@@ -17,6 +17,8 @@ def department(request, department_id):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
     depart = client.service.getDepartmentById(int(department_id))
     groups = client.service.getAllStudentGroupByDepartmentIdLite(int(department_id))
+    role_id = request.session.get('role_id', 0)
     return render(request, "department/department.html", {
         'department': depart ,
-        'groups' : groups.StudentGroup if groups else None});
+        'groups': groups.StudentGroup if groups else None,
+        'role_id': role_id});

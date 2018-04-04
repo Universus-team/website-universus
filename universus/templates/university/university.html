@@ -43,6 +43,7 @@
 
 <div class="container-fluid">
 
+    {% if role_id == 3 or role_id == 4 %}
     {# Manage panel for moderator/admin#}
     <div class="row">
         <div class="panel panel-warning">
@@ -60,7 +61,7 @@
             </div>
         </div>
     </div>
-
+    {% endif %}
 
     <div class="row">
         <img src="{{ university.LogoURL }}" align="left" height="150" style="margin-right: 10px" width="150">
@@ -79,13 +80,14 @@
 
         <div class="col-sm-8">
 
-
+            {% if role_id == 3 or role_id == 4 %}
             {#Department manager bar#}
             <div class="btn-group btn-admin-group">
                 <a class="btn btn-primary" href="/department_body/add">
                    <i class="fa fa-plus-circle fa-lg"></i> Добавить отдел
                 </a>
             </div>
+            {% endif %}
 
             {#    Search#}
             <div class="input-group">
@@ -125,7 +127,7 @@
 
 
 
-
+{% if role_id == 3 or role_id == 4 %}
 <div id="delete_modal_university" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -146,6 +148,7 @@
 
   </div>
 </div>
+{% endif %}
 
 </body>
 </html>
