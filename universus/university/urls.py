@@ -21,6 +21,6 @@ from university import views
 urlpatterns = [
     re_path('show/(?P<university_id>\d+)/', views.university, name='university'),
     path('list/', views.university_list, name='university_list'),
-    path('list/delete', views.university_list_delete, name='university_list_delete'),
+    path('delete/', views.university_list_delete, name='university_list_delete'),
     path('list/add', views.university_add, name='university_add'),
 ]

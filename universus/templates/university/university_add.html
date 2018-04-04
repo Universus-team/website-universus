@@ -15,10 +15,15 @@
 <body>
 <div class="container-fluid">
     <div class="row">
+        {% if added %}
+            <h3>Университет был успешно добавлен</h3>
+        {% endif %}
+
         <div class="panel panel-success">
             <div class="panel-heading">Добавить новый университет</div>
             <div class="panel-body">
-                <form action="/add">
+                <form action="" method = "POST" enctype="multipart/form-data" >
+                    {% csrf_token %}
                     <div class="form-group">
                         <label for="in1">Полное название:</label>
                         <input type="text" id="in1" class="form-control" name="full_name" required maxlength="255">
@@ -45,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label for="in4">Логотип: (вставьте ссылку на логотип или загрузите)</label>
-                        <input type="text" id="in4" class="form-control" name="logo_utl" maxlength="255">
+                        <input type="text" id="in4" class="form-control" name="logo_url" maxlength="255">
                         <input type="file" name="logo" accept="image/x-png,image/gif,image/jpeg" />
                     </div>
 
