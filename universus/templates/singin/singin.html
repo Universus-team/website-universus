@@ -35,7 +35,7 @@
 
       <div class="panel panel-default singin">
         <div class="panel-heading title text-center">
-          Sing in
+          Вход на <span style="color: #FF8900">Universus</span>
         </div>
         <div class="panel-body">
           <form name = "form" class="form-horizontal" action = ""
@@ -44,26 +44,27 @@
 
 
             <div class="form-group">
-              <label for="mail" class="control-label">E-mail</label>
+              <label for="mail" class="control-label">E-mail:</label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i> </span>
-                <input type="text" class="form-control" name="email" placeholder="Mail">
+                <input type="text" class="form-control" name="email" placeholder="E-Mail">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="password" class="control-label">Password</label>
+              <label for="password" class="control-label">Пароль:</label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input type="text" class="form-control" name="password" placeholder="Password">
+                <input type="text" class="form-control" name="password" placeholder="Пароль">
               </div>
             </div>
 
-            <button class="btn btn-primary" type="submit">Sing in!</button>
+            <button class="btn btn-primary" type="submit">Войти!</button>
 
           </form>
         </div>
         <div class="panel-footer">
+            <h4> Ещё не <a href="/singup">зарегистрированы?</a> </h4>
             {% if not result %}
                 <h4 class="text-danger bg-danger">Неправильный логин или пароль!</h4>
             {% endif %}

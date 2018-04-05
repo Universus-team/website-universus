@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from suds.client import Client
+from suds.sax.attribute import Attribute
+from suds.sax.element import Element
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-from suds.sax.attribute import Attribute
-from suds.sax.element import Element
 import json
 # Create your views here.
 @csrf_exempt

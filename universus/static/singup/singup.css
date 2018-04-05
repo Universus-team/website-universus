@@ -25,3 +25,23 @@ html body {
 	padding-left: 5%;
 	padding-right: 5%;
 }
+
+/* unvisited link */
+a:link {
+    color: #FF8900;
+}
+
+/* visited link */
+a:visited {
+    color: #ee5700;
+}
+
+/* mouse over link */
+a:hover {
+    color: #ffbd4d;
+}
+
+/* selected link */
+a:active {
+    color: #FF8900;
+}

@@ -18,5 +18,6 @@ from singup import views
 from django.urls import path, include
 
 urlpatterns = [
-    path('', views.singup, name='singup')
+    path('', views.singup, name='singup'),
+    path('departments/', views.departments, name='departments')
 ]

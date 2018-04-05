@@ -18,5 +18,10 @@ def show_profile(request):
         )
         client.set_options(soapheaders=auth)
         account = client.service.getAccount()
+        department = client.service.getDepartmentByIdLite(account.DepartmentId)
+        university = client.service.getUniversityByIdLite(department.UniversityId)
         role = getRoleById(account.RoleId)
-    return render(request, 'user_profile/user_profile.html', {'account' : account, 'role':role});
+    return render(request, 'user_profile/user_profile.html', {'account' : account,
+                                                              'role':role,
+                                                              'university': university,
+                                                              'department': department});

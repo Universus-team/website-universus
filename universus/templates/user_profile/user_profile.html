@@ -46,7 +46,7 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-md-3 col-lg-3 " align="center">
-              <img alt="User Pic" id="user-img" src="{% static 'common/img/photo.jpg' %}" class="img-circle img-responsive">
+              <img alt="User Pic" id="user-img" src="{{ account.PhotoURL }}" class="img-circle img-responsive">
             </div>
             
             <div class=" col-md-9 col-lg-9 "> 
@@ -54,19 +54,11 @@
                 <tbody>
                   <tr>
                     <td>Университет:</td>
-                    <td>ВлГУ</td>
+                    <td>{{ university.ShortName }}</td>
                   </tr>
                   <tr>
                     <td>Факультет/институт:</td>
-                    <td>Информационных технологий и радиоэлектронники</td>
-                  </tr>
-                  <tr>
-                    <td>Группа:</td>
-                    <td>ПРИ-115</td>
-                  </tr>
-                  <tr>
-                    <td>Курс:</td>
-                    <td>3</td>
+                    <td>{{ department.Name }}</td>
                   </tr>
                   <tr>
                     <td>Дата рождения:</td>
