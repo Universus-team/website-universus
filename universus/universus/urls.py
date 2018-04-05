@@ -37,7 +37,7 @@ urlpatterns = [
 
 
     # must be at the end
-    re_path('(^[a-zA-Z]+_$|^[a-zA-Z]+_/[a-zA-Z_]+$)', include('main.urls')),
+    re_path('^\/*[a-zA-Z]+_(?:\/[a-zA-Z0-9]+)*\/*$', include('main.urls')),
 ]
 
 

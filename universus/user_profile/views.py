@@ -9,6 +9,7 @@ from user_profile.util import getRoleById
 
 
 def show_profile(request):
+    print(1233)
     if request.session.get('id', False):
         client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
         auth = Element("AuthHeader").append((

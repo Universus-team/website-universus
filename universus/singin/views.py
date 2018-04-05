@@ -23,6 +23,7 @@ def singin(request):
             request.session['email'] = email
             request.session['password'] = password
             request.session['role_id'] = account.RoleId
+            # request.session['department_id'] = account.DepartmentId
             return HttpResponseRedirect('/profile_')
         else:
             return render(request, 'singin/singin.html', {'result': False})
