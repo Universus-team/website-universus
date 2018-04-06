@@ -20,10 +20,11 @@ def my_dialogs(request):
     dialogs = client.service.getDialogs()
     countMsgs = []
     lastMsgs = []
-    for account in dialogs.Account:
-        countMsgs.append(client.service.getCountNewMessages(account.Id))
-        lastMsgs.append(client.service.getLastMessage(account.Id))
-    data = zip(dialogs.Account, countMsgs, lastMsgs)
+    if dialogs:
+        for account in dialogs.Account:
+            countMsgs.append(client.service.getCountNewMessages(account.Id))
+            lastMsgs.append(client.service.getLastMessage(account.Id))
+        data = zip(dialogs.Account, countMsgs, lastMsgs)
     return render(request, 'chat/my_dialogs.html', {'dialogs': data})
 
 @csrf_exempt
