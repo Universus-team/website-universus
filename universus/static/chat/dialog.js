@@ -89,6 +89,7 @@ function loadAllMessages(fromId, toId) {
                         insertChat('собеседник', item['Message'], date)
                     }
                 }
+                gotoBottom('messages')
             }
         }
 
@@ -120,10 +121,16 @@ function loadNewMessages(fromId, toId) {
                         insertChat('собеседник', item['Message'], date)
                     }
                 }
+                gotoBottom('messages')
             }
         }
 
     })
+}
+
+function gotoBottom(id){
+   var element = document.getElementById(id);
+   element.scrollTop = element.scrollHeight - element.clientHeight;
 }
 
 /*$('textarea').keydown(function (e) {
