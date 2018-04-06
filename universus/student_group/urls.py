@@ -18,5 +18,6 @@ from student_group import views
 from django.urls import path, include, re_path
 
 urlpatterns = [
-    re_path('show/(?P<group_id>\d+)/', views.student_group, name='student_group')
+    re_path('show/(?P<group_id>\d+)/', views.student_group, name='student_group'),
+    re_path('add_student/(?P<group_id>\d+)/', views.add_student_to_group, name='add_student_to_group')
 ]

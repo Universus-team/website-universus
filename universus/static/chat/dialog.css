@@ -92,7 +92,7 @@ ul {
     list-style-type: none;
     padding:18px;
     position:absolute;
-    bottom: 70px;
+    bottom: 100px;
     display:flex;
     flex-direction: column;
     margin-right: 10px;
@@ -155,4 +155,32 @@ input:focus{
     border-width: 0 13px 13px 0;
     border-color: transparent #9cb4ff transparent transparent;
 }
+}
+
+
+
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+ul { -ms-overflow-style: none; }
+
+
+#messages {
+    max-height: 70%;
+    overflow-y:scroll;
+}
+
+#title {
+    text-align: center;
 }

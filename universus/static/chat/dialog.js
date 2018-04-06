@@ -2,21 +2,14 @@ var me = {};
 
 var you = {};
 
-function formatAMPM(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    return strTime;
+function formatDate(date) {
+    return moment(date).format('HH:mm DD-MM-YYYY');
 }
 
 //-- No use time. It is a javaScript effect.
-function insertChat(who, text, time = 0){
+function insertChat(who, text, date_msg){
     var control = "";
-    var date = formatAMPM(new Date());
+    var date = formatDate(date_msg);
 
     if (who == "me" || who == 'я'){
         control = '<li style="width:100%;">' +
@@ -37,11 +30,8 @@ function insertChat(who, text, time = 0){
                         '</div>' +
                     '</li>';
     }
-    setTimeout(
-        function(){
-            $("ul").append(control);
+    $("#messages").append(control);
 
-        }, time);
 
 }
 
@@ -57,9 +47,10 @@ function sendMessage(text) {
             type: 'POST',
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify({
+                'getNewMessages' : false,
+                'getDialog' : false,
                 'sendMessage' : true,
-                'message' : text,
-                'getDialog' : false
+                'message' : text
             }),
             dataType: 'text',
             success: function(result) {
@@ -71,7 +62,68 @@ function sendMessage(text) {
         }
     });
     }
+}
 
+function loadAllMessages(fromId, toId) {
+    $.ajax({
+        url: window.location.href,
+        type: 'POST',
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify({
+            'getNewMessages' : false,
+            'getDialog' : true,
+            'sendMessage' : false
+        }),
+        dataType: 'text',
+        success: function(result) {
+            var data = JSON.parse(result);
+            if (data['dialog']) {
+                count_msg = data['dialog'].length
+                for (var i = 0; i < count_msg; i++) {
+                    var item = data['dialog'][i];
+                    if (item['From'] === fromId) {
+                        var date = Date.parse(item['Date']);
+                        insertChat('me', item['Message'], date)
+                    } else {
+                        var date = Date.parse(item['Date']);
+                        insertChat('собеседник', item['Message'], date)
+                    }
+                }
+            }
+        }
+
+    })
+}
+
+function loadNewMessages(fromId, toId) {
+    $.ajax({
+        url: window.location.href,
+        type: 'POST',
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify({
+            'getNewMessages' : true,
+            'getDialog' : false,
+            'sendMessage' : false
+        }),
+        dataType: 'text',
+        success: function(result) {
+            var data = JSON.parse(result);
+            if (data['newMessage']) {
+                count_msg = data['messages'].length
+                for (var i = 0; i < count_msg; i++) {
+                    var item = data['messages'][i];
+                    if (item['From'] === fromId) {
+                        var date = Date.parse(item['Date']);
+                        insertChat('me', item['Message'], date)
+                    } else {
+                        var date = Date.parse(item['Date']);
+                        insertChat('собеседник', item['Message'], date)
+                    }
+                }
+            }
+        }
+
+    })
 }
 
 /*$('textarea').keydown(function (e) {
@@ -92,15 +144,13 @@ function sendMessage(text) {
 
 
 
-
-
-// insertChat("Trinity", "Wake up, Neo...", 0);
-// insertChat("Trinity", "The Matrix has you...",2000);
-// insertChat("Trinity", "Knock, knock, Neo.",4000);
-// insertChat("Trinity", "Follow the white rabbit.",6000);
-// insertChat("me", "Фига себе травка о.О",9000);
-
 $(document).ready(function () {
-    //-- Clear Chat
     resetChat();
+    loadAllMessages(+$('#fromUserId').text(), +$('#toUserId').text())
+    setTimeout(function () {
+        setInterval(function () {
+            loadNewMessages(+$('#fromUserId').text(), +$('#toUserId').text())
+        }, 3000)
+    }, 10000)
+
 })

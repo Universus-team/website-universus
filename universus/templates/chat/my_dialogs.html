@@ -46,32 +46,22 @@
         <div class="addon">
           <p>Твои сообщения:</p>
           <ul>
+
+          {% for account, count_msg, last_msg in dialogs %}
             <li class="clearfix">
-              <a href="/chat_body/show" >
-              <img class="round" src="https://upload.wikimedia.org/wikipedia/ru/thumb/4/4c/Neo2.jpg/220px-Neo2.jpg">
+              <a href="/chat_body/show/{{ account.Id }}/" >
+              <img class="round" src="{{ account.PhotoURL }}">
               <div class="legend-info">
-                <strong class="user-name">Томас А. Андерсон</strong>
-                  Тук! Тук! Нео!
+              {% if count_msg %}
+                <span class="badge">{{ count_msg }}</span>
+              {% endif %}
+                <strong class="user-name" style="display: inline-block">{{ account.Surname }} {{ account.Name }}</strong>
+                    <br>
+                    {{ last_msg.MessageContent }}
+
                 </div></a>
               </li>
-
-            <li class="clearfix">
-                <a href="/chat_body/show" >
-              <em class="extra"></em>
-                <img class="round" src="http://crosti.ru/patterns/00/12/4f/d69cfcc7e5/picture.jpg">
-              <div class="legend-info">
-                <strong class="user-name">Агент Смит</strong>Зачем? Во имя чего?
-              </div>
-            </li>
-
-            <li class="clearfix">
-                <a href="/chat_body/show" >
-              <em class="extra"></em>
-                <img class="round" src="http://img.rosbalt.ru/photobank/b/d/6/d/b6gHrWcK-580.jpg">
-              <div class="legend-info">
-                <strong class="user-name">Морфеус</strong>Ты избранный!
-              </div>
-            </li>
+          {% endfor %}
           </ul>
         </div>
     </div>

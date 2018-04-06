@@ -69,7 +69,11 @@
           <td><a href="../error/coming_soon">Тесты</a></td>
         </tr>
         <tr>
-          <td><a href="/chat_/list">Сообщения</a></td>
+          <td><a href="/chat_/list">Сообщения
+              {% if count_msg %}
+              <span class="badge">{{ count_msg }}</span>
+              {% endif %}
+          </a></td>
         </tr>
         <tr>
           <td><a href="/students_">Студенты</a></td>

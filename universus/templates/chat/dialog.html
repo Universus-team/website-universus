@@ -16,6 +16,9 @@
     <!-- Bootstrap  JS remote-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    {# moment.js LOCAL http://momentjs.com/   #}
+    <script src="{% static 'common/js/moment.js' %}"></script>
+
     {# Custom JS local  #}
     <script src="{% static 'chat/dialog.js' %}"></script>
 
@@ -24,7 +27,13 @@
 </head>
 <body>
     <div class="col-lg-10 col-lg-offset-4 frame dialog-list">
-        <ul></ul>
+
+        <h2 id="title">Чат с {{ interlocutor.Surname }} {{ interlocutor.Name }}</h2>
+
+        <span id="fromUserId" class="hidden">{{ account.Id }}</span>
+        <span id="toUserId" class="hidden">{{ interlocutor.Id }}</span>
+
+        <ul id="messages"></ul>
         <div>
             <div class="msj-rta macro msj-send" style="margin:auto;">
                 <div class="text text-send" style="display: inline-block ">
