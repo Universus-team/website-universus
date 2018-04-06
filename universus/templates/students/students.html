@@ -81,51 +81,26 @@
             </thead>
 
             <tbody id="students">
-            <tr>
-                <td class="user-name">
-                    <div class="media">
-                        <div class="media-left"><i class="far fa-user-circle fa-3x"></i></div>
-                        <div class="media-body">Ivanov Ivan</div>
-                    </div>
-                </td>
-                <td class="user-university">
-                    VLSU
-                </td>
-                <td class="user-university-department">
-                    Information technology
-                </td>
-            </tr>
-
-            <tr>
-                <td class="user-name">
-                    <div class="media">
-                        <div class="media-left"><i class="far fa-user-circle fa-3x"></i></div>
-                        <div class="media-body">Kurochkin Mikhail</div>
-                    </div>
-                </td>
-                <td class="user-university">
-                    MSU
-                </td>
-                <td class="user-university-department">
-                    Information technology
-                </td>
-            </tr>
-
-            <tr>
-                <td class="user-name">
-                    <div class="media">
-                        <div class="media-left"><i class="far fa-user-circle fa-3x"></i></div>
-                        <div class="media-body">Pushkin Alexsandr</div>
-                    </div>
-                </td>
-                <td class="user-university">
-                    VLSU
-                </td>
-                <td class="user-university-department">
-                    Jurisprudence
-                </td>
-            </tr>
-
+            {% for student, university, department in data %}
+                <tr onclick="window.location='/profile_body/show/{{ student.Id }}/';">
+                    <td class="user-name">
+                        <div class="media">
+                            <div class="media-left avatar"><img src="{{ student.PhotoURL }}"></div>
+                            <div class="media-body">{{ student.Surname }} {{ student.Name }} {{ student.Patronymic }}</div>
+                        </div>
+                    </td>
+                    <td class="user-university">
+                        {{ university.ShortName }}
+                    </td>
+                    <td class="user-university-department">
+                        {{ department.Name }}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <h3>Нет студентов :(</h3>
+                </tr>
+            {% endfor %}
             </tbody>
         </table>
     </div>

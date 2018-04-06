@@ -9,7 +9,6 @@ from user_profile.util import getRoleById
 
 
 def show_profile(request):
-    print(1233)
     if request.session.get('id', False):
         client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
         auth = Element("AuthHeader").append((
@@ -23,6 +22,19 @@ def show_profile(request):
         university = client.service.getUniversityByIdLite(department.UniversityId)
         role = getRoleById(account.RoleId)
     return render(request, 'user_profile/user_profile.html', {'account' : account,
+                                                              'role':role,
+                                                              'university': university,
+                                                              'department': department});
+
+
+def show_profile_by_id(request, account_id):
+    if request.session.get('id', False):
+        client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
+        account = client.service.getAccountById(int(account_id))
+        department = client.service.getDepartmentByIdLite(account.DepartmentId)
+        university = client.service.getUniversityByIdLite(department.UniversityId)
+        role = getRoleById(account.RoleId)
+    return render(request, 'user_profile/user_profile_id.html', {'account' : account,
                                                               'role':role,
                                                               'university': university,
                                                               'department': department});

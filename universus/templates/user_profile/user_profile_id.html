@@ -23,9 +23,9 @@
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
+
         {#  AWESOME ICONS fonts#}
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
-
 
     {#common style    #}
     <link rel="stylesheet" href="{% static 'common/css/common.css' %}">
@@ -35,16 +35,9 @@
 </head>
 <body>
 
-        <div class="btn-group btn-admin-group " >
-            <input id="edit-mode" type="checkbox" data-toggle="toggle" data-on="Edit on" data-off="Edit off">
-            <button id="save-change" class="btn btn-warning">
-                <i class="fa fa-save fa-lg"></i> Save change
-            </button>
-        </div>
-
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div id="user-name" class="field"> {{ account.Surname }} {{ account.Name }} {{ account.Patronymic }}
+          <div id="user-name"> {{ account.Surname }} {{ account.Name }} {{ account.Patronymic }}
               ({{ role }}) </div>
         </div>
         <div class="panel-body">
@@ -67,19 +60,19 @@
                   <tr>
                     <td>Дата рождения:</td>
                     <td>
-                        <input name="birth_day" type="date" value="{{ account.BirthDay|date:"Y-m-d" }}" class="field">
+                        {{ account.BirthDay|date:"Y-m-d" }}
                     </td>
                   </tr>
                   <tr>
                     <td>Адрес</td>
-                    <td><input name="address" type="text" value="{{ account.Address }}" class="field"></td>
+                    <td>{{ account.Address }}"</td>
                   </tr>
                   <tr>
                     <td>Email</td>
-                    <td><input name="email" type="email" value="{{ account.Email }}" class="field"></td>
+                    <td>{{ account.Email }}</td>
                   </tr>
                     <td>Номер телефона:</td>
-                    <td><input name="phone" type="tel" value="{{ account.Phone }}" class="field"></td>
+                    <td>{{ account.Phone }}</td>
                   </tr>
                  
                 </tbody>
@@ -92,12 +85,11 @@
             </div>
           </div>
         </div>
-         <div class="panel-footer">
-            <button class="btn btn-danger" data-toggle="modal" data-target="#delete_modal_profile">
-                <i class="fa fa-trash-alt fa-lg"></i> Удалить
-            </button>
-         </div>
-        
+             <div class="panel-footer">
+                  <button class="btn btn-danger" data-toggle="modal" data-target="#delete_modal_profile">
+                        <i class="fa fa-trash-alt fa-lg"></i> Удалить
+                  </button>
+             </div>
       </div>
     </div>
 
@@ -122,7 +114,6 @@
 
   </div>
 </div>
-
 
 </body>
 </html>

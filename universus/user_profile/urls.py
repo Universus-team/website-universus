@@ -15,8 +15,9 @@ Including another URLconf
 """
 
 from user_profile import views
-from django.urls import path
+from django.urls import path, re_path
 
 urlpatterns = [
-    path('', views.show_profile, name='show_profile')
+    path('', views.show_profile, name='show_profile'),
+    re_path('show/(?P<account_id>\d+)/', views.show_profile_by_id, name='show_profile_by_id')
 ]
