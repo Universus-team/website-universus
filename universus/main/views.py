@@ -22,8 +22,9 @@ def main(request):
     uni = client.service.getUniversityByIdLite(dep.UniversityId)
     count_msg = 0;
     dialogs = client.service.getDialogs()
-    for account in dialogs.Account:
-        count_msg += client.service.getCountNewMessages(account.Id)
+    if (dialogs):
+        for account in dialogs.Account:
+            count_msg += client.service.getCountNewMessages(account.Id)
     return render(request, 'main/main.html', {'university' : uni,
                                               'content_src' : content_src,
                                               'count_msg' : count_msg})
