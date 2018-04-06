@@ -51,13 +51,30 @@ function resetChat(){
 
 function sendMessage(text) {
     if (text !== "") {
-        insertChat('Я', text);
         $('#my_message').val('');
+        $.ajax({
+            url: window.location.href,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({
+                'sendMessage' : true,
+                'message' : text,
+                'getDialog' : false
+            }),
+            dataType: 'text',
+            success: function(result) {
+                data = JSON.parse(result)
+                if (data['result_send']) {
+                    insertChat("me",text, 0);
+                }
+
+        }
+    });
     }
 
 }
 
-$('textarea').keydown(function (e) {
+/*$('textarea').keydown(function (e) {
     console.log('keydown');
     if (e.keyCode === 13 && e.ctrlKey) {
         $(this).val(function(i,val){
@@ -71,19 +88,19 @@ $('textarea').keydown(function (e) {
         sendMessage($(this).val())
         return false;
     }
-});
-
-
-//-- Clear Chat
-resetChat();
-
-//-- Print Messages
-insertChat("Trinity", "Wake up, Neo...", 0);
-insertChat("Trinity", "The Matrix has you...",2000);
-insertChat("Trinity", "Knock, knock, Neo.",4000);
-insertChat("Trinity", "Follow the white rabbit.",6000);
-insertChat("me", "Фига себе травка о.О",9000);
+});*/
 
 
 
-//-- NOTE: No use time on insertChat.
+
+
+// insertChat("Trinity", "Wake up, Neo...", 0);
+// insertChat("Trinity", "The Matrix has you...",2000);
+// insertChat("Trinity", "Knock, knock, Neo.",4000);
+// insertChat("Trinity", "Follow the white rabbit.",6000);
+// insertChat("me", "Фига себе травка о.О",9000);
+
+$(document).ready(function () {
+    //-- Clear Chat
+    resetChat();
+})

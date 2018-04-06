@@ -15,9 +15,9 @@ Including another URLconf
 """
 
 from chat import views
-from django.urls import path, include
+from django.urls import path, include, re_path
 
 urlpatterns = [
     path('list/', views.my_dialogs, name='my_dialogs'),
-    path('show/', views.dialog, name='dialog')
+    re_path('show/(?P<to_user_id>\d+)/', views.dialog, name='dialog')
 ]
