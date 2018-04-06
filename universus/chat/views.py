@@ -20,6 +20,7 @@ def my_dialogs(request):
     dialogs = client.service.getDialogs()
     countMsgs = []
     lastMsgs = []
+    data = []
     if dialogs:
         for account in dialogs.Account:
             countMsgs.append(client.service.getCountNewMessages(account.Id))
