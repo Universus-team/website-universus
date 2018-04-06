@@ -57,6 +57,7 @@ function sendMessage(text) {
                 data = JSON.parse(result)
                 if (data['result_send']) {
                     insertChat("me",text, 0);
+                    gotoBottom('messages')
                 }
 
         }
