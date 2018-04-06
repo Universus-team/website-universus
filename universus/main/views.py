@@ -15,14 +15,15 @@ def main(request):
     )
     client.set_options(soapheaders=auth)
     dep_id = request.session.get('department_id', False)
-    if (dep_id):
-        dep = client.service.getDepartmentByIdLite(dep_id)
-        uni = client.service.getUniversityByIdLite(dep.UniversityId)
-        count_msg = 0;
-        dialogs = client.service.getDialogs()
-        for account in dialogs.Account:
-            count_msg += client.service.getCountNewMessages(account.Id)
-        return render(request, 'main/main.html', {'university' : uni,
-                                                  'content_src' : content_src,
-                                                  'count_msg' : count_msg})
-    return render(request, 'main/main.html', {'content_src' : content_src})
+    if not dep_id:
+        account = client.service.getAccount()
+        dep_id = account.DepartmentId
+    dep = client.service.getDepartmentByIdLite(dep_id)
+    uni = client.service.getUniversityByIdLite(dep.UniversityId)
+    count_msg = 0;
+    dialogs = client.service.getDialogs()
+    for account in dialogs.Account:
+        count_msg += client.service.getCountNewMessages(account.Id)
+    return render(request, 'main/main.html', {'university' : uni,
+                                              'content_src' : content_src,
+                                              'count_msg' : count_msg})
