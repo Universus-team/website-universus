@@ -86,14 +86,16 @@
           </div>
         </div>
              <div class="panel-footer">
+                 {% if role_id == 3 or role_id == 4 %}
                   <button class="btn btn-danger" data-toggle="modal" data-target="#delete_modal_profile">
                         <i class="fa fa-trash-alt fa-lg"></i> Удалить
                   </button>
+                 {% endif %}
              </div>
       </div>
     </div>
 
-
+{% if role_id == 3 or role_id == 4 %}
 <div id="delete_modal_profile" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -104,7 +106,7 @@
       </div>
       <div class="modal-body">
         <h4>Вы действительно хотите удалить этот профиль?</h4>
-        <a class="btn btn-danger" href="/profile_body/delete/123/">Да</a>
+        <a class="btn btn-danger" href="/profile_body/delete/{{ account.Id }}/">Да</a>
         <button class="btn btn-primary" data-dismiss="modal">Нет</button>
       </div>
       <div class="modal-footer">
@@ -114,6 +116,6 @@
 
   </div>
 </div>
-
+{% endif %}
 </body>
 </html>
