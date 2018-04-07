@@ -16,18 +16,18 @@ def singup(request):
    if request.method == 'POST':
        account = client.factory.create('Account')
        account.Id = 0
-       account.Name = request.POST.get('name', '')
-       account.Surname = request.POST.get('surname', '')
-       account.Patronymic = request.POST.get('patronymic', '')
-       account.Address = request.POST.get('address', '')
-       account.Email = request.POST.get('email', '')
-       account.Phone = request.POST.get('phone', '')
-       account.PasswordMD5 = request.POST.get('password', '')
-       account.DepartmentId = request.POST.get('department', 1)
-       account.BirthDay = request.POST.get('birth_day', '')
+       account.Name = request.POST['name']
+       account.Surname = request.POST['surname']
+       account.Patronymic = request.POST['patronymic'] if request.POST['patronymic'] else ' '
+       account.Address = request.POST['address'] if request.POST['address'] else 'не задан'
+       account.Email = request.POST['email']
+       account.Phone = request.POST['phone'] if request.POST['phone'] else 'не задан'
+       account.PasswordMD5 = request.POST['password']
+       account.DepartmentId = request.POST['department']
+       account.BirthDay = request.POST['birth_day']
        account.RoleId = 1;
 
-       if request.FILES['photo']:
+       if request.FILES and request.FILES['photo']:
             cloudinary.config(
                  cloud_name="universusimages",
                  api_key="421689719673152",
@@ -39,6 +39,8 @@ def singup(request):
                  width = 700,
                  height = 700
             )['url']
+       else:
+           account.PhotoURL = 'http://res.cloudinary.com/universusimages/image/upload/v1523119802/default.png'
        id = client.service.addStudent(account)
        if id > 0:
              request.session['id'] = id

@@ -6,6 +6,9 @@ from suds.sax.element import Element
 
 # Create your views here.
 def singin(request):
+    if request.session.get('email', False):
+        return HttpResponseRedirect('/profile_')
+
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -23,8 +26,14 @@ def singin(request):
             request.session['email'] = email
             request.session['password'] = password
             request.session['role_id'] = account.RoleId
-            # request.session['department_id'] = account.DepartmentId
             return HttpResponseRedirect('/profile_')
         else:
             return render(request, 'singin/singin.html', {'result': False})
     return render(request, 'singin/singin.html', {'result': True})
+
+def logout(request):
+    del request.session['id']
+    del request.session['email']
+    del request.session['password']
+    del request.session['role_id']
+    return HttpResponseRedirect('/')

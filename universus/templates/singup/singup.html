@@ -116,12 +116,11 @@
               </div>
             </div>
 
-            <!-- useful link https://itchief.ru/lessons/bootstrap-3/113-bootstrap-3-datetimepicker -->
             <div class="form-group">        
-                <label for="birth_day" class="control-label">День рождения:</label>
+                <label for="birth_day" class="control-label">День рождения*:</label>
                 <div class="input-group">
                   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                  <input type='date' class="form-control" name="birth_day" id="birth_day" />
+                  <input type='date' class="form-control" name="birth_day" id="birth_day" required/>
                 </div>
             </div>
 
@@ -129,7 +128,7 @@
                 <label for="sel1">Выберите университет*:</label>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-                    <select class="form-control" id="universities" name="university">
+                    <select class="form-control" id="universities" name="university" required>
                         <option value="0" selected disabled hidden>Выберите университет</option>
                         {% for univer in universities %}
                             <option value="{{ univer.Id }}">{{ univer.ShortName }}</option>
@@ -142,13 +141,13 @@
                 <label for="sel1">Выберите отдел*:</label>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-                    <select class="form-control" id="departments" name="department">
+                    <select class="form-control" id="departments" name="department" required>
                     </select>
                 </div>
             </div>
 
 
-            <button class="btn btn-primary" type="submit">Зарегистрироваться!</button>
+            <button class="btn btn-primary btn-lg" type="submit">Зарегистрироваться!</button>
 
 
           </form>

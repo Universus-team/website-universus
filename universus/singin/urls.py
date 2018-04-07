@@ -18,5 +18,7 @@ from singin import views
 from django.urls import path, include
 
 urlpatterns = [
-    path('', views.singin, name='singin')
+    path('', views.singin, name='singin'),
+    path('logout/', views.logout,  name='logout')
+
 ]

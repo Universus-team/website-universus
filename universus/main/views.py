@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from suds.client import Client
 from suds.sax.attribute import Attribute
@@ -5,6 +6,8 @@ from suds.sax.element import Element
 
 # Create your views here.
 def main(request):
+    if not request.session.get('email', False):
+        return HttpResponseRedirect('/')
     # формируем ссылку для фрейма
     content_src = request.path[:request.path.index('_')+1] + 'body' + request.path[request.path.index('_')+1:]
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
