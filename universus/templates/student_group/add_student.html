@@ -49,6 +49,7 @@
         <h3 class="alert alert-info">
            Добавление студента в группу {{ group.Name }}
         </h3>
+        <p class="alert alert-info">Найдите студента и кликните по нему, чтобы добавить в группу.</p>
         <table class="table table-bordered table-hover">
 
             <thead>
@@ -85,7 +86,7 @@
 
             <tbody id="students">
             {% for student, university, department in data %}
-                <tr onclick="addStudent({{ group.Id }}, {{ student.Id }});">
+                <tr onclick="window.location='/studentgroup_body/added_student/{{ group.Id }}/{{ student.Id }}/';">
                     <td class="user-name">
                         <div class="media">
                             <div class="media-left avatar"><img src="{{ student.PhotoURL }}"></div>

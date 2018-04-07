@@ -2,20 +2,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chat</title>
-        <!-- custom style local-->
+<title>Список диалогов</title>
+    <!-- custom style local-->
     <link rel="stylesheet" type="text/css" href="{% static 'chat/my_dialogs.css' %}">
 
     <!-- Bootstrap CSS remote-->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     {#  AWESOME ICONS fonts#}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- jQuery local-->
     <script type="text/javascript" src="{% static 'common/js/jquery-1.11.1.min.js' %}"></script>
 
-{#    Highlight jquery plugin #}
+    {#Highlight jquery plugin #}
     <script src='{% static "common/js/highlight_jquery_plugin.js" %}'></script>
 
     <!-- Bootstrap  JS remote-->
@@ -62,7 +62,7 @@
                 </div></a>
               </li>
           {% empty %}
-          <h4>У вас ещё нет открытых диалогов.</h4>
+          <h3 style="margin-left: 20px">У вас ещё нет открытых диалогов.</h3>
           {% endfor %}
           </ul>
         </div>

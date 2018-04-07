@@ -1,7 +1,4 @@
 
-function addStudent(group_id, student_id) {
-    alert("added student")
-}
 
 $(document).ready(function () {
 

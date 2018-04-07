@@ -49,11 +49,8 @@
             <div class="panel-body">
                 <div class="row">
                    <div class="btn-group col-sm-5 btn-admin-group">
-                        <a class="btn btn-primary" href="">
-                            <i class="fa fa-plus-circle fa-lg"></i> Добавить преподавателя
-                        </a>
                         <button class="btn btn-danger" data-toggle="modal" data-target="#delete_modal">
-                            <i class="fa fa-trash-alt fa-lg"></i> Удалить
+                            <i class="fa fa-trash-alt fa-lg"></i> Удалить группу
                         </button>
                     </div>
                     <div class="col-sm-5 btn-group btn-admin-group ">
@@ -89,14 +86,15 @@
 
 
         <div class="row">
-            {# Members of group#}
+            {# Students of group#}
             <div class="col-sm-6">
                 {% if role_id == 2 or role_id == 3 or role_id == 4%}
 
                 {# Student manager bar#}
                 <div class="btn-group btn-admin-group">
-                    <a href="/studentgroup_body/add_student/{{ group.Id }}/" class="btn btn-primary"><i class="fa fa-plus-circle fa-lg"></i> Добавить студента</a>
-                    <a href="" class="btn btn-danger"><i class="fa fa-trash-alt fa-lg"></i> Удалить студента</a>
+                    <a href="/studentgroup_body/add_student/{{ group.Id }}/" class="btn btn-primary">
+                        <i class="fa fa-plus-circle fa-lg"></i> Добавить студента
+                    </a>
                 </div>
 
                 {% endif %}
@@ -114,34 +112,84 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <td><h4>Список участников</h4></td>
+                        <td colspan="2" ><h4>Список студентов</h4></td>
                     </tr>
                     </thead>
                     <tbody id="students" >
-                    <tr>
+                    {%  for account in students %}
+                    <tr onclick="window.location='/profile_body/show/{{ account.Id }}/';">
                         <td>
                             <div class="media">
-                                <div class="media-left"><i class="far fa-user-circle fa-4x"></i></div>
-                                <div class="media-body">Ivanov Ivan</div>
+                                <div class="media-left avatar"><img src="{{ account.PhotoURL  }}"></div>
+                                <div class="media-body">{{ account.Surname }}
+                                    {{ account.Name }} {{ account.Patronymic }}</div>
+                            </div>
+                        </td>
+                        <td>
+                            <a href="/studentgroup_body/delete_student/{{ group.Id }}/{{ account.Id }}/" class="btn btn-danger"><i class="fa fa-trash-alt fa-lg"></i></a>
+                        </td>
+                    </tr>
+
+                    {% empty %}
+                    <tr>
+                        <td>
+                            <h4>Студентов нет</h4>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+
+            {# Teachers of group#}
+            <div class="col-sm-6">
+                {% if role_id == 2 or role_id == 3 or role_id == 4%}
+
+                {# Teachers manager bar#}
+                <div class="btn-group btn-admin-group">
+                    <a href="/studentgroup_body/add_teacher/{{ group.Id }}/" class="btn btn-primary">
+                        <i class="fa fa-plus-circle fa-lg"></i> Добавить преподавателя
+                    </a>
+                </div>
+
+                {% endif %}
+
+
+                {#    Search#}
+                <div class="input-group">
+                    <input id="search_teacher" type="text" class="form-control" type="text" placeholder="Search..">
+                    <div class="input-group-addon">
+                        <i class="fa fa-search fa-lg"></i>
+                    </div>
+                </div>
+
+
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <td><h4>Список преподавателей</h4></td>
+                    </tr>
+                    </thead>
+                    <tbody id="teachers" >
+                    {%  for account in teachers %}
+                    <tr onclick="window.location='/profile_body/show/{{ account.Id }}/';">
+                        <td>
+                            <div class="media">
+                                <div class="media-left avatar"><img src="{{ account.PhotoURL  }}"></div>
+                                <div class="media-body">{{ account.Surname }}
+                                    {{ account.Name }} {{ account.Patronymic }}</div>
                             </div>
                         </td>
                     </tr>
+
+                    {% empty %}
                     <tr>
                         <td>
-                            <div class="media">
-                                <div class="media-left"><i class="far fa-user-circle fa-4x"></i></div>
-                                <div class="media-body">Kurochkin Mikhail</div>
-                            </div>
+                            <h4>Преподавателей нет</h4>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <div class="media">
-                                <div class="media-left"><i class="far fa-user-circle fa-4x"></i></div>
-                                <div class="media-body">Pushkin Alexsandr</div>
-                            </div>
-                        </td>
-                    </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
 
@@ -162,15 +210,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Delete the group</h4>
+        <h4 class="modal-title">Удалить группу?</h4>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to delete the group?</p>
-        <button class="btn btn-danger">Yes</button>
-        <button class="btn btn-primary" data-dismiss="modal">No</button>
+        <p>Вы уверены, что хотите удалить эту группу?</p>
+        <button class="btn btn-danger">Да</button>
+        <button class="btn btn-primary" data-dismiss="modal">Нет</button>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
       </div>
     </div>
 
@@ -186,15 +234,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Leave the group</h4>
+        <h4 class="modal-title">Покинуть группу?</h4>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to leave the group?</p>
-        <button class="btn btn-danger">Yes</button>
-        <button class="btn btn-primary" data-dismiss="modal">No</button>
+        <p>Вы уверены, что хотите покинуть эту группу?</p>
+        <button class="btn btn-danger">Да</button>
+        <button class="btn btn-primary" data-dismiss="modal">Нет</button>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
       </div>
     </div>
 
