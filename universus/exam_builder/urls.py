@@ -18,5 +18,7 @@ from exam_builder import views
 from django.urls import path, include
 
 urlpatterns = [
-    path('', views.exam_buider, name='exam_builder')
+    path('add/', views.exam_buider, name='exam_builder'),
+    path('list/', views.exam_list, name='exam_list'),
+
 ]

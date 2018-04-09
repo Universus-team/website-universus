@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {#    Bootstrap 3 CSS remote#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    {#    jQuery#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    {#    Highlight jquery plugin #}
+    <script src='{% static "common/js/highlight_jquery_plugin.js" %}'></script>
+
+    {#    Bootstrap JS remote#}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {#    custom script#}
+    <script src="{% static 'exam_builder/exam_list.js' %}"></script>
+
+        {#    Bootstrap 3 CSS remote#}
+    <link rel="stylesheet" href="{% static 'common/css/common.css' %}">
+
+    {#  AWESOME ICONS fonts#}
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+    {% if role_id == 2 or role_id == 3 or role_id == 4 %}
+        <a href="/exambuilder_body/">Создать тест</a>
+    {% endif %}
+
+
+    {#Search panel#}
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <div class="input-group">
+                <input id="search" type="text" class="form-control" type="text" placeholder="Search..">
+                <div class="input-group-addon">
+                    <i class="fa fa-search fa-lg"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+        <table class="table table-hover" >
+            <thead>
+                <tr>
+                    <td></td>
+                    <td><b>Тест</b></td>
+                    <td><b>Описание</b></td>
+                </tr>
+            </thead>
+            <tbody id="exams">
+
+                {% for exam in exams %}
+
+                    <tr onclick="window.location='/exambuilder_body/show/{{ exam.Id }}/';" style="font-size: 18px">
+                        <td>
+                            <i class="fa fa-clipboard-list fa-3x"></i>
+                        </td>
+                        <td>{{ exam.Title }}</td>
+                        <td width="50%">{{  exam.Description|truncatechars:100 }}</td>
+                    </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

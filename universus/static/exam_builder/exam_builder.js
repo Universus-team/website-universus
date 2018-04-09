@@ -34,8 +34,8 @@ function formatDoc(sCmd, sValue) {
 function readExam() {
     //считывает поля страницы в объект exam и возвращает этот объект
     var exam = {
-        title : $('#title').text(),
-        description : $('#description').text(),
+        title : $('#title').val(),
+        description : $('#description').val(),
         tests:[]
     }
     //not('.template .test') используется, чтобы не обрабатывать данные шаблона,
