@@ -8,8 +8,8 @@ from datetime import datetime
 @csrf_exempt
 def exam_buider(request):
     if request.method == 'POST':
-        data = request.body
-        print(data)
+        data = request.body.decode('utf-8')
+        exam = json.loads(data)
         response = {
             'status': 1,
             'message': 'Сохранено '+datetime.strftime(datetime.now(), '%H:%M:%S')

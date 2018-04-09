@@ -5,9 +5,9 @@ window.onload = function (ev) {
     obj.style.height = obj.contentWindow.document.body.scrollHeight +15+ 'px';
     setInterval(
         function () {
-            obj.style.height = obj.contentWindow.document.body.scrollHeight +15+ 'px';
+            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
         },
-        300
+        1000
     )
 
 }

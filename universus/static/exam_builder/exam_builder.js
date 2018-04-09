@@ -34,13 +34,15 @@ function formatDoc(sCmd, sValue) {
 function readExam() {
     //считывает поля страницы в объект exam и возвращает этот объект
     var exam = {
+        title : $('#title').text(),
+        description : $('#description').text(),
         tests:[]
     }
     //not('.template .test') используется, чтобы не обрабатывать данные шаблона,
     //используемого для формирования конструктора тестов
     $('.test').not('.template .test').each(function (i) {
         exam.tests.push({
-            question: $(this).find('.question-textarea').text(),
+            question: $(this).find('.question-textarea').html(),
             answers: []
         })
         $(this).find('.posible-answer').each(function () {
