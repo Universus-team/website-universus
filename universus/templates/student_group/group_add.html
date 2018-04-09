@@ -22,7 +22,7 @@
         <div class="col-sm-8">
 
             <div class="panel panel-success">
-                <div class="panel-heading">Добавление отдела в университет {{ university.ShortName }}</div>
+                <div class="panel-heading">Добавление группы в {{ department.Name }}</div>
                 <div class="panel-body">
 
                     <form action="" method="post">
@@ -36,8 +36,8 @@
                             <textarea type="text" id="in2" class="form-control" name="description" rows="5" maxlength="65000"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="in1">Декан:</label>
-                            <input type="text" id="in1" class="form-control" name="dean"  maxlength="100">
+                            <label for="in1">Дата создания:</label>
+                            <input type="date" id="in1" class="form-control" name="created_date" required>
                         </div>
                         <input type="submit" class="btn btn-primary btn-lg" value="Добавить">
                     </form>
@@ -45,13 +45,13 @@
 
                 </div>
                 <div class="panel panel-footer">
-                    <a class="btn btn-primary" href="/university_body/show/{{ university.Id }}/">Вернуться в университет</a>
+                    <a class="btn btn-primary" href="/department_body/show/{{ department.Id }}">Вернуться в отдел</a>
                     {% if result == 1 %}
-                    <h3 class="alert alert-success">Отдел был добавлен</h3>
+                    <h4 class="alert alert-success">Группа была добавлена</h4>
                     {% elif result == -1 %}
-                    <h3 class="alert alert-danger">Ошибка базы данных, отдел добавлен не был</h3>
+                    <h4 class="alert alert-danger">Ошибка базы данных.</h4>
                     {% elif result == -2 %}
-                    <h3 class="alert alert-danger">Ошибка нет прав доступа, отдел добавлен не был</h3>
+                    <h4 class="alert alert-danger">Ошибка нет прав доступа.</h4>
                     {% endif %}
                 </div>
             </div>

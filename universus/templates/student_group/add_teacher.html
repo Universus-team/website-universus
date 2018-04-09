@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers</title>
+
+    {# Bootstrap 3 CSS remote#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    {#    jQuery#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    {#    Highlight jquery plugin #}
+    <script src='{% static "common/js/highlight_jquery_plugin.js" %}'></script>
+
+    {#  AWESOME ICONS fonts#}
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+    {#    Bootstrap 3 JS remote#}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {#    Bootstrap toogle plugin#}
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+    {#    fonts#}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {#custom style  #}
+    <link rel="stylesheet" href="{% static 'students/students.css' %}">
+
+    {#custom JS#}
+    <script src="{% static 'student_group/add_teacher.js' %}"></script>
+
+    {#common style    #}
+    <link rel="stylesheet" href="{% static 'common/css/common.css' %}">
+
+    {#common JS    #}
+    <script src="{% static 'common/js/common.js' %}"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <h3 class="alert alert-info">
+           Добавление преподавателя в группу {{ group.Name }}
+        </h3>
+        <p class="alert alert-info">Найдите преподавателя и кликните по нему, чтобы добавить в группу.</p>
+        <table class="table table-bordered table-hover">
+
+            <thead>
+                <tr>
+                    <td>
+                        Преподаватель
+                    </td>
+                    <td>
+                        Университет
+                    </td>
+                    <td>
+                        Отдел
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        {#    Search student#}
+                        <input id="search_teacher" type="text" class="form-control" type="text" placeholder="Search">
+                    </td>
+                    <td>
+                        {#    Search university#}
+                        <input id="search_university" type="text" class="form-control" type="text" placeholder="Search">
+                    </td>
+                    <td>
+                        {#    Search department#}
+                        <input id="search_department" type="text" class="form-control" type="text" placeholder="Search">
+                    </td>
+
+                </tr>
+
+
+            </thead>
+
+            <tbody id="teachers">
+            {% for teacher, university, department in data %}
+                <tr onclick="window.location='/studentgroup_body/added_teacher/{{ group.Id }}/{{ teacher.Id }}/';">
+                    <td class="user-name">
+                        <div class="media">
+                            <div class="media-left avatar"><img src="{{ teacher.PhotoURL }}"></div>
+                            <div class="media-body">{{ teacher.Surname }} {{ teacher.Name }} {{ teacher.Patronymic }}</div>
+                        </div>
+                    </td>
+                    <td class="user-university">
+                        {{ university.ShortName }}
+                    </td>
+                    <td class="user-university-department">
+                        {{ department.Name }}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <h3>Нет преподавателей :(</h3>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

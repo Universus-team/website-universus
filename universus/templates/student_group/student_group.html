@@ -125,9 +125,15 @@
                                     {{ account.Name }} {{ account.Patronymic }}</div>
                             </div>
                         </td>
+
+                        {% if role_id == 2 or role_id == 3 or role_id == 4 %}
                         <td>
-                            <a href="/studentgroup_body/delete_student/{{ group.Id }}/{{ account.Id }}/" class="btn btn-danger"><i class="fa fa-trash-alt fa-lg"></i></a>
+                            <a href="/studentgroup_body/delete_student/{{ group.Id }}/{{ account.Id }}/"
+                               class="btn btn-danger">
+                                <i class="fa fa-trash-alt fa-lg"></i>
+                            </a>
                         </td>
+                        {% endif %}
                     </tr>
 
                     {% empty %}
