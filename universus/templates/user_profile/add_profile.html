@@ -1,0 +1,175 @@
+
+{% load static %}﻿
+<!DOCTYPE html>
+<html lang="rus" >
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- fonts remote-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+
+    <!-- custom style local-->
+    <link rel="stylesheet" type="text/css" href="{% static 'user_profile/add_profile.css' %}">
+
+    <!-- Bootstrap CSS remote-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  
+
+    <!-- jQuery local-->
+    <script type="text/javascript" src="{% static 'common/js/jquery-1.11.1.min.js' %}"></script>
+
+    <!-- Bootstrap  JS remote-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="{% static 'common/js/moment-with-locales.min.js' %}"></script>
+    <!-- widget "Bootstrap datetimepicker" -->
+    <script type="text/javascript" src="{% static 'common/js/bootstrap-datetimepicker.min.js' %}"></script>
+    <!--  CSS widget "Bootstrap datetimepicker" -->  
+    <link rel="stylesheet" href="{% static 'common/css/bootstrap-datetimepicker.min.css' %}" />
+
+      <!-- custom scripts-->
+    <script type="text/javascript" src="{% static 'user_profile/add_profile.js' %}"></script>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="panel panel-default singup">
+        <div class="panel-heading title text-center">
+          Добавление нового пользователя
+        </div>
+        <div class="panel-body">
+          <form name = "form" class="form-horizontal" action = "" 
+             method = "POST" enctype="multipart/form-data">
+              {% csrf_token %}
+            Обязательные поля помеченны *
+            <div class="form-group">
+              <label for="role" class="control-label">Роль*:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-warning-sign"></i> </span>
+                <select name="role" class="form-control" required>
+                    <option value="1">Студент</option>
+                    <option value="2">Преподаватель</option>
+                    {% if role_id %}
+                    <option value="3">Модератор</option>
+                    <option value="4">Админ</option>
+                    {% endif %}
+                </select>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="name" class="control-label">Имя*:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> </span>
+                <input type="text" class="form-control" name="name" placeholder="Имя" required maxlength="32">
+              </div>
+            </div>                
+
+            <div class="form-group">
+              <label for="surname" class="control-label">Фамилия*:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> </span>
+                <input type="text" class="form-control" name="surname" placeholder="Фамилия" required maxlength="32">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="patronymic" class="control-label">Отчество:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> </span>
+                <input type="text" class="form-control" name="patronymic" placeholder="Отчество" maxlength="42">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="photo" class="control-label">Загрузите аватар:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-camera"></i></span>
+                <input type="file" class="form-control" name="photo"
+                       accept="image/x-png,image/gif,image/jpeg" placeholder="Повторите пароль">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="control-label">E-mail*:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i> </span>
+                <input type="text" class="form-control" name="email" placeholder="E-Mail" required maxlength="255">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="control-label">Телефон:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i> </span>
+                <input type="text" class="form-control" name="phone" placeholder="Телефон" maxlength="20">
+              </div>
+            </div>
+
+              <div class="form-group">
+              <label for="phone" class="control-label">Адрес:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i> </span>
+                <input type="text" class="form-control" name="address" placeholder="Домашний адрес" maxlength="20">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="control-label">Пароль*:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input type="password" class="form-control" name="password" placeholder="Пароль" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="control-label">Повторите пароль*:</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input type="password" class="form-control" name="password2" placeholder="Повторите пароль" required>
+              </div>
+            </div>
+
+            <div class="form-group">        
+                <label for="birth_day" class="control-label">День рождения*:</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                  <input type='date' class="form-control" name="birth_day" id="birth_day" required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sel1">Выберите университет*:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
+                    <select class="form-control" id="universities" name="university" required>
+                        <option value="0" selected disabled hidden>Выберите университет</option>
+                        {% for univer in universities %}
+                            <option value="{{ univer.Id }}">{{ univer.ShortName }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sel1">Выберите отдел*:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
+                    <select class="form-control" id="departments" name="department" required>
+                    </select>
+                </div>
+            </div>
+
+
+          </form>
+        </div>
+      <div class="panel panel-footer">
+          <button class="btn btn-primary btn-lg" type="submit">Добавить</button>
+      </div>
+      </div>
+    </div>
+
+  </body>
+</html>

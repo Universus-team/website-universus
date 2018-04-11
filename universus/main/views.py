@@ -28,6 +28,9 @@ def main(request):
     if (dialogs):
         for account in dialogs.Account:
             count_msg += client.service.getCountNewMessages(account.Id)
-    return render(request, 'main/main.html', {'university' : uni,
-                                              'content_src' : content_src,
-                                              'count_msg' : count_msg})
+
+    role_id = request.session.get('role_id', 0)
+    return render(request, 'main/main.html', {'university': uni,
+                                              'content_src': content_src,
+                                              'count_msg': count_msg,
+                                              'role_id': role_id})

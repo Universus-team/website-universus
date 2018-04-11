@@ -1,3 +1,5 @@
+from cloudinary.templatetags import cloudinary
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from suds.client import Client
 from suds.sax.attribute import Attribute
@@ -53,3 +55,54 @@ def delete_user_profile(request, account_id):
     return render(request, 'user_profile/user_profile_delete.html',
                   {'result': result,
                    'profile': acc})
+
+def add_user_profile(request):
+    client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
+    auth = Element("AuthHeader").append((
+        Element('Email').setText(request.session.get('email', '')),
+        Element('Password').setText(request.session.get('password', '')),
+        Attribute('xmlns', 'http://universus-webservice.ru/'))
+    )
+    client.set_options(soapheaders=auth)
+
+    if request.method == 'POST':
+        account = client.factory.create('Account')
+        account.Id = 0
+        account.Name = request.POST['name']
+        account.Surname = request.POST['surname']
+        account.Patronymic = request.POST['patronymic'] if request.POST['patronymic'] else ' '
+        account.Address = request.POST['address'] if request.POST['address'] else 'не задан'
+        account.Email = request.POST['email']
+        account.Phone = request.POST['phone'] if request.POST['phone'] else 'не задан'
+        account.PasswordMD5 = request.POST['password']
+        account.DepartmentId = request.POST['department']
+        account.BirthDay = request.POST['birth_day']
+        account.RoleId = request.POST['role'];
+
+        if request.FILES and request.FILES['photo']:
+            cloudinary.config(
+                cloud_name="universusimages",
+                api_key="421689719673152",
+                api_secret="E3pIIQne8HbWnxnJiyNm9NFGCxY"
+            )
+            account.PhotoURL = cloudinary.uploader.upload(
+                request.FILES['photo'].read(),
+                crop='fit',
+                width=700,
+                height=700
+            )['url']
+        else:
+            account.PhotoURL = 'http://res.cloudinary.com/universusimages/image/upload/v1523119802/default.png'
+        id = client.service.addStudent(account)
+        if id > 0:
+            request.session['id'] = id
+            request.session['email'] = account.Email
+            request.session['password'] = account.PasswordMD5
+            request.session['role_id'] = account.RoleId
+            return HttpResponseRedirect('/profile_/show/'+str(id))
+
+    uni = client.service.getAllUniversitiesLite()
+    role_id = request.session.get('role_id', 0)
+    return render(request, 'user_profile/add_profile.html', {
+        'universities': uni.University if uni else [],
+        'role_id': role_id})

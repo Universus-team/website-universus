@@ -21,4 +21,5 @@ urlpatterns = [
     path('', views.show_profile, name='show_profile'),
     re_path('show/(?P<account_id>\d+)/', views.show_profile_by_id, name='show_profile_by_id'),
     re_path('delete/(?P<account_id>\d+)/', views.delete_user_profile, name='delete_user_profile'),
+    path('add/', views.add_user_profile, name='add_user_profile'),
 ]
