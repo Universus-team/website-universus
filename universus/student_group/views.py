@@ -160,3 +160,18 @@ def leave_group(request, group_id):
     else:
         return HttpResponseRedirect('/studentgroup_body/show/'+group_id)
 
+def delete_group(request, group_id):
+    client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
+    auth = Element("AuthHeader").append((
+        Element('Email').setText(request.session.get('email', '')),
+        Element('Password').setText(request.session.get('password', '')),
+        Attribute('xmlns', 'http://universus-webservice.ru/'))
+    )
+    client.set_options(soapheaders=auth)
+    group = client.service.getStudentGroupByIdLite(int(group_id))
+    res = client.service.deleteStudentGroup(int(group_id))
+    if res > 0:
+        return HttpResponseRedirect('/department_body/show/'+str(group.DepartmentID))
+    else:
+        return HttpResponseRedirect('/studentgroup_body/show/' + group_id)
+

@@ -30,5 +30,7 @@ urlpatterns = [
             views.delete_student, name='delete_student'),
     re_path('leave/(?P<group_id>\d+)/',
             views.leave_group, name='leave_group'),
+    re_path('delete/(?P<group_id>\d+)/',
+            views.leave_group, name='leave_group'),
     re_path('mygroups/', views.my_groups, name='my_groups'),
 ]
