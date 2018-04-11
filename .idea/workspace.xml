@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0807708-1590-481a-b810-cedea5c314d0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/universus/static/students/students.css" afterPath="$PROJECT_DIR$/universus/static/students/students.css" />
-      <change beforePath="$PROJECT_DIR$/universus/static/teachers/teachers.css" afterPath="$PROJECT_DIR$/universus/static/teachers/teachers.css" />
-      <change beforePath="$PROJECT_DIR$/universus/static/university/university_list.css" afterPath="$PROJECT_DIR$/universus/static/university/university_list.css" />
-      <change beforePath="$PROJECT_DIR$/universus/templates/exam_builder/exam_show.html" afterPath="$PROJECT_DIR$/universus/templates/exam_builder/exam_show.html" />
+      <change beforePath="$PROJECT_DIR$/universus/templates/singin/singin.html" afterPath="$PROJECT_DIR$/universus/templates/singin/singin.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/universus/exam_builder/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+              <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -74,11 +71,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exam_show.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="exam_show.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/universus/templates/exam_builder/exam_show.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
               <caret line="75" column="45" lean-forward="false" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="singin.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/universus/templates/singin/singin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="57" column="37" lean-forward="false" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -89,16 +96,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="36" column="62" lean-forward="false" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="university.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/universus/static/university/university.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -154,7 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/universus/user_profile/urls.py" />
         <option value="$PROJECT_DIR$/universus/user_profile/views.py" />
         <option value="$PROJECT_DIR$/universus/chat/urls.py" />
         <option value="$PROJECT_DIR$/universus/static/common/js/moment.js" />
@@ -205,6 +201,7 @@
         <option value="$PROJECT_DIR$/universus/static/students/students.css" />
         <option value="$PROJECT_DIR$/universus/static/teachers/teachers.css" />
         <option value="$PROJECT_DIR$/universus/templates/exam_builder/exam_show.html" />
+        <option value="$PROJECT_DIR$/universus/templates/singin/singin.html" />
       </list>
     </option>
   </component>
@@ -306,6 +303,13 @@
               <item name="universus" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="exam_builder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website-universus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website-universus" type="462c0819:PsiDirectoryNode" />
+              <item name="universus" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="singin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="website-universus" type="b2602c69:ProjectViewProjectNode" />
@@ -589,13 +593,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/universus/templates/student_group/added_student.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/universus/templates/student_group/delete_student.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -838,7 +835,7 @@
         <state relative-caret-position="315">
           <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding>
-            <element signature="e#634#664#0" expanded="true" />
+            <element signature="e#634#664#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -904,7 +901,7 @@
     <entry file="file://$PROJECT_DIR$/universus/exam_builder/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+          <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -955,6 +952,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="75" column="45" lean-forward="false" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/universus/templates/singin/singin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="57" column="37" lean-forward="false" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
           <folding />
         </state>
       </provider>
