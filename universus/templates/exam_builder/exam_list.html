@@ -34,7 +34,11 @@
 <div class="container-fluid">
 
     {% if role_id == 2 or role_id == 3 or role_id == 4 %}
-        <a href="/exambuilder_body/">Создать тест</a>
+        <a class="btn btn-success" href="/exambuilder_body/add">
+            <i class="fa fa-plus-circle fa-lg"></i>
+            Создать тест
+        </a>
+        <hr>
     {% endif %}
 
 

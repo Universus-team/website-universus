@@ -1,38 +1,29 @@
 html body {
-  background: #FAFAFA;
   height: 100%;
 }
-.template {
-  display: none;
-}
-.text-format-toolbar-up {
-	margin-bottom: 10px;
-}
-.text-format-toolbar-down {
-  margin-top: 10px;
+
+.question {
+  font-size: 20px;
+  color: #222222;
 }
 
-.txt-color {
-  display: block;
-  width: 17px;
-  height: 17px;
-  border-color: #4D4D4D; 
+.question hr {
+  border-color: rgba(184, 184, 184, 0.65);
+  border-style: double none none none;
+  border-width: 9px;
 }
-.txt-color-black {
-  background-color: black;
+
+label {
+  height: 20px;
 }
-.txt-color-red {
-  background-color: red;
+
+
+.answer {
+  margin-top: -5px;
+  font-size: 18px;
+  color: #222222;
 }
-.txt-color-yellow {
-  background-color: yellow;
-}
-.txt-color-green {
-  background-color: green;
-}
-.txt-color-blue {
-  background-color: blue;
-}
+
 
 .dropdown-menu {
     min-width: 0px !important;
@@ -53,26 +44,11 @@ hr {
     border-width: 2px;
 }
 
-.question hr {
-  border-style: double none none none;
-  border-width: 7px;
-}
-
 .posible-answers-menu {
   margin-left: -20px;
 }
 
-.posible-answers-toolbar button {
-  margin-left: 10px;
-}
 
-.question-textarea {
-  font-family: 'Lora';
-  font-size: 1.2em;
-  height: 105px;
-  padding: 4px;
-  overflow: auto;
-}
 
 .btn-remove-test {
   background-color: #D79F9F;
@@ -127,3 +103,19 @@ input[type="radio"]:focus + label:before {
   box-shadow: 0 0 0 3px rgba(230,230,230,.5);
 }
 /*style above http://dimox.name/custom-checkboxes-and-radio-buttons-using-css-only/*/
+
+
+.panel {
+  margin: auto; !important;
+  box-shadow: 2px 5px 18px #888888; !important;
+  margin-top: 25px; !important;
+}
+
+.panel-heading {
+  font-size: 18px;
+  color: #6b6b6b;
+}
+
+#testContainer {
+  padding-bottom: 20px;
+}

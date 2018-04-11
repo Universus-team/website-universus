@@ -8,6 +8,8 @@ from datetime import datetime
 from suds.client import Client
 from suds.sax.attribute import Attribute
 from suds.sax.element import Element
+import json
+
 
 @csrf_exempt
 def exam_buider(request):
@@ -47,8 +49,21 @@ def exam_list(request):
     client.set_options(soapheaders=auth)
     account = client.service.getAccount()
     exams = client.service.getAllExamsByDepartmentId(account.DepartmentId)
-
+    role_id = request.session.get('role_id', 0)
     return render(request, 'exam_builder/exam_list.html', {
-        'exams': exams.Exam if exams else []
+        'exams': exams.Exam if exams else [],
+        'role_id': role_id
     })
 
+def exam_show(request, exam_id):
+    client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
+    auth = Element("AuthHeader").append((
+        Element('Email').setText(request.session.get('email', '')),
+        Element('Password').setText(request.session.get('password', '')),
+        Attribute('xmlns', 'http://universus-webservice.ru/'))
+    )
+    client.set_options(soapheaders=auth)
+    exam = client.service.getExamById(int(exam_id))
+    tests = json.loads(exam.Content)
+    return render(request, 'exam_builder/exam_show.html', {'exam': exam,
+                                                           'tests': tests})

@@ -61,7 +61,7 @@ function sendToServer() {
     //если всё произошло удачно, выводит пользователю сообщение
     //о последнем времени сохранение теста
     $.ajax({
-        url: '/exambuilder_body/',
+        url: window.location.href,
         type: 'POST',
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(readExam()),

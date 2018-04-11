@@ -17,7 +17,6 @@ Including another URLconf
 from test_webservice import views
 from django.urls import path, include
 
-import timetable.views
 
 urlpatterns = [
     path('', views.test_webservice, name='test_webservice'),

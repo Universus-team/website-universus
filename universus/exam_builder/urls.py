@@ -15,10 +15,11 @@ Including another URLconf
 """
 
 from exam_builder import views
-from django.urls import path, include
+from django.urls import path, include, re_path
 
 urlpatterns = [
     path('add/', views.exam_buider, name='exam_builder'),
     path('list/', views.exam_list, name='exam_list'),
+    re_path('show/(?P<exam_id>\d+)/', views.exam_show, name='exam_show'),
 
 ]

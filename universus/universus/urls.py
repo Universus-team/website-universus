@@ -27,7 +27,6 @@ urlpatterns = [
     path('about_body/', include('about.urls')),
     path('university_body/', include('university.urls')),
     path('chat_body/', include('chat.urls')),
-    path('timetable_body/', include('timetable.urls')),
     path('department_body/', include('department.urls')),
     path('singin/', include('singin.urls')),
     path('studentgroup_body/', include('student_group.urls')),
