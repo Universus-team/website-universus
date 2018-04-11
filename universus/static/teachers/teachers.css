@@ -17,3 +17,12 @@ thead {
     font-size: 18px;
     font-weight: bold;
 }
+
+/*MOBILE ONLY*/
+@media only screen and (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

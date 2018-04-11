@@ -64,7 +64,9 @@
                     <div class="posible-answer posible-answer-single">
                         <div class="row">
                           <div class="col-xs-1">
-                            <input id="answer_id_{{  forloop.counter }}" type="radio" name="test_{{forloop.parentloop.counter}}"
+                            <input id="answer_id_{{forloop.parentloop.counter}}_{{  forloop.counter }}"
+                                   type="radio"
+                                   name="test_{{forloop.parentloop.counter}}"
                             {% if answer.correct == '1' %}
                                 checked
                             {% endif %}
