@@ -67,7 +67,7 @@
         <a class="btn btn-success"><i class="fa fa-tasks fa-lg"></i> Назначить тест</a>
         {% endif %}
 
-        {% if role_id == 1 or role_id == 2 or role_id == 3 or role_id == 4 %}
+        {% if member_of_group %}
         <button class="btn btn-warning" data-toggle="modal" data-target="#leave_modal">
             <i class="fas fa-sign-out-alt fa-lg"></i> Покинуть группу
         </button>
@@ -88,7 +88,7 @@
         <div class="row">
             {# Students of group#}
             <div class="col-sm-6">
-                {% if role_id == 2 or role_id == 3 or role_id == 4%}
+                {% if role_id == 2 and member_of_group or role_id == 3 or role_id == 4%}
 
                 {# Student manager bar#}
                 <div class="btn-group btn-admin-group">
@@ -126,7 +126,7 @@
                             </div>
                         </td>
 
-                        {% if role_id == 2 or role_id == 3 or role_id == 4 %}
+                        {% if role_id == 2 and member_of_group or role_id == 3 or role_id == 4 %}
                         <td>
                             <a href="/studentgroup_body/delete_student/{{ group.Id }}/{{ account.Id }}/"
                                class="btn btn-danger">
@@ -150,7 +150,7 @@
 
             {# Teachers of group#}
             <div class="col-sm-6">
-                {% if role_id == 2 or role_id == 3 or role_id == 4%}
+                {% if role_id == 2 and member_of_group or role_id == 3 or role_id == 4%}
 
                 {# Teachers manager bar#}
                 <div class="btn-group btn-admin-group">

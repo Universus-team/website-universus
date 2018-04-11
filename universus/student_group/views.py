@@ -64,11 +64,15 @@ def student_group(request, group_id):
     students = client.service.getAllStudentsByGroupId(int(group_id))
     teachers = client.service.getAllTeachersByGroupId(int(group_id))
     role_id = request.session.get('role_id', 0)
+    id = request.session.get('id', 0)
+    member_of_group = client.service.isStudentMemberOfGroup(id, int(group_id))\
+                      or client.service.isTeacherMemberOfGroup(id, int(group_id));
     return render(request, 'student_group/student_group.html',
                   {'group': group,
                    'role_id': role_id,
                    'students': students.Account if students else [],
-                   'teachers': teachers.Account if teachers else []})
+                   'teachers': teachers.Account if teachers else [],
+                   'member_of_group': member_of_group})
 
 
 def add_student_to_group(request, group_id):
