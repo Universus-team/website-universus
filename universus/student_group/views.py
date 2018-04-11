@@ -145,3 +145,18 @@ def added_teacher_to_group(request, group_id, teacher_id):
     account = client.service.getAccountById(int(teacher_id))
     result = client.service.addTeacherToGroup(int(teacher_id), int(group_id))
     return render(request, 'student_group/added_teacher.html', {'group': group, 'account': account, 'result': result})
+
+def leave_group(request, group_id):
+    client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
+    auth = Element("AuthHeader").append((
+        Element('Email').setText(request.session.get('email', '')),
+        Element('Password').setText(request.session.get('password', '')),
+        Attribute('xmlns', 'http://universus-webservice.ru/'))
+    )
+    client.set_options(soapheaders=auth)
+    res = client.service.leaveStudentGroupById(int(group_id))
+    if res > 0:
+        return HttpResponseRedirect('/studentgroup_body/mygroups/')
+    else:
+        return HttpResponseRedirect('/studentgroup_body/show/'+group_id)
+
