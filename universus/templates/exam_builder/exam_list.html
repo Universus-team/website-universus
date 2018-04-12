@@ -62,6 +62,7 @@
                     <td></td>
                     <td><b>Тест</b></td>
                     <td><b>Описание</b></td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody id="exams">
@@ -72,8 +73,13 @@
                         <td>
                             <i class="fa fa-clipboard-list fa-3x"></i>
                         </td>
+
                         <td>{{ exam.Title }}</td>
                         <td width="50%">{{  exam.Description|truncatechars:100 }}</td>
+
+                        <td>
+                            <a href="/exambuilder_body/choosegroup/{{ exam.Id }}/" class="btn btn-success"><i class="fa fa-tasks"></i></a>
+                        </td>
                     </tr>
 
                 {% endfor %}

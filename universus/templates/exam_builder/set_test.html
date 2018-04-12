@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+        {#    Bootstrap 3 CSS remote#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    {#    jQuery#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    {#    Highlight jquery plugin #}
+    <script src='{% static "common/js/highlight_jquery_plugin.js" %}'></script>
+
+    {#    Bootstrap JS remote#}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+        {#    COMMON STYLE#}
+    <link rel="stylesheet" href="{% static 'common/css/common.css' %}">
+
+    {#    CUSTOM STYLE#}
+    <link rel="stylesheet" href="{% static 'exam_builder/set_test.css' %}">
+
+    {#  AWESOME ICONS fonts#}
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="row">
+    <div class="col-sm-offset-2 col-sm-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Назначение теста группе {{ group.Name }}</h3>
+            </div>
+            <div class="panel-body">
+                                <div class="well well-sm">
+                    <b>Имя теста:</b> {{ exam.Title }}
+                </div>
+                <div class="well well-sm">
+                    <b>Описание теста:</b> {{ exam.Description }}
+                </div>
+                <div class="well well-sm">
+                    <b>Количество вопросов:</b> {{ exam.CountOfQuestion }}
+                </div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="deadline_date" class="control-label">Крайняя дата сдачи:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-calender-alt"></i> </span>
+                            <input type="date" class="form-control" name="deadline_date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deadline_time" class="control-label">Крайнее время сдачи:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-clock"></i> </span>
+                            <input type="time" class="form-control" name="deadline_time" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deadline_time" class="control-label">Проходной процент:</label>
+                        <div class="slidecontainer">
+                          <input name="passing_score" type="range" min="0" max="100" value="60" step="5" class="slider"
+                          oninput="rangeOutputId.value = passing_score.value">
+                        </div>
+                        <output name="rangeOutputId" id="rangeOutputId">60</output>
+
+                    </div>
+
+                    <input type="submit" value="Назначить" class="btn btn-primary btn-lg">
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
