@@ -20,3 +20,27 @@ $(document).ready(function () {
 
 
 })
+
+function sendMessage() {
+    $.ajax({
+        url: window.location.href,
+        type: 'POST',
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify({
+            'sendMessage': true,
+            'message': $('#share_message').val()
+        }),
+        dataType: 'text',
+        success: function(result) {
+            data = JSON.parse(result)
+            if (data['no students']) {
+                $('#msg_result').text('Нет студентов')
+            } else if (data['send']) {
+                $('#msg_result').text('Сообщение отправлено')
+                $('#share_message').val('')
+            } else {
+                $('#msg_result').text('Сообщение НЕ отправлено')
+            }
+        }
+    });
+}

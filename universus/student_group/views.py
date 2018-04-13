@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from suds.client import Client
@@ -58,14 +58,34 @@ def add_student_group(request, department_id):
                                                                   'result': result})
     return render(request, 'student_group/group_add.html', {'department': department})
 
+@csrf_exempt
 def student_group(request, group_id):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
-    group = client.service.getStudentGroupById(int(group_id))
+
+
     students = client.service.getAllStudentsByGroupId(int(group_id))
+    if request.method == 'POST':
+        data = request.body.decode('utf-8')
+        query = json.loads(data)
+        auth = Element("AuthHeader").append((
+            Element('Email').setText(request.session.get('email', '')),
+            Element('Password').setText(request.session.get('password', '')),
+            Attribute('xmlns', 'http://universus-webservice.ru/'))
+        )
+        client.set_options(soapheaders=auth)
+        res = 0
+        if query['sendMessage']:
+            if not students:
+                return HttpResponse(json.dumps({'no students': True}), content_type='application/json')
+            else:
+                for student in students.Account:
+                    res += client.service.sendMessage(student.Id, query['message'])
+                return HttpResponse(json.dumps({'send': True}), content_type='application/json')
+    group = client.service.getStudentGroupById(int(group_id))
     teachers = client.service.getAllTeachersByGroupId(int(group_id))
     role_id = request.session.get('role_id', 0)
     id = request.session.get('id', 0)
-    member_of_group = client.service.isStudentMemberOfGroup(id, int(group_id))\
+    member_of_group = client.service.isStudentMemberOfGroup(id, int(group_id)) \
                       or client.service.isTeacherMemberOfGroup(id, int(group_id));
     return render(request, 'student_group/student_group.html',
                   {'group': group,

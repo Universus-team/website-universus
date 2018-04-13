@@ -82,9 +82,27 @@
             <label for="created_date">Дата создания:</label>
             <input id="created_date" class="field" type="date" value="{{ group.CreatedDate|date:"Y-m-d" }}" readonly>
         </div>
+        {% if role_id == 2 and member_of_group or role_id == 3 or role_id == 4%}
+        <div class="row" style="margin-top: 10px">
+            <div class="col-sm-offset-1 col-sm-10">
+                <div class="form-group">
+                    <label for="share_message">Сообщение для всех студентов:</label>
+                    <textarea class="form-control" name="share_message" id="share_message" rows="3" placeholder="Введите сообщение"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-offset-1 col-sm-4">
+                <button class="btn btn-primary" onclick="sendMessage()">
+                    Отправить сообщение
+                </button>
 
-
-
+            </div>
+            <div class="col-sm-6">
+                <span id="msg_result"> </span>
+            </div>
+        </div>
+        {% endif %}
         <div class="row">
             {# Students of group#}
             <div class="col-sm-6">

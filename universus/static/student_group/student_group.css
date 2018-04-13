@@ -12,3 +12,9 @@ h5 {
     height: 55px;
     border-radius: 28px;
 }
+
+#msg_result {
+    font-weight: bold;
+    font-size: 18px;
+    color: #FF8900;
+}
