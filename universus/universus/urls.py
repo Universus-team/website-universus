@@ -33,6 +33,8 @@ urlpatterns = [
     path('students_body/', include('students.urls')),
     path('teachers_body/', include('teachers.urls')),
     path('test_webservice/', include('test_webservice.urls')),
+    path('support_body/', include('support.urls')),
+
 
 
     # must be at the end

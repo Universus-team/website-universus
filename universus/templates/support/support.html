@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+        <!-- custom style local-->
+    <link rel="stylesheet" type="text/css" href="{% static 'chat/my_dialogs.css' %}">
+
+    <!-- Bootstrap CSS remote-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    {#  AWESOME ICONS fonts#}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- jQuery local-->
+    <script type="text/javascript" src="{% static 'common/js/jquery-1.11.1.min.js' %}"></script>
+
+{#    Highlight jquery plugin #}
+    <script src='{% static "common/js/highlight_jquery_plugin.js" %}'></script>
+
+    <!-- Bootstrap  JS remote-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    {# Custom JS local  #}
+
+    <script src="{% static 'chat/my_dialogs.js' %}"></script>
+
+</head>
+<body style="height: 100%">
+<div class="container-fluid">
+
+
+    {#    #}
+    <div class="row">
+        <h2>Поддержка</h2>
+        <p>
+            Если у вас возникли вопросы по поводу использования сайта вы можете задать их нашему модератору.
+        </p>
+    </div>
+
+    {# Search field #}
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <div class="input-group">
+                <input id="search" type="text" class="form-control" type="text" placeholder="Search..">
+                <div class="input-group-addon">
+                    <i class="fa fa-search fa-lg"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="addon">
+          <p>Наши модераторы:</p>
+          <ul>
+              {% for account in moderators %}
+                <li class="clearfix">
+                  <a href="/chat_body/show/{{ account.Id }}/" >
+                  <img class="round" src="{{ account.PhotoURL }}">
+                  <div class="legend-info">
+                    <strong class="user-name" style="display: inline-block">{{ account.Surname }} {{ account.Name }}</strong>
+
+                    </div></a>
+                  </li>
+              {% empty %}
+              <h3 style="margin-left: 20px">У нас нет модераторов:(</h3>
+              {% endfor %}
+          </ul>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
