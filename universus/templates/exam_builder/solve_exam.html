@@ -1,0 +1,117 @@
+
+{% load static %}﻿
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+
+
+    <!-- Font awesome Font Awesome is fully open source and is GPL friendly. You can use it for commercial projects, open source projects, or really just about whatever you want. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- fonts remote-->
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+
+    <!-- Bootstrap CSS remote-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  
+
+
+ 
+
+    <!-- custom style local-->
+    <link rel="stylesheet" type="text/css" href="{% static 'exam_builder/exam_show.css' %}">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="{% static 'common/js/jquery-1.11.1.min.js' %}"></script>
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="{% static 'exam_builder/solve_test.js' %}"></script>
+
+    <!-- Bootstrap  JS remote-->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+      <!-- bootstrap-select https://silviomoreto.github.io/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-offset-1 col-sm-10">
+                <h4 class="well">
+                    <b>Имя теста: </b> {{ exam.Title }} <br>
+                    <b>Описание теста: </b> {{ exam.Description }}
+                </h4>
+            </div>
+        </div>
+
+      <div class="row" id="testContainer">
+
+          {% for test in tests %}
+          <div class="panel panel-default test">
+
+            <div class="panel-heading text-center">
+              Вопрос {{ forloop.counter }}
+            </div>
+
+            <div class="panel-body">
+
+                <div class="question">
+                    {% autoescape off %}
+                        {{ test.question }}
+                    {% endautoescape %}
+                    <hr>
+                </div>
+                {% for answer in test.answers %}
+                <div class="container-posible-answers">
+                    <div class="posible-answer posible-answer-single">
+                        <div class="row">
+                          <div class="col-xs-1">
+                            <input id="answer_id_{{forloop.parentloop.counter}}_{{  forloop.counter }}"
+                                   type="radio"
+                                   value="{{forloop.parentloop.counter}}_{{  forloop.counter }}"
+                                   name="test_{{forloop.parentloop.counter}}"
+                            {% if answer.correct == '1' %}
+                                checked
+                            {% endif %}
+                            >
+                            <label for="answer_id_{{forloop.parentloop.counter}}_{{  forloop.counter }}"></label>
+                          </div>
+                          <div class="col-xs-10">
+                            <div class="answer">
+                                {{ answer.content }}
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+
+        <div class="row" style="margin-top: 20px; margin-left: 5px">
+            <div class="col-sm-offset-1 col-sm-10">
+                <button class="btn btn-primary btn-lg" onclick="sendToServer()">Отправить</button>
+            </div>
+        </div>
+
+
+
+          {# PANEL END#}
+
+      </div>
+    </div>
+
+
+
+  </body>
+</html>

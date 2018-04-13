@@ -22,6 +22,7 @@ urlpatterns = [
     path('list/', views.exam_list, name='exam_list'),
     re_path('show/(?P<exam_id>\d+)/', views.exam_show, name='exam_show'),
     re_path('choosegroup/(?P<exam_id>\d+)/', views.choose_group, name='choose_group'),
+    re_path('solvetest/(?P<exam_history_id>\d+)/', views.solve_test, name='solve_test'),
     re_path('settest/(?P<group_id>\d+)/(?P<exam_id>\d+)/', views.set_test, name='set_test'),
 
 ]

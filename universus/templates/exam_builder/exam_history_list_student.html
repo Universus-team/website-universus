@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {#    Bootstrap 3 CSS remote#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    {#    jQuery#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    {#    Highlight jquery plugin #}
+    <script src='{% static "common/js/highlight_jquery_plugin.js" %}'></script>
+
+    {#    Bootstrap JS remote#}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {#    custom script#}
+    <script src="{% static 'exam_builder/exam_list.js' %}"></script>
+
+        {#    COMMON STYLE#}
+    <link rel="stylesheet" href="{% static 'common/css/common.css' %}">
+
+    {#  AWESOME ICONS fonts#}
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+    {% if role_id == 2 or role_id == 3 or role_id == 4 %}
+        <a class="btn btn-success" href="/exambuilder_body/add">
+            <i class="fa fa-plus-circle fa-lg"></i>
+            Создать тест
+        </a>
+        <hr>
+    {% endif %}
+
+
+    {#Search panel#}
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <div class="input-group">
+                <input id="search" type="text" class="form-control" type="text" placeholder="Search..">
+                <div class="input-group-addon">
+                    <i class="fa fa-search fa-lg"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+        <table class="table table-hover" >
+            <thead>
+                <tr>
+                    <td><b>Тест</b></td>
+                    <td><b>Дата теста</b></td>
+                    <td>Крайний срок</td>
+                </tr>
+            </thead>
+            <tbody id="exams">
+
+                {% for test in tests %}
+
+                    <tr onclick="window.location='/exambuilder_body/show/{{ exam.Id }}/';" style="font-size: 18px">
+
+                        <td>{{ test.Exam.Title }}</td>
+                        <td >{{  exam.DateOfTest }}</td>
+                        <td >{{  exam.Deadline }}</td>
+                    </tr>
+                    {% if test.StatusId > 1 %}
+                    <tr>
+                        <td colspan="3">
+                            <div class="progress">
+                              <div class="
+                                {% if test.StatusId == 2 %}
+                                progress-bar-danger
+                                {% elif test.StatusId == 3 %}
+                                progress-bar-success
+                                {% endif %}"
+                                   role="progressbar" aria-valuenow="{{ test.Result }}"
+                              aria-valuemin="0" aria-valuemax="1" style="width:100%">
+                                {{ test.Result  }} %
+                              </div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endif %}
+
+                {% endfor %}
+            </tbody>
+        </table>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

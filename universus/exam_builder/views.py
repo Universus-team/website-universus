@@ -1,6 +1,6 @@
 import json
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
@@ -40,6 +40,7 @@ def exam_buider(request):
     return render(request, 'exam_builder/exam_builder.html', locals())
 
 def exam_list(request):
+
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
     auth = Element("AuthHeader").append((
         Element('Email').setText(request.session.get('email', '')),
@@ -47,13 +48,19 @@ def exam_list(request):
         Attribute('xmlns', 'http://universus-webservice.ru/'))
     )
     client.set_options(soapheaders=auth)
-    account = client.service.getAccount()
-    exams = client.service.getAllExamsByDepartmentId(account.DepartmentId)
     role_id = request.session.get('role_id', 0)
-    return render(request, 'exam_builder/exam_list.html', {
-        'exams': exams.Exam if exams else [],
-        'role_id': role_id
-    })
+    id = request.session.get('id', 0)
+    if role_id == 2:
+        account = client.service.getAccount()
+        exams = client.service.getAllExamsByDepartmentId(account.DepartmentId)
+        return render(request, 'exam_builder/exam_list.html', {
+            'exams': exams.Exam if exams else [],
+            'role_id': role_id
+        })
+    else:
+        tests = client.service.getAllExamHistoryByStudentId(id)
+        return render(request, 'exam_builder/exam_history_list_student.html',
+                      {'tests': tests.ExamHistory if tests else []})
 
 def exam_show(request, exam_id):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
@@ -124,3 +131,27 @@ def set_test(request, group_id, exam_id):
         'exam': exam,
         'group': group
     })
+
+@csrf_exempt
+def solve_test(request, exam_history_id):
+    client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
+    auth = Element("AuthHeader").append((
+        Element('Email').setText(request.session.get('email', '')),
+        Element('Password').setText(request.session.get('password', '')),
+        Attribute('xmlns', 'http://universus-webservice.ru/'))
+    )
+    client.set_options(soapheaders=auth)
+
+    exam_history = client.service.getExamHistoryById(int(exam_history_id))
+    exam = exam_history.Exam
+    id = request.session.get('id', 0)
+    if request.method == 'POST':
+        data = request.body.decode('utf-8')
+        exam_history.Exam.Content = data
+        res = client.service.takeExam(exam_history)
+        return HttpResponseRedirect('/exambuilder_/list')
+    tests = json.loads(exam.Content)
+    return render(request, 'exam_builder/solve_exam.html', {'exam': exam,
+                                                            'tests': tests})
+
+

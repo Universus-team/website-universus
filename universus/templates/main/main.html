@@ -105,18 +105,16 @@
 
     </div>
     <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>
-          <h5><b>Тест по физике</b></h5>
-          <h6>22.12.2017</h6>
-        </p>
-      </div>
-      <div class="well">
-        <p>
-          <h5><b>Тест по Java</b></h5>
-          <h6>02.12.2017</h6>
-        </p>
-      </div>
+    {% for test in tests %}
+        {% if test.StatusId == 1 %}
+          <div class="well" onclick="window.location='/exambuilder_/solvetest/{{ test.Id }}/';">
+            <p>
+              <h5>Тест: <b>{{ test.Exam.Title }}</b></h5>
+              <h6>{{ test.Deadline }}</h6>
+            </p>
+          </div>
+        {% endif %}
+    {% endfor %}
     </div>
   </div>
 </div>
