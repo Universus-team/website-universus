@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {#    Bootstrap 3 CSS remote#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    {#jQuery#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    {#    Bootstrap 3 JS remote#}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {# FONT FOR AWESOME ICONS fonts#}
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+    {#   custom css#}
+    <link rel="stylesheet" href="{% static 'tutorial/add.css' %}">
+
+    {#    custom script#}
+    <script src="{% static 'tutorial/add.js' %}"></script>
+
+</head>
+<body>
+<div class="row">
+    <div class="col-sm-offset-1 col-sm-10">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Добавление учебного материала</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="name">Название: </label>
+                    <input name="name" type="text" class="form-control" placeholder="Название..">
+                </div>
+
+                <div class="content_container">
+
+                    <!-- for desktop -->
+                    <!-- this code is repeated. fix it if you can. -->
+                    <div class="text-format-toolbar-up hidden-xs">
+                       <button onclick="formatDoc('bold');" class="btn btn-default btn-sm"
+                          data-toggle="tooltip"
+                          data-html="true"
+                          title="Сделать текст жирным. <b> CTRL+B </b>."
+                          >
+                        <i class="fa fa-bold"></i>
+                      </button>
+                      <button onclick="formatDoc('italic');" class="btn btn-default btn-sm"
+                          data-toggle="tooltip"
+                          data-html="true"
+                          title="Сделать текст курсивным. <b> CTRL+I </b>."
+                          >
+                        <i class="fa fa-italic"></i>
+                      </button>
+                      <button onclick="formatDoc('underline');" class="btn btn-default btn-sm"
+                          data-toggle="tooltip"
+                          data-html="true"
+                          title="Сделать текст подчёркнутым. <b> CTRL+U </b>."
+                          >
+                        <i class="fa fa-underline"></i>
+                      </button>
+
+                      <div class="btn-group">
+                        <button
+                          onclick = "formatDoc('forecolor','red')"
+                          type="button"
+                          class="btn btn-default btn-sm txt-color-red"
+                          data-toggle="tooltip"
+                          data-html="true"
+                          title="Сделать текст красным. <b> CTRL+ALT+R </b>.">_</button>
+                        <button
+                          onclick = "formatDoc('forecolor','blue')"
+                          type="button"
+                          class="btn btn-default btn-sm txt-color-blue"
+                          data-toggle="tooltip"
+                          data-html="true"
+                          title="Сделать текст синим. <b> CTRL+ALT+B </b>."
+                          >_</button>
+
+                        <button
+                          onclick = "formatDoc('forecolor','green')"
+                          type="button"
+                          class="btn btn-default btn-sm txt-color-green"
+                          data-toggle="tooltip"
+                          data-html="true"
+                          title="Сделать текст зелёным. <b> CTRL+ALT+G </b>.">_</button>
+
+                        <button
+                          onclick = "formatDoc('forecolor','yellow')"
+                          type="button"
+                          class="btn btn-default btn-sm txt-color-yellow"
+                          data-toggle="tooltip"
+                          data-html="true"
+                          title="Сделать текст жёлтым. <b> CTRL+ALT+Y </b>.">_</button>
+                        <button
+                          onclick = "formatDoc('forecolor','black')"
+                          type="button"
+                          class="btn btn-default btn-sm txt-color-black"
+                          data-toggle="tooltip"
+                          data-html="true"
+                          title="Сделать текст черным. <b> CTRL+ALT+K </b>.">_</button>
+                      </div>
+
+                      <div class="btn-group">
+                          <button
+                            onclick = "formatDoc('justifyleft');"
+                            type="button"
+                            class="btn btn-default btn-sm"
+                            data-toggle="tooltip"
+                            data-html="true"
+                            title="Центр. <b> CTRL+R </b>.">
+                            <i class="fa fa-align-right"></i>
+                          </button>
+                          <button
+                            onclick = "formatDoc('justifycenter');"
+                            type="button"
+                            class="btn btn-default btn-sm"
+                            data-toggle="tooltip"
+                            data-html="true"
+                            title="Центр. <b> CTRL+E </b>.">
+                            <i class="fa fa-align-center"></i>
+                          </button>
+                          <button
+                            onclick = "formatDoc('justifyright');"
+                            type="button"
+                            class="btn btn-default btn-sm"
+                            data-toggle="tooltip"
+                            data-html="true"
+                            title="Центр. <b> CTRL+L </b>.">
+                            <i class="fa fa-align-left"></i>
+                          </button>
+                      </div>
+
+
+                    </div>
+
+                    <div id="content" contenteditable="true" class="form-control question-textarea" placeholder="Содержание"></div>
+
+                    <!-- for mobile -->
+                    <!-- this code is repeated. fix it if you can. -->
+                    <div class="text-format-toolbar-down hidden-lg hidden-md hidden-sm">
+                       <button onclick="formatDoc('bold');" class="btn btn-default btn-sm"
+                          data-toggle="tooltip"
+                          data-html="true"
+                          title="Сделать текст жирным. Горячая клавиша <b> CTRL+B </b>."
+                          >
+                        <i class="fa fa-bold"></i>
+                      </button>
+                      <button onclick="formatDoc('italic');" class="btn btn-default btn-sm"
+                          data-toggle="tooltip"
+                          data-html="true"
+                          title="Сделать текст курсивным. Горячая клавиша <b> CTRL+I </b>."
+                          >
+                        <i class="fa fa-italic"></i>
+                      </button>
+                      <button onclick="formatDoc('underline');" class="btn btn-default btn-sm"
+                          data-toggle="tooltip"
+                          data-html="true"
+                          title="Сделать текст подчёркнутым. Горячая клавиша <b> CTRL+U </b>."
+                          >
+                        <i class="fa fa-underline"></i>
+                      </button>
+            </div>
+            <hr>
+
+          </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

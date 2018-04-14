@@ -149,7 +149,8 @@ def solve_test(request, exam_history_id):
         data = request.body.decode('utf-8')
         exam_history.Exam.Content = data
         res = client.service.takeExam(exam_history)
-        return HttpResponseRedirect('/exambuilder_/list')
+        return HttpResponse(json.dumps({'success': res >= 0}), content_type='application/json')
+
     tests = json.loads(exam.Content)
     return render(request, 'exam_builder/solve_exam.html', {'exam': exam,
                                                             'tests': tests})

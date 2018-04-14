@@ -6,14 +6,18 @@ function saveChange() {
         data: JSON.stringify(readAccount()),
         dataType: 'text',
         success: function(result) {
-            data = JSON.parse(result)
-            $('#saveMessage').text(data.message)
+
         }
     });
 }
 
 function readAccount() {
     return {
-        
+        'name' : $('#name').text(),
+        'surname' : $('#surname').text(),
+        'patronymic' : $('#patronymic').text(),
+        'phone' : $('#phone').val(),
+        'address' : $('#address').val(),
+        'birth_day' : $('#birth_day').val()
     }
 }

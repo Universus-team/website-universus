@@ -32,19 +32,24 @@
 
     {#common JS    #}
     <script src="{% static 'common/js/common.js' %}"></script>
+    {# CUSTOM JS   #}
+    <script src="{% static 'user_profile/user_profile.js' %}"></script>
 </head>
 <body>
 
         <div class="btn-group btn-admin-group " >
             <input id="edit-mode" type="checkbox" data-toggle="toggle" data-on="Edit on" data-off="Edit off">
-            <button id="save-change" class="btn btn-warning">
+            <button id="save-change" class="btn btn-warning" onclick="saveChange()">
                 <i class="fa fa-save fa-lg"></i> Save change
             </button>
         </div>
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div id="user-name" class="field"> {{ account.Surname }} {{ account.Name }} {{ account.Patronymic }}
+          <div>
+              <span id="surname" class="field">{{ account.Surname }}</span>
+              <span id="name" class="field">{{ account.Name }}</span>
+              <span id="patronymic" class="field">{{ account.Patronymic }}</span>
               ({{ role }}) </div>
         </div>
         <div class="panel-body">
@@ -67,19 +72,19 @@
                   <tr>
                     <td>Дата рождения:</td>
                     <td>
-                        <input name="birth_day" type="date" value="{{ account.BirthDay|date:"Y-m-d" }}" class="field">
+                        <input id="birth_day" name="birth_day" type="date" value="{{ account.BirthDay|date:"Y-m-d" }}" class="field">
                     </td>
                   </tr>
                   <tr>
                     <td>Адрес:</td>
-                    <td><input name="address" type="text" value="{{ account.Address }}" class="field"></td>
+                    <td><input id="address" name="address" type="text" value="{{ account.Address }}"></td>
                   </tr>
                   <tr>
                     <td>Email:</td>
                     <td><input name="email" type="email" value="{{ account.Email }}" class="field"></td>
                   </tr>
                     <td>Номер телефона:</td>
-                    <td><input name="phone" type="text" value="{{ account.Phone }}" class="field"></td>
+                    <td><input id="phone" name="phone" type="text" value="{{ account.Phone }}" class="field"></td>
                   </tr>
                  
                 </tbody>

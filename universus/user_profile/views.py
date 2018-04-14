@@ -1,6 +1,7 @@
 from cloudinary.templatetags import cloudinary
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from suds.client import Client
 from suds.sax.attribute import Attribute
 from suds.sax.element import Element
@@ -8,8 +9,9 @@ from suds.sax.element import Element
 
 # Create your views here.
 from user_profile.util import getRoleById
+import json
 
-
+@csrf_exempt
 def show_profile(request):
     if request.session.get('id', False):
         client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
@@ -19,7 +21,20 @@ def show_profile(request):
             Attribute('xmlns', 'http://universus-webservice.ru/'))
         )
         client.set_options(soapheaders=auth)
+
         account = client.service.getAccount()
+
+        if request.method == 'POST':
+            data = request.body.decode('utf-8')
+            acc = json.loads(data)
+            account.Name = acc['name']
+            account.Surname = acc['surname']
+            account.Patronymic = acc['patronymic']
+            account.Address = acc['address']
+            account.Phone = acc['phone']
+            account.BirthDay = acc['birth_day']
+            res = client.service.updateAccount(account)
+
         department = client.service.getDepartmentByIdLite(account.DepartmentId)
         university = client.service.getUniversityByIdLite(department.UniversityId)
         role = getRoleById(account.RoleId)
