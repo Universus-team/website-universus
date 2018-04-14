@@ -34,7 +34,7 @@ def show_profile(request):
             account.Phone = acc['phone']
             account.BirthDay = acc['birth_day']
             res = client.service.updateAccount(account)
-
+            print(res)
         department = client.service.getDepartmentByIdLite(account.DepartmentId)
         university = client.service.getUniversityByIdLite(department.UniversityId)
         role = getRoleById(account.RoleId)
