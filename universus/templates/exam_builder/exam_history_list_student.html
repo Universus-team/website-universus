@@ -18,7 +18,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     {#    custom script#}
-    <script src="{% static 'exam_builder/exam_list.js' %}"></script>
+    <script src="{% static 'exam_builder/exam_history_list_student.js' %}"></script>
+
+    {#    CUSTOM STYLE#}
+    <link rel="stylesheet" href="{% static 'exam_builder/exam_history_list_student.css' %}">
 
         {#    COMMON STYLE#}
     <link rel="stylesheet" href="{% static 'common/css/common.css' %}">
@@ -59,9 +62,18 @@
         <table class="table table-hover table-bordered" >
             <thead>
                 <tr>
-                    <td><b>Тест</b></td>
-                    <td><b>Дата теста</b></td>
-                    <td><b>Крайний срок</b></td>
+                    <td>
+                        Тест
+                    </td>
+                    <td>
+                        Статус
+                    </td>
+                    <td>
+                        Сдано
+                    </td>
+                    <td>
+                        Крайний срок
+                    </td>
                 </tr>
             </thead>
             <tbody id="exams">
@@ -71,12 +83,21 @@
                     <tr onclick="window.location='/exambuilder_body/show/{{ exam.Id }}/';" style="font-size: 18px">
 
                         <td>{{ test.Exam.Title }}</td>
-                        <td >{{  test.Exam.DateOfTest|date:"d-m-Y H:M" }}</td>
-                        <td >{{  test.Exam.Deadline|date:"d-m-Y H:M" }}</td>
+                        <td>
+                            {% if test.StatusId == 1 %}
+                                <span class="not-complete">Не выполнен</span>
+                            {% elif test.StatusId == 2 %}
+                                <span class="not-pass">Не сдан</span>
+                            {% elif test.StatusId == 3 %}
+                                <span class="pass">Cдан</span>
+                            {% endif %}
+                        </td>
+                        <td >{{  test.DateOfTest|date:"d-m-Y H:i" }}</td>
+                        <td >{{  test.Deadline|date:"d-m-Y H:i" }}</td>
                     </tr>
                     {% if test.StatusId > 1 %}
                     <tr>
-                        <td colspan="3">
+                        <td colspan="4">
                             <div class="progress">
                               <div class="
                                 {% if test.StatusId == 2 %}
