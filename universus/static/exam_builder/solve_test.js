@@ -7,8 +7,9 @@ function sendToServer() {
         data: JSON.stringify(readExam()),
         dataType: 'text',
         success: function(result) {
-            if (result['success']) {
-                window.location.replace("/exambuilder_body/list")
+            data = JSON.parse(result)
+            if (data['success']) {
+                window.location.href = '../../list/'
             }
         }
     });
