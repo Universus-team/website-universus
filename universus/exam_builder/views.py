@@ -62,6 +62,31 @@ def exam_list(request):
         return render(request, 'exam_builder/exam_history_list_student.html',
                       {'tests': tests.ExamHistory if tests else []})
 
+def exam_list_teacher(request, exam_id):
+    client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
+    auth = Element("AuthHeader").append((
+        Element('Email').setText(request.session.get('email', '')),
+        Element('Password').setText(request.session.get('password', '')),
+        Attribute('xmlns', 'http://universus-webservice.ru/'))
+    )
+    client.set_options(soapheaders=auth)
+    role_id = request.session.get('role_id', 0)
+    id = request.session.get('id', 0)
+    # if teacher
+    if role_id == 2:
+        account = client.service.getAccount()
+        exams = client.service.getAllExamHistoryByTeacherId(id, int(exam_id))
+        students = []
+        for e in exams.ExamHistory:
+            student = client.service.getAccountById(e.StudentId)
+            students.append(student)
+        data = zip(exams.ExamHistory, students)
+        return render(request, 'exam_builder/exam_history_list_teacher.html', {
+            'data': data,
+            'role_id': role_id
+        })
+
+
 def exam_show(request, exam_id):
     client = Client('http://www.universus-webservice.ru/WebService1.asmx?WSDL')
     auth = Element("AuthHeader").append((

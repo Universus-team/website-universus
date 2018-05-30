@@ -63,6 +63,7 @@
                     <td><b>Тест</b></td>
                     <td><b>Описание</b></td>
                     <td></td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody id="exams">
@@ -77,6 +78,9 @@
                         <td>{{ exam.Title }}</td>
                         <td width="50%">{{  exam.Description|truncatechars:100 }}</td>
 
+                        <td>
+                            <a href="/exambuilder_body/showhistory/{{ exam.Id }}/" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                        </td>
                         <td>
                             <a href="/exambuilder_body/choosegroup/{{ exam.Id }}/" class="btn btn-success"><i class="fa fa-tasks"></i></a>
                         </td>

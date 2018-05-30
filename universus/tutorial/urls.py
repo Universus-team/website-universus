@@ -14,16 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from exam_builder import views
+from tutorial import views
 from django.urls import path, include, re_path
 
 urlpatterns = [
-    path('add/', views.exam_buider, name='exam_builder'),
-    path('list/', views.exam_list, name='exam_list'),
-    re_path('show/(?P<exam_id>\d+)/', views.exam_show, name='exam_show'),
-    re_path('showhistory/(?P<exam_id>\d+)/', views.exam_list_teacher, name='exam_list_teacher'),
-    re_path('choosegroup/(?P<exam_id>\d+)/', views.choose_group, name='choose_group'),
-    re_path('solvetest/(?P<exam_history_id>\d+)/', views.solve_test, name='solve_test'),
-    re_path('settest/(?P<group_id>\d+)/(?P<exam_id>\d+)/', views.set_test, name='set_test'),
+    path('add/', views.add, name='add_tutorial'),
+    re_path('show/(?P<tutorial_id>\d+)/', views.show, name='show_tutorial'),
 
 ]

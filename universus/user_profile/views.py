@@ -92,7 +92,7 @@ def add_user_profile(request):
         account.PasswordMD5 = request.POST['password']
         account.DepartmentId = request.POST['department']
         account.BirthDay = request.POST['birth_day']
-        account.RoleId = request.POST['role'];
+        account.RoleId = int(request.POST['role']);
 
         if request.FILES and request.FILES['photo']:
             cloudinary.config(
@@ -108,13 +108,14 @@ def add_user_profile(request):
             )['url']
         else:
             account.PhotoURL = 'http://res.cloudinary.com/universusimages/image/upload/v1523119802/default.png'
-        id = client.service.addStudent(account)
+
+        id = 0;
+        if account.RoleId == 1:
+            id = client.service.addStudent(account)
+        elif account.RoleId == 2:
+            id = client.service.addTeacher(account)
         if id > 0:
-            request.session['id'] = id
-            request.session['email'] = account.Email
-            request.session['password'] = account.PasswordMD5
-            request.session['role_id'] = account.RoleId
-            return HttpResponseRedirect('/profile_/show/'+str(id))
+            return HttpResponseRedirect('/profile_body/show/'+str(id))
 
     uni = client.service.getAllUniversitiesLite()
     role_id = request.session.get('role_id', 0)
